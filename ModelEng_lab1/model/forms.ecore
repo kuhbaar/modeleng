@@ -20,6 +20,15 @@
         name="enumerations"
         upperBound="-1"
         eType="#//entityModeling/Enumeration"/>
+    <eStructuralFeatures
+        xsi:type="ecore:EReference"
+        name="welcomeForm"
+        lowerBound="1"
+        eType="#//formModeling/Form"/>
+    <eStructuralFeatures
+        xsi:type="ecore:EReference"
+        name="forms"
+        eType="#//formModeling/Form"/>
   </eClassifiers>
   <eSubpackages
       name="entityModeling">
@@ -149,6 +158,48 @@
           xsi:type="ecore:EAttribute"
           name="name"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures
+          xsi:type="ecore:EAttribute"
+          name="title"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures
+          xsi:type="ecore:EAttribute"
+          name="description"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures
+          xsi:type="ecore:EReference"
+          name="entity"
+          eType="#//entityModeling/Entity"/>
+      <eStructuralFeatures
+          xsi:type="ecore:EReference"
+          name="pages"
+          upperBound="-1"
+          eType="#//formModeling/Page"/>
+    </eClassifiers>
+    <eClassifiers
+        xsi:type="ecore:EClass"
+        name="Page">
+      <eStructuralFeatures
+          xsi:type="ecore:EAttribute"
+          name="title"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures
+          xsi:type="ecore:EReference"
+          name="pageElements"
+          eType="#//formModeling/PageElement"/>
+    </eClassifiers>
+    <eClassifiers
+        xsi:type="ecore:EClass"
+        name="PageElement">
+      <eStructuralFeatures
+          xsi:type="ecore:EAttribute"
+          name="label"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures
+          xsi:type="ecore:EAttribute"
+          name="elementID"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral=""/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
