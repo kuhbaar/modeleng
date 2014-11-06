@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MyFormsModel" nsURI="http://www.eclipse.org/emf/CDO/ui/defs/1.0.0"
+    nsPrefix="ecore_MyFormsModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Person">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1" eType="#//Email"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="external" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="faculty" eType="#//Faculty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publications" upperBound="-1"
+        eType="#//Publication" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publication">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keywords" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="#//Text"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doi" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="#//Year" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromPage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="untilPage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PublicationType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignedFaculty" lowerBound="1"
+        eType="#//Faculty"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" lowerBound="1" eType="#//ResearchField"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="authors" lowerBound="1"
+        upperBound="-1" eType="#//Person" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proceedings" eType="#//Proceedings"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="journal" eType="#//Journal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="book" eType="#//Book"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Proceedings" eSuperTypes="#//PublicationVenue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisher" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="volume" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isbn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editors" upperBound="-1"
+        eType="#//Person"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Journal" eSuperTypes="#//PublicationVenue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="volume" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Book" eSuperTypes="#//PublicationVenue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisher" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isbn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicationVenue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromDate" eType="#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="untilDate" eType="#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTime" eType="#//Time"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endTime" eType="#//Time"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Faculty">
+    <eLiterals name="AP" literal=" Faculty of Architecture and Planning"/>
+    <eLiterals name="CE" value="1" literal=" Faculty of Civil Engineering"/>
+    <eLiterals name="MIE" value="2" literal=" Faculty of Mechanical and Industrial Engineering"/>
+    <eLiterals name="EEIT" value="3" literal="Faculty of Electrical Engineering and Information Technology"/>
+    <eLiterals name="MG" value="4" literal=" Faculty of Mathematics and Geoinformation"/>
+    <eLiterals name="P" value="5" literal=" Faculty of Physics"/>
+    <eLiterals name="TC" value="6" literal=" Faculty of Technical Chemistry"/>
+    <eLiterals name="I" value="7" literal="Faculty of Informatics"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PublicationType">
+    <eLiterals name="JA" literal="Journal Article"/>
+    <eLiterals name="BC" value="1" literal="Book Chapter"/>
+    <eLiterals name="CP" value="2" literal="Conference Paper"/>
+    <eLiterals name="WP" value="3" literal="Workshop Paper"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResearchField">
+    <eLiterals name="CSE" literal="Computational Science and Engineering"/>
+    <eLiterals name="QPQT" value="1" literal="Quantum Physics and Quantum Technologies"/>
+    <eLiterals name="MM" value="2" literal="Materials and Matte"/>
+    <eLiterals name="ICT" value="3" literal="Information and Communication Technology"/>
+    <eLiterals name="EE" value="4" literal="Energy and Environment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Date">
+    <eLiterals name="Date"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Text">
+    <eLiterals name="Text"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Year">
+    <eLiterals name="Year"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Email">
+    <eLiterals name="Email"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Time">
+    <eLiterals name="Time"/>
+  </eClassifiers>
+</ecore:EPackage>
