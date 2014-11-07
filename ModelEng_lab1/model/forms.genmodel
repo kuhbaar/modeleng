@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/ModelEng_lab1/src" modelPluginID="ModelEng_lab1"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ModelEng_lab1/src" modelPluginID="ModelEng_lab1"
     modelName="Forms" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>forms.ecore</foreignModel>
-  <genPackages prefix="Forms" disposableProviderFactory="true" ecorePackage="forms.ecore#/"/>
+  <genPackages prefix="Forms" disposableProviderFactory="true" ecorePackage="forms.ecore#/">
+    <genClasses ecoreClass="forms.ecore#//EFML_model">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/entities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/enumerations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/welcomeForm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/forms"/>
+    </genClasses>
+    <nestedGenPackages prefix="EntityModeling" disposableProviderFactory="true" ecorePackage="forms.ecore#//entityModeling">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="forms.ecore#//entityModeling/AttributeType">
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/String"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Text"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Integer"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Date"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Time"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Year"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Email"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/Boolean"/>
+        <genEnumLiterals ecoreEnumLiteral="forms.ecore#//entityModeling/AttributeType/None"/>
+      </genEnums>
+      <genClasses ecoreClass="forms.ecore#//entityModeling/Entity">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Entity/name"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Entity/id"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Entity/attributes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Entity/superType"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//entityModeling/Attribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Attribute/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Attribute/mandatory"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Attribute/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Attribute/enumerationType"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//entityModeling/Enumeration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Enumeration/name"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Enumeration/literals"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//entityModeling/Relationship">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/name"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/target"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/lowerBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/upperBound"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/opposite"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//entityModeling/Literal">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Literal/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Literal/value"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="FormModeling" disposableProviderFactory="true" ecorePackage="forms.ecore#//formModeling">
+      <genClasses ecoreClass="forms.ecore#//formModeling/Form">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/Form/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/Form/title"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/Form/description"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//formModeling/Form/entity"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//formModeling/Form/pages"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//formModeling/Page">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/Page/title"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//formModeling/Page/pageElements"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="forms.ecore#//formModeling/PageElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/PageElement/label"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/PageElement/elementID"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="forms.ecore#//formModeling/AttributePageElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//formModeling/AttributePageElement/attributeToEnterValues"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/AttributePageElement/valueOfAttribute"/>
+        <genOperations ecoreOperation="forms.ecore#//formModeling/AttributePageElement/enterValues"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="forms.ecore#//formModeling/RelationshipPageElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//formModeling/RelationshipPageElement/relationshipToEnterValues"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/RelationshipPageElement/valuesOfRelationship"/>
+        <genOperations ecoreOperation="forms.ecore#//formModeling/RelationshipPageElement/enterInstance"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//formModeling/Textfield">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/Textfield/allowedValueFormat"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//formModeling/Textarea"/>
+      <genClasses ecoreClass="forms.ecore#//formModeling/SelectionField"/>
+      <genClasses ecoreClass="forms.ecore#//formModeling/DataSelectionField"/>
+      <genClasses ecoreClass="forms.ecore#//formModeling/TimeSelectionField"/>
+      <genClasses ecoreClass="forms.ecore#//formModeling/List"/>
+      <genClasses ecoreClass="forms.ecore#//formModeling/Table">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//formModeling/Table/Columns"/>
+      </genClasses>
+      <genClasses ecoreClass="forms.ecore#//formModeling/Column"/>
+    </nestedGenPackages>
+  </genPackages>
 </genmodel:GenModel>

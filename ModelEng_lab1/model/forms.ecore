@@ -13,9 +13,10 @@
   <eSubpackages name="entityModeling" nsURI="http://ecore_entityModeling.ecore" nsPrefix="ecore_entityModeling">
     <eClassifiers xsi:type="ecore:EClass" name="Entity">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="id" lowerBound="1" eType="#//entityModeling/Attribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="id" lowerBound="1" eType="#//entityModeling/Attribute"
+          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-          eType="#//entityModeling/Attribute"/>
+          eType="#//entityModeling/Attribute" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//entityModeling/Entity"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Attribute">
@@ -27,15 +28,16 @@
     <eClassifiers xsi:type="ecore:EClass" name="Enumeration">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="literals" lowerBound="1"
-          upperBound="-1" eType="#//entityModeling/Literal"/>
+          upperBound="-1" eType="#//entityModeling/Literal" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Relationship">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-          eType="#//entityModeling/Entity"/>
+          eType="#//entityModeling/Entity" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//entityModeling/Relationship"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//entityModeling/Relationship"
+          containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Literal">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
