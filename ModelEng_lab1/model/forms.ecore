@@ -1,205 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="forms"
-    nsURI="http://www.example.org/forms"
-    nsPrefix="forms">
-  <eClassifiers
-      xsi:type="ecore:EClass"
-      name="EFML_model">
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="entities"
-        upperBound="-1"
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="forms" nsURI="http://www.example.org/forms" nsPrefix="forms">
+  <eClassifiers xsi:type="ecore:EClass" name="EFML_model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//entityModeling/Entity"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="enumerations"
-        upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerations" upperBound="-1"
         eType="#//entityModeling/Enumeration"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="welcomeForm"
-        lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="welcomeForm" lowerBound="1"
         eType="#//formModeling/Form"/>
-    <eStructuralFeatures
-        xsi:type="ecore:EReference"
-        name="forms"
-        eType="#//formModeling/Form"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forms" eType="#//formModeling/Form"/>
   </eClassifiers>
-  <eSubpackages
-      name="entityModeling">
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Entity">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="name"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="id"
-          lowerBound="1"
+  <eSubpackages name="entityModeling" nsURI="http://ecore_entityModeling.ecore" nsPrefix="ecore_entityModeling">
+    <eClassifiers xsi:type="ecore:EClass" name="Entity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="id" lowerBound="1" eType="#//entityModeling/Attribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
           eType="#//entityModeling/Attribute"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="attributes"
-          upperBound="-1"
-          eType="#//entityModeling/Attribute"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="superType"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//entityModeling/Entity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//entityModeling/AttributeType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationType" eType="#//entityModeling/Enumeration"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Enumeration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="literals" lowerBound="1"
+          upperBound="-1" eType="#//entityModeling/Literal"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
           eType="#//entityModeling/Entity"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//entityModeling/Relationship"/>
     </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Attribute">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="name"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="mandatory"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="type"
-          eType="#//entityModeling/AttributeType"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="enumerationType"
-          eType="#//entityModeling/Enumeration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Literal">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Enumeration">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="name"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="literals"
-          lowerBound="1"
-          upperBound="-1"
-          eType="#//entityModeling/Literal"/>
-    </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Relationship">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="name"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="target"
-          lowerBound="1"
-          eType="#//entityModeling/Entity"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="lowerBound"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-          defaultValueLiteral=""/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="upperBound"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="opposite"
-          eType="#//entityModeling/Relationship"/>
-    </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Literal">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="name"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="value"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EEnum"
-        name="AttributeType">
-      <eLiterals
-          name="String"/>
-      <eLiterals
-          name="Text"/>
-      <eLiterals
-          name="Integer"/>
-      <eLiterals
-          name="Date"/>
-      <eLiterals
-          name="Time"/>
-      <eLiterals
-          name="Year"/>
-      <eLiterals
-          name="Email"/>
-      <eLiterals
-          name="Boolean"/>
-      <eLiterals
-          name="None"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="AttributeType">
+      <eLiterals name="String"/>
+      <eLiterals name="Text"/>
+      <eLiterals name="Integer"/>
+      <eLiterals name="Date"/>
+      <eLiterals name="Time"/>
+      <eLiterals name="Year"/>
+      <eLiterals name="Email"/>
+      <eLiterals name="Boolean"/>
+      <eLiterals name="None"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages
-      name="formModeling">
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Form">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="name"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="title"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="description"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="entity"
-          eType="#//entityModeling/Entity"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="pages"
-          upperBound="-1"
+  <eSubpackages name="formModeling" nsURI="http://ecore_formModeling.ecore" nsPrefix="ecore_formModeling">
+    <eClassifiers xsi:type="ecore:EClass" name="Form">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//entityModeling/Entity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
           eType="#//formModeling/Page"/>
     </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="Page">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="title"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EReference"
-          name="pageElements"
-          eType="#//formModeling/PageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Page">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pageElements" eType="#//formModeling/PageElement"/>
     </eClassifiers>
-    <eClassifiers
-        xsi:type="ecore:EClass"
-        name="PageElement">
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="label"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures
-          xsi:type="ecore:EAttribute"
-          name="elementID"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-          defaultValueLiteral=""/>
+    <eClassifiers xsi:type="ecore:EClass" name="PageElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" abstract="true"
+        eSuperTypes="#//formModeling/PageElement">
+      <eOperations name="enterValues" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToEnterValues"
+          eType="#//entityModeling/Attribute" derived="true" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueOfAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" abstract="true"
+        eSuperTypes="#//formModeling/PageElement">
+      <eOperations name="enterInstance" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipToEnterValues"
+          eType="#//entityModeling/Relationship"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valuesOfRelationship"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Textfield" eSuperTypes="#//formModeling/AttributePageElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowedValueFormat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Textarea" eSuperTypes="#//formModeling/AttributePageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SelectionField" eSuperTypes="#//formModeling/AttributePageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DataSelectionField" eSuperTypes="#//formModeling/AttributePageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TimeSelectionField" eSuperTypes="#//formModeling/AttributePageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//formModeling/RelationshipPageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//formModeling/RelationshipPageElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Columns" lowerBound="1"
+          upperBound="-1" eType="#//formModeling/Column"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Column"/>
   </eSubpackages>
 </ecore:EPackage>
