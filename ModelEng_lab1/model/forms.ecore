@@ -31,9 +31,16 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//entityModeling/Entity"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ifEnumerationThenAttributeTypeMustBeNone"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="ifEnumerationThenAttributeTypeMustBeNone" value="if self.enumerationType -> isEmpty() then self.type &lt;> forms::entityModeling::AttributeType::None else self.type = forms::entityModeling::AttributeType::None endif"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//entityModeling/AttributeType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//entityModeling/AttributeType"
+          defaultValueLiteral="String"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationType" eType="#//entityModeling/Enumeration"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Enumeration">
@@ -104,7 +111,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToEnterValues"
           lowerBound="1" eType="#//entityModeling/Attribute" derived="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueOfAttribute" eType="#//entityModeling/AttributeType"
-          defaultValueLiteral=""/>
+          defaultValueLiteral="String"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" abstract="true"
         eSuperTypes="#//entityModeling/PageElement">
@@ -128,14 +135,14 @@
         <details key="constraints" value="onlyAttributesBooleanOrEnum"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="onlyAttributesBooleanOrEnum" value="self.valueOfAttribute = entityModeling::AttributeType::_'Boolean' or self.valueOfAttribute = entityModeling::AttributeType::None"/>
+        <details key="onlyAttributesBooleanOrEnum" value="self.valueOfAttribute = forms::entityModeling::AttributeType::_'Boolean' or self.valueOfAttribute = forms::entityModeling::AttributeType::None"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DateSelectionField" eSuperTypes="#//entityModeling/AttributePageElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="TimeSelectionField" eSuperTypes="#//entityModeling/AttributePageElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//entityModeling/RelationshipPageElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
-          eType="#//entityModeling/AttributeType" defaultValueLiteral=""/>
+          eType="#//entityModeling/AttributeType" defaultValueLiteral="String"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//entityModeling/RelationshipPageElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="Columns" lowerBound="1"
@@ -143,11 +150,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Column">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
-          eType="#//entityModeling/AttributeType" defaultValueLiteral=""/>
+          eType="#//entityModeling/AttributeType" defaultValueLiteral="String"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
-          eType="#//entityModeling/ConditionType" defaultValueLiteral=""/>
+          eType="#//entityModeling/ConditionType" defaultValueLiteral="Show"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ConditionType">
@@ -159,7 +166,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="AttributeValueCondition" eSuperTypes="#//entityModeling/Condition"/>
     <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//entityModeling/Condition">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanOperator" eType="#//entityModeling/BooleanOperators"
-          defaultValueLiteral=""/>
+          defaultValueLiteral="AND"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="composedConditions" lowerBound="2"
           upperBound="2" eType="#//entityModeling/Condition" containment="true"/>
     </eClassifiers>

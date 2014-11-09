@@ -6,6 +6,11 @@
     xmlns:ecore_entityModeling="http://ecore_entityModeling.ecore"
     xmlns:forms="http://www.example.org/forms"
     xsi:schemaLocation="http://ecore_entityModeling.ecore forms.ecore#//entityModeling http://www.example.org/forms forms.ecore">
+  <enumerations>
+    <literals
+        name="12"
+        value="12"/>
+  </enumerations>
   <welcomeForm
       entity="//@relationships.0/@target">
     <pages title="asdf">
@@ -19,11 +24,14 @@
       name="rel1">
     <target
         name="1">
-      <id/>
+      <id type="None"
+          enumerationType="//@enumerations.0"/>
     </target>
     <source
         name="2">
-      <id/>
+      <id name=""
+          type="None"
+          enumerationType="//@enumerations.0"/>
     </source>
   </relationships>
 </forms:EFML_model>
