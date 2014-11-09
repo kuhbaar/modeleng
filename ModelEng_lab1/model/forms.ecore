@@ -15,8 +15,7 @@
         eType="#//formModeling/Form" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionId" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionId"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ConditionType"
         defaultValueLiteral=""/>
   </eClassifiers>
@@ -61,8 +60,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
           eType="#//entityModeling/Entity" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//entityModeling/Relationship"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -85,6 +84,11 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="formModeling" nsURI="http://ecore_formModeling.ecore" nsPrefix="ecore_formModeling">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Form">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -103,14 +107,13 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PageElement" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elementID"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" abstract="true"
         eSuperTypes="#//formModeling/PageElement">
-      <eOperations name="enterValues" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      <eOperations name="enterValues"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToEnterValues"
           lowerBound="1" eType="#//entityModeling/Attribute" derived="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueOfAttribute" eType="#//entityModeling/AttributeType"
@@ -127,7 +130,14 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowedValueFormat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Textarea" eSuperTypes="#//formModeling/AttributePageElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SelectionField" eSuperTypes="#//formModeling/AttributePageElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SelectionField" eSuperTypes="#//formModeling/AttributePageElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="onlyAttributesBooleanOrEnum"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="onlyAttributesBooleanOrEnum" value="self.valueOfAttribute = entityModeling::AttributeType::_'Boolean' or self.valueOfAttribute = entityModeling::AttributeType::None"/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DateSelectionField" eSuperTypes="#//formModeling/AttributePageElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="TimeSelectionField" eSuperTypes="#//formModeling/AttributePageElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//formModeling/RelationshipPageElement">
