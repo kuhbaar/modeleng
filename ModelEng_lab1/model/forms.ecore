@@ -41,14 +41,6 @@
         eType="#//formModeling/Form"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers
-      xsi:type="ecore:EEnum"
-      name="BooleanOperators">
-    <eLiterals
-        name="AND"/>
-    <eLiterals
-        name="OR"/>
-  </eClassifiers>
   <eSubpackages
       name="entityModeling"
       nsURI="http://ecore_entityModeling.ecore"
@@ -432,7 +424,7 @@
       <eStructuralFeatures
           xsi:type="ecore:EAttribute"
           name="booleanOperator"
-          eType="#//BooleanOperators"
+          eType="#//formModeling/BooleanOperators"
           defaultValueLiteral=""/>
       <eStructuralFeatures
           xsi:type="ecore:EReference"
@@ -441,6 +433,14 @@
           upperBound="2"
           eType="#//formModeling/Condition"
           containment="true"/>
+    </eClassifiers>
+    <eClassifiers
+        xsi:type="ecore:EEnum"
+        name="BooleanOperators">
+      <eLiterals
+          name="AND"/>
+      <eLiterals
+          name="OR"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
