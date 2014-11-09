@@ -15,9 +15,9 @@
         eType="#//formModeling/Form" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionId"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ConditionType"
         defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ConditionType">
     <eLiterals name="Hide"/>
@@ -60,12 +60,14 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
           eType="#//entityModeling/Entity" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//entityModeling/Relationship"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
           eType="#//entityModeling/Entity" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" ordered="false"
+          unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" ordered="false"
+          unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Literal">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -107,9 +109,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PageElement" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="elementID"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
           containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" abstract="true"
         eSuperTypes="#//formModeling/PageElement">

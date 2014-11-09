@@ -23,8 +23,8 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/forms"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Condition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//Condition/conditionId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Condition/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Condition/conditionID"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//AttributeValueCondition"/>
     <genClasses ecoreClass="forms.ecore#//CompositeCondition">
@@ -68,11 +68,11 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/name"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/target"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/lowerBound"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/upperBound"/>
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/opposite"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/source"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/lowerBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/upperBound"/>
       </genClasses>
       <genClasses ecoreClass="forms.ecore#//entityModeling/Literal">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Literal/name"/>
@@ -97,8 +97,8 @@
       </genClasses>
       <genClasses image="false" ecoreClass="forms.ecore#//formModeling/PageElement">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/PageElement/label"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//formModeling/PageElement/elementID"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//formModeling/PageElement/condition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//formModeling/PageElement/elementID"/>
       </genClasses>
       <genClasses image="false" ecoreClass="forms.ecore#//formModeling/AttributePageElement">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference forms.ecore#//formModeling/AttributePageElement/attributeToEnterValues"/>
