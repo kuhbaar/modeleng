@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ASCII"?>
+<forms:EFML_model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore_entityModeling="http://ecore_entityModeling.ecore"
+    xmlns:forms="http://www.example.org/forms"
+    xsi:schemaLocation="http://ecore_entityModeling.ecore forms.ecore#//entityModeling http://www.example.org/forms forms.ecore">
+  <welcomeForm
+      name="Publication"
+      title="Publication"
+      description="Form for scientific publications">
+    <entity
+        href="publicationEntityModel.xmi#//@entities.0"/>
+    <pages title="Publication Details">
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Title"
+          elementID="1"
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@id"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Keywords"
+          elementID="2"
+          allowedValueFormat="^([a-zA-Z]+, )+[a-zA-Z]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.0"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textarea"
+          label="Abstract"
+          elementID="3">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.1"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="DOI"
+          elementID="4"
+          allowedValueFormat="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.2"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Year"
+          elementID="5"
+          allowedValueFormat="^[0-9]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.3"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="From page"
+          elementID="6"
+          allowedValueFormat="^[0-9]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.4"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Until Page"
+          elementID="7"
+          allowedValueFormat="^[0-9]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.5"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:SelectionField"
+          label="Publication type"
+          elementID="8">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.6"/>
+      </pageElements>
+    </pages>
+  </welcomeForm>
+</forms:EFML_model>

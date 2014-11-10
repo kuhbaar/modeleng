@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ASCII"?>
+<forms:EFML_model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:forms="http://www.example.org/forms" xsi:schemaLocation="http://www.example.org/forms forms.ecore">
+  <entities name="Publication">
+    <id name="title" mandatory="true"/>
+    <attributes name="keywords"/>
+    <attributes name="abstract" type="Text"/>
+    <attributes name="doi"/>
+    <attributes name="year" type="Year"/>
+    <attributes name="fromPage" type="Integer"/>
+    <attributes name="untilPage" type="Integer"/>
+    <attributes name="type" mandatory="true" type="None" enumerationType="//@enumerations.0"/>
+    <attributes name="assignedFaculty" mandatory="true" type="None" enumerationType="//@enumerations.2"/>
+    <attributes name="field" mandatory="true" type="None" enumerationType="//@enumerations.1"/>
+    <relationships name="authors" target="//@entities.1" opposite="//@entities.1/@relationships.0" lowerBound="1" upperBound="-1"/>
+    <relationships name="proceedings" target="//@entities.2" upperBound="1"/>
+    <relationships name="journal" target="//@entities.4" upperBound="1"/>
+    <relationships name="book" target="//@entities.5" upperBound="1"/>
+  </entities>
+  <entities name="Person">
+    <id name="email" mandatory="true" type="Email"/>
+    <attributes name="firstName" mandatory="true"/>
+    <attributes name="lastName" mandatory="true"/>
+    <attributes name="external" mandatory="true" type="Boolean"/>
+    <attributes name="faculty" type="None" enumerationType="//@enumerations.2"/>
+    <relationships name="publications" target="//@entities.0" opposite="//@entities.0/@relationships.0" upperBound="-1"/>
+  </entities>
+  <entities name="Proceedings" superType="//@entities.3">
+    <attributes name="publisher" mandatory="true"/>
+    <attributes name="volume" type="Integer"/>
+    <attributes name="isbn"/>
+    <relationships name="editors" target="//@entities.1" upperBound="-1"/>
+    <relationships name="event" target="//@entities.6" lowerBound="1" upperBound="1"/>
+  </entities>
+  <entities name="PublicationVenue">
+    <id name="title" mandatory="true"/>
+  </entities>
+  <entities name="Journal" superType="//@entities.3">
+    <attributes name="volume" mandatory="true" type="Integer"/>
+    <attributes name="number" mandatory="true" type="Integer"/>
+  </entities>
+  <entities name="Book" superType="//@entities.3">
+    <attributes name="publisher" mandatory="true"/>
+    <attributes name="isbn"/>
+  </entities>
+  <entities name="Event">
+    <id name="title" mandatory="true"/>
+    <attributes name="city"/>
+    <attributes name="country"/>
+    <attributes name="fromDate" type="Date"/>
+    <attributes name="untilDate" type="Date"/>
+    <attributes name="startTime" type="Time"/>
+    <attributes name="endTime" type="Time"/>
+  </entities>
+  <enumerations name="PublicationType">
+    <literals name="JA" value="Journal Article"/>
+    <literals name="BC" value="BookChapter"/>
+    <literals name="CP" value="Conference Paper"/>
+    <literals name="WP" value="Workshop Paper"/>
+  </enumerations>
+  <enumerations name="ResearchField">
+    <literals name="CSE" value="Computational Science and Engineering"/>
+    <literals name="QPQT" value="Quantum Physics and Quantum Technologies"/>
+    <literals name="MM" value="Materials and Matter"/>
+    <literals name="ICT" value="Information and Communication Technology"/>
+    <literals name="EE" value="Energy and Environment"/>
+  </enumerations>
+  <enumerations name="Faculty">
+    <literals name="AP" value="Faculty of Architecture and Planning"/>
+    <literals name="CE" value="Faculty of Civil Engineering"/>
+    <literals name="MIE" value="Faculty of Mechanical and Industrial Engineering"/>
+    <literals name="EEIT"/>
+    <literals name="MG"/>
+    <literals name="P"/>
+    <literals name="TC"/>
+    <literals name="I"/>
+  </enumerations>
+  <welcomeForm entity="//@entities.0"/>
+</forms:EFML_model>

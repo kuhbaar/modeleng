@@ -4,7 +4,7 @@
   <models xmi:type="genmodel:GenModel" href="forms.genmodel#/"/>
   <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
   <models xmi:type="forms:EFML_model" href="EFML_model.xmi#/"/>
-  <models xmi:type="forms:EFML_model" href="EFML_model.xmi#/"/>
+  <models xmi:type="forms:publicationEntityModel" href="publicationEntityModel1.xmi#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_BSF9cGW-EeS8RLrcvX7shQ" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_Bd3IkGW-EeS8RLrcvX7shQ" name="forms class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BeR_UGW-EeS8RLrcvX7shQ" source="GMF_DIAGRAMS">
