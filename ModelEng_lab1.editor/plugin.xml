@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated forms -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="forms.presentation.FormsModelWizardID"
+            name="%_UI_FormsModelWizard_label"
+            class="forms.presentation.FormsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FormsModelFile.gif">
+         <description>%_UI_FormsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated forms -->
+      <editor
+            id="forms.presentation.FormsEditorID"
+            name="%_UI_FormsEditor_label"
+            icon="icons/full/obj16/FormsModelFile.gif"
+            extensions="forms"
+            class="forms.presentation.FormsEditor"
+            contributorClass="forms.presentation.FormsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated forms -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="forms.entityModeling.presentation.EntityModelingModelWizardID"
+            name="%_UI_EntityModelingModelWizard_label"
+            class="forms.entityModeling.presentation.EntityModelingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EntityModelingModelFile.gif">
+         <description>%_UI_EntityModelingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated forms -->
+      <editor
+            id="forms.entityModeling.presentation.EntityModelingEditorID"
+            name="%_UI_EntityModelingEditor_label"
+            icon="icons/full/obj16/EntityModelingModelFile.gif"
+            extensions="entitymodeling"
+            class="forms.entityModeling.presentation.EntityModelingEditor"
+            contributorClass="forms.entityModeling.presentation.EntityModelingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

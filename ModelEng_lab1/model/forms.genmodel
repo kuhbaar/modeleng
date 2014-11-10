@@ -11,7 +11,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/enumerations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/welcomeForm"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/forms"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EFML_model/relationships"/>
     </genClasses>
     <nestedGenPackages prefix="EntityModeling" disposableProviderFactory="true" ecorePackage="forms.ecore#//entityModeling">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="forms.ecore#//entityModeling/AttributeType">
@@ -41,6 +40,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Entity/attributes"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Entity/superType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Entity/relationships"/>
       </genClasses>
       <genClasses ecoreClass="forms.ecore#//entityModeling/Attribute">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Attribute/name"/>
@@ -55,8 +55,10 @@
       </genClasses>
       <genClasses ecoreClass="forms.ecore#//entityModeling/Relationship">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/name"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/target"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/opposite"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/target"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/opposite"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/lowerBound"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/upperBound"/>
       </genClasses>
@@ -102,19 +104,24 @@
       <genClasses ecoreClass="forms.ecore#//entityModeling/DateSelectionField"/>
       <genClasses ecoreClass="forms.ecore#//entityModeling/TimeSelectionField"/>
       <genClasses ecoreClass="forms.ecore#//entityModeling/List">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/List/value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/List/alreadyEnteredEntity"/>
       </genClasses>
       <genClasses ecoreClass="forms.ecore#//entityModeling/Table">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Table/Columns"/>
       </genClasses>
       <genClasses ecoreClass="forms.ecore#//entityModeling/Column">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Column/value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Column/attribute"/>
       </genClasses>
       <genClasses image="false" ecoreClass="forms.ecore#//entityModeling/Condition">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Condition/type"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Condition/conditionID"/>
       </genClasses>
-      <genClasses ecoreClass="forms.ecore#//entityModeling/AttributeValueCondition"/>
+      <genClasses ecoreClass="forms.ecore#//entityModeling/AttributeValueCondition">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference forms.ecore#//entityModeling/AttributeValueCondition/value"/>
+      </genClasses>
       <genClasses ecoreClass="forms.ecore#//entityModeling/CompositeCondition">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/CompositeCondition/booleanOperator"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/CompositeCondition/composedConditions"/>
