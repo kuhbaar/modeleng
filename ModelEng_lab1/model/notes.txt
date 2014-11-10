@@ -1,4 +1,0 @@
-* OCL Constraint for the Attribute that is related to the AttributePageElement (it must be part of an Entity which is related to the Form)
-* OCL Constraint for Selection Fields (only Boolean, Enumeration)
-* OCL Constraint editingForm
-* OCL Constraint ensuring all the data entered in one column are of the same attribute type ? 
