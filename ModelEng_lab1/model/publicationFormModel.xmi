@@ -76,6 +76,313 @@
         <attributeToEnterValues
             href="publicationEntityModel.xmi#//@entities.0/@attributes.6"/>
       </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:SelectionField"
+          label="Assigned faculty"
+          elementID="9"
+          valueOfAttribute="None">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.7"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:SelectionField"
+          label="Research field"
+          elementID="10"
+          valueOfAttribute="None">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.8"/>
+      </pageElements>
+    </pages>
+    <pages title="Authors">
+      <pageElements
+          xsi:type="ecore_entityModeling:Table"
+          label=""
+          elementID="11"
+          editingForm="//@forms.3">
+        <relationshipToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@relationships.0"/>
+        <Columns>
+          <attribute
+              href="publicationEntityModel.xmi#//@entities.1/@attributes.0"/>
+        </Columns>
+        <Columns>
+          <attribute
+              href="publicationEntityModel.xmi#//@entities.1/@attributes.1"/>
+        </Columns>
+        <Columns>
+          <attribute
+              href="publicationEntityModel.xmi#//@entities.1/@id"/>
+        </Columns>
+      </pageElements>
+    </pages>
+    <pages title="Journal">
+      <pageElements
+          xsi:type="ecore_entityModeling:List"
+          label=""
+          elementID=""
+          editingForm="//@forms.2">
+        <relationshipToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@relationships.2"/>
+        <alreadyEnteredEntity
+            href="publicationEntityModel.xmi#//@entities.4"/>
+      </pageElements>
+      <condition
+          xsi:type="ecore_entityModeling:AttributeValueCondition">
+        <value
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.6"/>
+      </condition>
+    </pages>
+    <pages title="Book">
+      <pageElements
+          xsi:type="ecore_entityModeling:List"
+          label=""
+          elementID=""
+          editingForm="//@forms.1">
+        <relationshipToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@relationships.3"/>
+        <alreadyEnteredEntity
+            href="publicationEntityModel.xmi#//@entities.5"/>
+      </pageElements>
+      <condition
+          xsi:type="ecore_entityModeling:AttributeValueCondition">
+        <value
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.6"/>
+      </condition>
+    </pages>
+    <pages title="Proceedings">
+      <pageElements
+          xsi:type="ecore_entityModeling:List"
+          label=""
+          elementID=""
+          editingForm="//@forms.0">
+        <relationshipToEnterValues
+            href="publicationEntityModel.xmi#//@entities.0/@relationships.1"/>
+        <alreadyEnteredEntity
+            href="publicationEntityModel.xmi#//@entities.2"/>
+      </pageElements>
+      <condition
+          xsi:type="ecore_entityModeling:AttributeValueCondition">
+        <value
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.6"/>
+      </condition>
     </pages>
   </welcomeForm>
+  <forms name="Proceedings">
+    <entity
+        href="publicationEntityModel.xmi#//@entities.2"/>
+    <pages title="Proceedings Details">
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Title"
+          elementID=""
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.3/@id"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Publisher">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.0"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Volume"
+          allowedValueFormat="^[0-9]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.1"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="ISBN"
+          elementID=""
+          allowedValueFormat="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.2"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:List"
+          label=""
+          editingForm="//@forms.3">
+        <relationshipToEnterValues
+            href="publicationEntityModel.xmi#//@entities.2/@relationships.0"/>
+        <alreadyEnteredEntity
+            href="publicationEntityModel.xmi#//@entities.1"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:List"
+          label=""
+          elementID=""
+          editingForm="//@forms.4">
+        <relationshipToEnterValues
+            href="publicationEntityModel.xmi#//@entities.2/@relationships.1"/>
+        <alreadyEnteredEntity
+            href="publicationEntityModel.xmi#//@entities.6"/>
+      </pageElements>
+    </pages>
+  </forms>
+  <forms name="Book">
+    <entity
+        href="publicationEntityModel.xmi#//@entities.5"/>
+    <pages title="Book Details">
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Publisher"
+          elementID=""
+          allowedValueFormat="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.5/@attributes.0"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="ISBN"
+          elementID=""
+          allowedValueFormat="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.2"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Title"
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.3/@id"/>
+      </pageElements>
+    </pages>
+  </forms>
+  <forms name="Journal">
+    <entity
+        href="publicationEntityModel.xmi#//@entities.4"/>
+    <pages title="Journal Details">
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Title"
+          elementID=""
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.3/@id"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Volume"
+          allowedValueFormat="^[0-9]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.4/@attributes.0"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Number"
+          elementID=""
+          allowedValueFormat="^[0-9]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.4/@attributes.1"/>
+      </pageElements>
+    </pages>
+  </forms>
+  <forms name="Person"
+      title=""
+      description="">
+    <entity
+        href="publicationEntityModel.xmi#//@entities.1"/>
+    <pages title="Person Detail">
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="First name"
+          elementID=""
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.0"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Last name"
+          elementID=""
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.1"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="E-Mail"
+          elementID=""
+          allowedValueFormat="^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.1/@id"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:SelectionField"
+          label="Faculty external"
+          elementID=""
+          valueOfAttribute="Boolean">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.2"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:SelectionField"
+          label="Faculty"
+          valueOfAttribute="None">
+        <condition
+            xsi:type="ecore_entityModeling:AttributeValueCondition">
+          <value
+              href="publicationEntityModel.xmi#//@entities.1/@attributes.2"/>
+        </condition>
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.3"/>
+      </pageElements>
+    </pages>
+  </forms>
+  <forms name="Event"
+      description="">
+    <entity
+        href="publicationEntityModel.xmi#//@entities.6"/>
+    <pages title="Event Details">
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Title"
+          elementID=""
+          allowedValueFormat="^[a-zA-Z -]+$">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@id"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="City"
+          allowedValueFormat="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.0"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:Textfield"
+          label="Country"
+          elementID="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.1"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:DateSelectionField"
+          label="From date"
+          elementID="">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.2"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:DateSelectionField"
+          label="Until date">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.3"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:TimeSelectionField"
+          label="Start time">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.4"/>
+      </pageElements>
+      <pageElements
+          xsi:type="ecore_entityModeling:TimeSelectionField"
+          label="End time">
+        <attributeToEnterValues
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.5"/>
+      </pageElements>
+    </pages>
+  </forms>
 </forms:EFML_model>

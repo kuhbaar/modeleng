@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <forms:EFML_model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:forms="http://www.example.org/forms" xsi:schemaLocation="http://www.example.org/forms forms.ecore">
   <entities name="Publication">
-    <id name="title" mandatory="true"/>
+    <id name="pubTitle" mandatory="true"/>
     <attributes name="keywords"/>
     <attributes name="abstract" type="Text"/>
     <attributes name="doi"/>
@@ -43,7 +43,7 @@
     <attributes name="isbn"/>
   </entities>
   <entities name="Event">
-    <id name="title" mandatory="true"/>
+    <id name="eventTitle" mandatory="true"/>
     <attributes name="city"/>
     <attributes name="country"/>
     <attributes name="fromDate" type="Date"/>
