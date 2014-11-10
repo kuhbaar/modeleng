@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore_entityModeling:Entity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore_entityModeling="http://ecore_entityModeling.ecore" xsi:schemaLocation="http://ecore_entityModeling.ecore forms.ecore#//entityModeling" name="Entity1">
+  <id name="NotMandatoryId"/>
+</ecore_entityModeling:Entity>

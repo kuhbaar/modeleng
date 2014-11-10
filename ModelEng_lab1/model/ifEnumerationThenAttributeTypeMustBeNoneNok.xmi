@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<forms:EFML_model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:forms="http://www.example.org/forms">
+  <entities name="Entity1">
+    <id name="AttributeIdWithEnum" mandatory="true" type="Email" enumerationType="//@enumerations.0"/>
+  </entities>
+  <enumerations name="Enum1">
+    <literals name="Literal1" value="Value1"/>
+  </enumerations>
+  <welcomeForm name="" entity="//@entities.0"/>
+</forms:EFML_model>

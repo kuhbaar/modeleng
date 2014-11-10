@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<forms:EFML_model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:forms="http://www.example.org/forms">
+  <entities name="Entity1">
+    <id name="Id1" mandatory="true"/>
+    <relationships name="Relation 0..2" target="//@entities.1" upperBound="2"/>
+  </entities>
+  <entities name="Entity2">
+    <id name="Id2" mandatory="true"/>
+  </entities>
+  <welcomeForm name="Form1" entity="//@entities.0"/>
+</forms:EFML_model>

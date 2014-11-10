@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<forms:EFML_model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore_entityModeling="http://ecore_entityModeling.ecore"
+    xmlns:forms="http://www.example.org/forms"
+    xsi:schemaLocation="http://ecore_entityModeling.ecore forms.ecore#//entityModeling http://www.example.org/forms forms.ecore">
+  <entities
+      name="Entity1">
+    <id name="Id"
+        mandatory="true"/>
+    <relationships
+        name="Rel2"
+        target="//@entities.1"
+        upperBound="2"/>
+  </entities>
+  <entities
+      name="Entity2">
+    <id name="Id2"
+        mandatory="true"/>
+  </entities>
+  <welcomeForm
+      name="Welcome"
+      entity="//@entities.0">
+    <pages title="1">
+      <pageElements
+          xsi:type="ecore_entityModeling:List"
+          relationshipToEnterValues="//@entities.0/@relationships.0"
+          editingForm="//@welcomeForm"/>
+    </pages>
+  </welcomeForm>
+</forms:EFML_model>
