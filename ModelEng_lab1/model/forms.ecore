@@ -4,7 +4,18 @@
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="EFML_model">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="IdOfEntityIsUnique"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="IdOfEntityIsUnique" value="self.entities -> select (e : forms::entityModeling::Entity | true) -> forAll( e1 : forms::entityModeling::Entity, e2 : forms::entityModeling::Entity | e1&lt;>e2 implies e1.id.name &lt;> e2.id.name)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//entityModeling/Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumerations" upperBound="-1"
@@ -23,6 +34,13 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Entity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="IdIsMandatory SuperTypeIsNotSelf"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="IdIsMandatory" value="self.id.mandatory = true"/>
+        <details key="SuperTypeIsNotSelf" value="self.superType &lt;> self"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="id" lowerBound="1" eType="#//entityModeling/Attribute"
           containment="true"/>
@@ -53,7 +71,7 @@
         <details key="constraints" value="lowerBoundUpperBoundConstraints"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="lowerBoundUpperBoundConstraints" value="self.lowerBound >= 0 and self.upperBound >= self.lowerBound"/>
+        <details key="lowerBoundUpperBoundConstraints" value="self.lowerBound >= 0 and (self.upperBound >= self.lowerBound or self.upperBound = -1) "/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -61,8 +79,6 @@
           eType="#//entityModeling/Entity"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//entityModeling/Relationship"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-          eType="#//entityModeling/Entity"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"

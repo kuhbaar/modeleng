@@ -57,7 +57,6 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/target"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/opposite"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//entityModeling/Relationship/source"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/lowerBound"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//entityModeling/Relationship/upperBound"/>
       </genClasses>
