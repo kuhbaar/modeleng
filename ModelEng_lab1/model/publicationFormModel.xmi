@@ -239,7 +239,7 @@
           elementID=""
           allowedValueFormat="">
         <attributeToEnterValues
-            href="publicationEntityModel.xmi#//@entities.2/@attributes.2"/>
+            href="publicationEntityModel.xmi#//@entities.5/@attributes.1"/>
       </pageElements>
       <pageElements
           xsi:type="ecore_entityModeling:Textfield"

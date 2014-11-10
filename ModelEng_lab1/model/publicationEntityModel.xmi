@@ -39,8 +39,8 @@
     <attributes name="number" mandatory="true" type="Integer"/>
   </entities>
   <entities name="Book" superType="//@entities.3">
-    <attributes name="publisher" mandatory="true"/>
-    <attributes name="isbn"/>
+    <attributes name="bookPublisher" mandatory="true"/>
+    <attributes name="bookIsbn"/>
   </entities>
   <entities name="Event">
     <id name="eventTitle" mandatory="true"/>
