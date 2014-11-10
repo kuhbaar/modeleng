@@ -71,7 +71,8 @@
       <pageElements
           xsi:type="ecore_entityModeling:SelectionField"
           label="Publication type"
-          elementID="8">
+          elementID="8"
+          valueOfAttribute="None">
         <attributeToEnterValues
             href="publicationEntityModel.xmi#//@entities.0/@attributes.6"/>
       </pageElements>
