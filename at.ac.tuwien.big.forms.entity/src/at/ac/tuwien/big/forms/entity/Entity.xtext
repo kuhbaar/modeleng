@@ -6,6 +6,45 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 // implement your grammar here, starting with the root element: EntityModel
 
+EntityModel:
+  {EntityModel} //instantiates the class
+  (entityModelElements += EntityModelElement)* //EntityModel contains 0...* EntityModelElements
+;
+
+EntityModelElement:
+	Entity | Enumeration
+;
+
+
+Entity:
+	'entity' name = ID ('extends' superType = [Entity])? '{' //TODO how to model name from NamedElement?!
+	 (features += Feature)* (',')
+	 ('id' id = [Attribute]) (',')
+	 '}'
+;
+
+Attribute:
+	'attribute' name = ID ':' type = AttributeType //TODO colon, how to display '*' when mandatory, name
+;
+
+enum AttributeType:
+	String = '1' | Integer = '2' | Text = '3' | Date = '4' | Time = '5' | Email = '6' | Boolean = '7' | Year = '8' | None = '0'
+;
+
+Feature:
+  name=STRING //TODO is that right?....
+;
+
+Enumeration:
+  'enum' name = ID '{'
+    (literals += Literal)+ (',')
+    '}'
+;
+
+Literal:
+	name = ID '=' '"' value = STRING '"'
+;
+
 EInt returns ecore::EInt:
 	'-'? INT;
 
