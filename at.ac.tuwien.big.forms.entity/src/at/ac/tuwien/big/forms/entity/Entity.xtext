@@ -27,6 +27,10 @@ Attribute:
 	'attribute' name = ID ':' type = AttributeType //TODO colon, how to display '*' when mandatory, name
 ;
 
+Relationship:
+  'reference' name = ID ':' target = [Entity]('[' lowerBound=INT '...' upperBound=INT ']') ('opposite-of' opposite = [Relationship])?
+;
+
 enum AttributeType:
 	String = '1' | Integer = '2' | Text = '3' | Date = '4' | Time = '5' | Email = '6' | Boolean = '7' | Year = '8' | None = '0'
 ;
