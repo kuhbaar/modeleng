@@ -12,19 +12,25 @@ EntityModel:
 ;
 
 EntityModelElement:
-	Entity | Enumeration
+	{Entity} | {Enumeration}
 ;
 
+NamedElement:
+  {Entity} | {Feature} | {Enumeration} | {Literal}
+  name = STRING
+;
 
 Entity:
 	'entity' name = ID ('extends' superType = [Entity])? '{' //TODO how to model name from NamedElement?!
+	 ('id' id = [Attribute]) (',') //TODO colon correct?
 	 (features += Feature)* (',')
-	 ('id' id = [Attribute]) (',')
 	 '}'
 ;
 
+
+
 Attribute:
-	'attribute' name = ID ':' type = AttributeType //TODO colon, how to display '*' when mandatory, name
+	'attribute' name = ID ('*')? ':' type = AttributeType (':' enumeration = [Enumeration])? //TODO how to display '*' when mandatory, name from NamedElement
 ;
 
 Relationship:
