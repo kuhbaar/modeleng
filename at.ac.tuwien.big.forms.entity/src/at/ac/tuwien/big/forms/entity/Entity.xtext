@@ -12,51 +12,51 @@ EntityModel:
 ;
 
 EntityModelElement:
-	{Entity} | {Enumeration}
+  Entity | Enumeration
 ;
 
 NamedElement:
-  {Entity} | {Feature} | {Enumeration} | {Literal}
+  Entity | Feature | Enumeration | Literal
   name = STRING
 ;
 
-Entity:
-	'entity' name = ID ('extends' superType = [Entity])? '{' //TODO how to model name from NamedElement?!
-	 ('id' id = [Attribute]) (',') //TODO colon correct?
-	 (features += Feature)* (',')
-	 '}'
+Entity returns Entity: 
+  'entity' name = ID ('extends' superType = [Entity])? '{' //?? name from NamedElement modeled, as the NamedElement instantiates an entity + has name from itself (NamedElement)??
+   ('id' id = [Attribute|QualifiedName])(',' 
+   features += Feature)*
+   '}'
 ;
 
 
 
-Attribute:
-	'attribute' name = ID ('*')? ':' type = AttributeType (':' enumeration = [Enumeration])? //TODO how to display '*' when mandatory, name from NamedElement
+Attribute returns Attribute:
+  'attribute' name = ID ('*')? ':' type = AttributeType (':' enumeration = [Enumeration|QualifiedName])? //TODO how to display '*' when mandatory --> can't be modeled? 
 ;
 
-Relationship:
-  'reference' name = ID ':' target = [Entity]('[' lowerBound=INT '...' upperBound=INT ']') ('opposite-of' opposite = [Relationship])?
+Relationship returns Relationship:
+  'reference' name = ID ':' target = [Entity|QualifiedName]('[' lowerBound=INT '...' upperBound=INT ']') ('opposite-of' opposite = [Relationship|QualifiedName])?
 ;
 
-enum AttributeType:
-	String = '1' | Integer = '2' | Text = '3' | Date = '4' | Time = '5' | Email = '6' | Boolean = '7' | Year = '8' | None = '0'
+enum AttributeType returns AttributeType:
+  String = '1' | Integer = '2' | Text = '3' | Date = '4' | Time = '5' | Email = '6' | Boolean = '7' | Year = '8' | None = '0'
 ;
 
 Feature:
-  name=STRING //TODO is that right?....
+  Attribute | Relationship
 ;
 
-Enumeration:
+Enumeration returns Enumeration:
   'enum' name = ID '{'
     (literals += Literal)+ (',')
     '}'
 ;
 
-Literal:
-	name = ID '=' '"' value = STRING '"'
+Literal returns Literal:
+  name = ID '=' '"' value = STRING '"'
 ;
 
 EInt returns ecore::EInt:
-	'-'? INT;
+  '-'? INT;
 
 QualifiedName returns ecore::EString: 
-	ID (=> '.'ID)*;
+  ID (=> '.'ID)*;
