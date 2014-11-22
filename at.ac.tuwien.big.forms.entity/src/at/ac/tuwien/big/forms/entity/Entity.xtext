@@ -65,7 +65,7 @@ Enumeration returns Enumeration:
 ;
 
 Literal returns Literal:
-  name = ID '=' '"' value = STRING '"'
+  name = ID '=' value = STRING 
 ;
 
 EInt returns ecore::EInt:
