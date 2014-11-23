@@ -3,6 +3,23 @@
  */
 package at.ac.tuwien.big.forms.form.scoping;
 
+import java.util.Collection;
+import java.util.HashSet;
+
+
+
+
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+
+import at.ac.tuwien.big.forms.AttributePageElement;
+import at.ac.tuwien.big.forms.Entity;
+import at.ac.tuwien.big.forms.Feature;
+import at.ac.tuwien.big.forms.Form;
+import at.ac.tuwien.big.forms.FormsPackage;
+import at.ac.tuwien.big.forms.Page;
+
 /**
  * This class contains custom scoping description.
  * 
@@ -12,4 +29,26 @@ package at.ac.tuwien.big.forms.form.scoping;
  */
 public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
 	
+	/* An attribute page element has to reference an attribute of the entity the containing form references. */
+	
+	/*public IScope scope_AttributePageElement_attribute(AttributePageElement ape, EReference ref){
+		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE))
+			return Scopes.scopeFor(getAllEntityAttributes(f));
+		return IScope.NULLSCOPE;
+	}*/
+	public IScope scope_Form_pages(Form f, EReference ref){
+		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE))
+			return Scopes.scopeFor(getAllEntityAttributes(f));
+		return IScope.NULLSCOPE;
+	}
+	
+	private Collection<Page> getAllEntityAttributes(Form f){
+		Collection<Page> allAttr = new HashSet<Page>();
+		Collection<Feature> feats = f.getEntity().getFeatures(); // feats to show in scoping
+		
+		//search for Form containing the ape
+		
+		
+		return allAttr;
+	}
 }
