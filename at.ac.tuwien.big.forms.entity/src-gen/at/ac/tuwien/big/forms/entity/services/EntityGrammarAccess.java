@@ -26,17 +26,19 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEntityModelElementsEntityModelElementParserRuleCall_1_0 = (RuleCall)cEntityModelElementsAssignment_1.eContents().get(0);
 		
 		//// implement your grammar here, starting with the root element: EntityModel
-		//EntityModel: //instantiates the class
+		// EntityModel: //instantiates the class
+		//
 		//	{EntityModel} entityModelElements+=EntityModelElement* //EntityModel contains 0...* EntityModelElements
 		//;
 		public ParserRule getRule() { return rule; }
 
 		////instantiates the class
-		//{EntityModel} entityModelElements+=EntityModelElement* //EntityModel contains 0...* EntityModelElements
+		// {EntityModel} entityModelElements+=EntityModelElement*
+		////EntityModel contains 0...* EntityModelElements
 		public Group getGroup() { return cGroup; }
 
 		////instantiates the class
-		//{EntityModel}
+		// {EntityModel}
 		public Action getEntityModelAction_0() { return cEntityModelAction_0; }
 
 		//entityModelElements+=EntityModelElement*
@@ -66,46 +68,6 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getEnumerationParserRuleCall_1() { return cEnumerationParserRuleCall_1; }
 	}
 
-	public class NamedElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NamedElement");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cEntityParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFeatureParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEnumerationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cLiteralParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
-		
-		//NamedElement:
-		//	Entity | Feature | Enumeration | Literal name=STRING;
-		public ParserRule getRule() { return rule; }
-
-		//Entity | Feature | Enumeration | Literal name=STRING
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Entity
-		public RuleCall getEntityParserRuleCall_0() { return cEntityParserRuleCall_0; }
-
-		//Feature
-		public RuleCall getFeatureParserRuleCall_1() { return cFeatureParserRuleCall_1; }
-
-		//Enumeration
-		public RuleCall getEnumerationParserRuleCall_2() { return cEnumerationParserRuleCall_2; }
-
-		//Literal name=STRING
-		public Group getGroup_3() { return cGroup_3; }
-
-		//Literal
-		public RuleCall getLiteralParserRuleCall_3_0() { return cLiteralParserRuleCall_3_0; }
-
-		//name=STRING
-		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
-
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_3_1_0() { return cNameSTRINGTerminalRuleCall_3_1_0; }
-	}
-
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Entity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -117,25 +79,41 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSuperTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final CrossReference cSuperTypeEntityCrossReference_2_1_0 = (CrossReference)cSuperTypeAssignment_2_1.eContents().get(0);
 		private final RuleCall cSuperTypeEntityIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_1_0.eContents().get(1);
+		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
+		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final CrossReference cSuperTypeEntityCrossReference_2_2_1_0 = (CrossReference)cSuperTypeAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cSuperTypeEntityIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cIdKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cIdAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cIdAttributeCrossReference_4_1_0 = (CrossReference)cIdAssignment_4_1.eContents().get(0);
-		private final RuleCall cIdAttributeQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cIdAttributeCrossReference_4_1_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cFeaturesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cFeaturesFeatureParserRuleCall_5_1_0 = (RuleCall)cFeaturesAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cIdKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cIdAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cIdAttributeCrossReference_5_0 = (CrossReference)cIdAssignment_5.eContents().get(0);
+		private final RuleCall cIdAttributeQualifiedNameParserRuleCall_5_0_1 = (RuleCall)cIdAttributeCrossReference_5_0.eContents().get(1);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Group cGroup_7_0 = (Group)cGroup_7.eContents().get(0);
+		private final Assignment cFeaturesAssignment_7_0_0 = (Assignment)cGroup_7_0.eContents().get(0);
+		private final RuleCall cFeaturesFeatureParserRuleCall_7_0_0_0 = (RuleCall)cFeaturesAssignment_7_0_0.eContents().get(0);
+		private final Keyword cCommaKeyword_7_0_1 = (Keyword)cGroup_7_0.eContents().get(1);
+		private final Assignment cFeaturesAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cFeaturesFeatureParserRuleCall_7_1_0 = (RuleCall)cFeaturesAssignment_7_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
+		////TODO: NOTE THAT IT IS NOT A MISTAKE WHEN IT GIVES THE ERROR IN THE TESTFILE: "COULD NOT RESOLVE REFERENCE TO ATTRIBUTE TITLE". 
+		//
+		////ONLY HAPPENS WITH EXTENSION CLASSES WHERE TITLE REFERS TO THE TITLE OF ITS SUPER CLASS. SO TO FIX IT SHOULD ACTUALLY BE 
+		//
+		////PUBLICATION.TITLE IN THE TESTFILE. 
+		//
+		////THIS PROBLEM CAN ONLY BE FIXED USING SCOPING. LOOK AT THIS DISCUSSION THREAD FROM TUWEL:https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53736
+		//
 		//Entity:
-		//	"entity" name=ID ("extends" superType=[Entity])? //?? name from NamedElement modeled, as the NamedElement instantiates an entity + has name from itself (NamedElement)??
-		//	"{" ("id" id=[Attribute|QualifiedName]) ("," features+=Feature)* "}";
+		//	"entity" name=ID ("extends" superType=[Entity] ("," superType=[Entity])*)? "{" "id" id=[Attribute|QualifiedName] ","
+		//	((features+=Feature ",")* features+=Feature) "}";
 		public ParserRule getRule() { return rule; }
 
-		//"entity" name=ID ("extends" superType=[Entity])? //?? name from NamedElement modeled, as the NamedElement instantiates an entity + has name from itself (NamedElement)??
-		//"{" ("id" id=[Attribute|QualifiedName]) ("," features+=Feature)* "}"
+		//"entity" name=ID ("extends" superType=[Entity] ("," superType=[Entity])*)? "{" "id" id=[Attribute|QualifiedName] ","
+		//((features+=Feature ",")* features+=Feature) "}"
 		public Group getGroup() { return cGroup; }
 
 		//"entity"
@@ -147,7 +125,7 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("extends" superType=[Entity])?
+		//("extends" superType=[Entity] ("," superType=[Entity])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"extends"
@@ -162,39 +140,62 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSuperTypeEntityIDTerminalRuleCall_2_1_0_1() { return cSuperTypeEntityIDTerminalRuleCall_2_1_0_1; }
 
-		////?? name from NamedElement modeled, as the NamedElement instantiates an entity + has name from itself (NamedElement)??
+		//("," superType=[Entity])*
+		public Group getGroup_2_2() { return cGroup_2_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
+
+		//superType=[Entity]
+		public Assignment getSuperTypeAssignment_2_2_1() { return cSuperTypeAssignment_2_2_1; }
+
+		//[Entity]
+		public CrossReference getSuperTypeEntityCrossReference_2_2_1_0() { return cSuperTypeEntityCrossReference_2_2_1_0; }
+
+		//ID
+		public RuleCall getSuperTypeEntityIDTerminalRuleCall_2_2_1_0_1() { return cSuperTypeEntityIDTerminalRuleCall_2_2_1_0_1; }
+
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"id" id=[Attribute|QualifiedName]
-		public Group getGroup_4() { return cGroup_4; }
-
 		//"id"
-		public Keyword getIdKeyword_4_0() { return cIdKeyword_4_0; }
+		public Keyword getIdKeyword_4() { return cIdKeyword_4; }
 
 		//id=[Attribute|QualifiedName]
-		public Assignment getIdAssignment_4_1() { return cIdAssignment_4_1; }
+		public Assignment getIdAssignment_5() { return cIdAssignment_5; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getIdAttributeCrossReference_4_1_0() { return cIdAttributeCrossReference_4_1_0; }
+		public CrossReference getIdAttributeCrossReference_5_0() { return cIdAttributeCrossReference_5_0; }
 
 		//QualifiedName
-		public RuleCall getIdAttributeQualifiedNameParserRuleCall_4_1_0_1() { return cIdAttributeQualifiedNameParserRuleCall_4_1_0_1; }
-
-		//("," features+=Feature)*
-		public Group getGroup_5() { return cGroup_5; }
+		public RuleCall getIdAttributeQualifiedNameParserRuleCall_5_0_1() { return cIdAttributeQualifiedNameParserRuleCall_5_0_1; }
 
 		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+
+		//(features+=Feature ",")* features+=Feature
+		public Group getGroup_7() { return cGroup_7; }
+
+		//(features+=Feature ",")*
+		public Group getGroup_7_0() { return cGroup_7_0; }
 
 		//features+=Feature
-		public Assignment getFeaturesAssignment_5_1() { return cFeaturesAssignment_5_1; }
+		public Assignment getFeaturesAssignment_7_0_0() { return cFeaturesAssignment_7_0_0; }
 
 		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_5_1_0() { return cFeaturesFeatureParserRuleCall_5_1_0; }
+		public RuleCall getFeaturesFeatureParserRuleCall_7_0_0_0() { return cFeaturesFeatureParserRuleCall_7_0_0_0; }
+
+		//","
+		public Keyword getCommaKeyword_7_0_1() { return cCommaKeyword_7_0_1; }
+
+		//features+=Feature
+		public Assignment getFeaturesAssignment_7_1() { return cFeaturesAssignment_7_1; }
+
+		//Feature
+		public RuleCall getFeaturesFeatureParserRuleCall_7_1_0() { return cFeaturesFeatureParserRuleCall_7_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class AttributeElements extends AbstractParserRuleElementFinder {
@@ -214,11 +215,13 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnumerationEnumerationQualifiedNameParserRuleCall_5_1_0_1 = (RuleCall)cEnumerationEnumerationCrossReference_5_1_0.eContents().get(1);
 		
 		//Attribute:
-		//	"attribute" name=ID "*"? ":" type=AttributeType (":" enumeration=[Enumeration|QualifiedName])? //TODO how to display '*' when mandatory --> can't be modeled? 
+		//	"attribute" name=ID "*"? ":" type=AttributeType (":" enumeration=[Enumeration|QualifiedName])?
+		//	//TODO how to display '*' when mandatory --> can't be modeled? 
 		//;
 		public ParserRule getRule() { return rule; }
 
-		//"attribute" name=ID "*"? ":" type=AttributeType (":" enumeration=[Enumeration|QualifiedName])? //TODO how to display '*' when mandatory --> can't be modeled?
+		//"attribute" name=ID "*"? ":" type=AttributeType (":" enumeration=[Enumeration|QualifiedName])?
+		////TODO how to display '*' when mandatory --> can't be modeled?
 		public Group getGroup() { return cGroup; }
 
 		//"attribute"
@@ -268,26 +271,25 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cTargetEntityCrossReference_3_0 = (CrossReference)cTargetAssignment_3.eContents().get(0);
 		private final RuleCall cTargetEntityQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cTargetEntityCrossReference_3_0.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cLowerBoundAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cLowerBoundINTTerminalRuleCall_4_1_0 = (RuleCall)cLowerBoundAssignment_4_1.eContents().get(0);
-		private final Keyword cFullStopFullStopFullStopKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Assignment cUpperBoundAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cUpperBoundINTTerminalRuleCall_4_3_0 = (RuleCall)cUpperBoundAssignment_4_3.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cOppositeOfKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cOppositeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cOppositeRelationshipCrossReference_5_1_0 = (CrossReference)cOppositeAssignment_5_1.eContents().get(0);
-		private final RuleCall cOppositeRelationshipQualifiedNameParserRuleCall_5_1_0_1 = (RuleCall)cOppositeRelationshipCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cLowerBoundAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cLowerBoundEIntParserRuleCall_5_0 = (RuleCall)cLowerBoundAssignment_5.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cUpperBoundAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cUpperBoundEIntParserRuleCall_7_0 = (RuleCall)cUpperBoundAssignment_7.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cOppositeOfKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cOppositeAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final CrossReference cOppositeRelationshipCrossReference_9_1_0 = (CrossReference)cOppositeAssignment_9_1.eContents().get(0);
+		private final RuleCall cOppositeRelationshipQualifiedNameParserRuleCall_9_1_0_1 = (RuleCall)cOppositeRelationshipCrossReference_9_1_0.eContents().get(1);
 		
 		//Relationship:
-		//	"reference" name=ID ":" target=[Entity|QualifiedName] ("[" lowerBound=INT "..." upperBound=INT "]") ("opposite-of"
+		//	"reference" name=ID ":" target=[Entity|QualifiedName] "[" lowerBound=EInt ".." upperBound=EInt "]" ("opposite-of"
 		//	opposite=[Relationship|QualifiedName])?;
 		public ParserRule getRule() { return rule; }
 
-		//"reference" name=ID ":" target=[Entity|QualifiedName] ("[" lowerBound=INT "..." upperBound=INT "]") ("opposite-of"
+		//"reference" name=ID ":" target=[Entity|QualifiedName] "[" lowerBound=EInt ".." upperBound=EInt "]" ("opposite-of"
 		//opposite=[Relationship|QualifiedName])?
 		public Group getGroup() { return cGroup; }
 
@@ -312,44 +314,41 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getTargetEntityQualifiedNameParserRuleCall_3_0_1() { return cTargetEntityQualifiedNameParserRuleCall_3_0_1; }
 
-		//"[" lowerBound=INT "..." upperBound=INT "]"
-		public Group getGroup_4() { return cGroup_4; }
-
 		//"["
-		public Keyword getLeftSquareBracketKeyword_4_0() { return cLeftSquareBracketKeyword_4_0; }
+		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
 
-		//lowerBound=INT
-		public Assignment getLowerBoundAssignment_4_1() { return cLowerBoundAssignment_4_1; }
+		//lowerBound=EInt
+		public Assignment getLowerBoundAssignment_5() { return cLowerBoundAssignment_5; }
 
-		//INT
-		public RuleCall getLowerBoundINTTerminalRuleCall_4_1_0() { return cLowerBoundINTTerminalRuleCall_4_1_0; }
+		//EInt
+		public RuleCall getLowerBoundEIntParserRuleCall_5_0() { return cLowerBoundEIntParserRuleCall_5_0; }
 
-		//"..."
-		public Keyword getFullStopFullStopFullStopKeyword_4_2() { return cFullStopFullStopFullStopKeyword_4_2; }
+		//".."
+		public Keyword getFullStopFullStopKeyword_6() { return cFullStopFullStopKeyword_6; }
 
-		//upperBound=INT
-		public Assignment getUpperBoundAssignment_4_3() { return cUpperBoundAssignment_4_3; }
+		//upperBound=EInt
+		public Assignment getUpperBoundAssignment_7() { return cUpperBoundAssignment_7; }
 
-		//INT
-		public RuleCall getUpperBoundINTTerminalRuleCall_4_3_0() { return cUpperBoundINTTerminalRuleCall_4_3_0; }
+		//EInt
+		public RuleCall getUpperBoundEIntParserRuleCall_7_0() { return cUpperBoundEIntParserRuleCall_7_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_4_4() { return cRightSquareBracketKeyword_4_4; }
+		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
 
 		//("opposite-of" opposite=[Relationship|QualifiedName])?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_9() { return cGroup_9; }
 
 		//"opposite-of"
-		public Keyword getOppositeOfKeyword_5_0() { return cOppositeOfKeyword_5_0; }
+		public Keyword getOppositeOfKeyword_9_0() { return cOppositeOfKeyword_9_0; }
 
 		//opposite=[Relationship|QualifiedName]
-		public Assignment getOppositeAssignment_5_1() { return cOppositeAssignment_5_1; }
+		public Assignment getOppositeAssignment_9_1() { return cOppositeAssignment_9_1; }
 
 		//[Relationship|QualifiedName]
-		public CrossReference getOppositeRelationshipCrossReference_5_1_0() { return cOppositeRelationshipCrossReference_5_1_0; }
+		public CrossReference getOppositeRelationshipCrossReference_9_1_0() { return cOppositeRelationshipCrossReference_9_1_0; }
 
 		//QualifiedName
-		public RuleCall getOppositeRelationshipQualifiedNameParserRuleCall_5_1_0_1() { return cOppositeRelationshipQualifiedNameParserRuleCall_5_1_0_1; }
+		public RuleCall getOppositeRelationshipQualifiedNameParserRuleCall_9_1_0_1() { return cOppositeRelationshipQualifiedNameParserRuleCall_9_1_0_1; }
 	}
 
 	public class FeatureElements extends AbstractParserRuleElementFinder {
@@ -379,16 +378,19 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLiteralsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLiteralsLiteralParserRuleCall_3_0 = (RuleCall)cLiteralsAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cLiteralsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cLiteralsLiteralParserRuleCall_3_0_0 = (RuleCall)cLiteralsAssignment_3_0.eContents().get(0);
+		private final Keyword cCommaKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cLiteralsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLiteralsLiteralParserRuleCall_4_0 = (RuleCall)cLiteralsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Enumeration:
-		//	"enum" name=ID "{" literals+=Literal+ "," "}";
+		//	"enum" name=ID "{" (literals+=Literal ",")* literals+=Literal "}";
 		public ParserRule getRule() { return rule; }
 
-		//"enum" name=ID "{" literals+=Literal+ "," "}"
+		//"enum" name=ID "{" (literals+=Literal ",")* literals+=Literal "}"
 		public Group getGroup() { return cGroup; }
 
 		//"enum"
@@ -403,14 +405,23 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//literals+=Literal+
-		public Assignment getLiteralsAssignment_3() { return cLiteralsAssignment_3; }
+		//(literals+=Literal ",")*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//literals+=Literal
+		public Assignment getLiteralsAssignment_3_0() { return cLiteralsAssignment_3_0; }
 
 		//Literal
-		public RuleCall getLiteralsLiteralParserRuleCall_3_0() { return cLiteralsLiteralParserRuleCall_3_0; }
+		public RuleCall getLiteralsLiteralParserRuleCall_3_0_0() { return cLiteralsLiteralParserRuleCall_3_0_0; }
 
 		//","
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_3_1() { return cCommaKeyword_3_1; }
+
+		//literals+=Literal
+		public Assignment getLiteralsAssignment_4() { return cLiteralsAssignment_4; }
+
+		//Literal
+		public RuleCall getLiteralsLiteralParserRuleCall_4_0() { return cLiteralsLiteralParserRuleCall_4_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
@@ -422,16 +433,14 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Literal:
-		//	name=ID "=" "\"" value=STRING "\"";
+		//	name=ID "=" value=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "=" "\"" value=STRING "\""
+		//name=ID "=" value=STRING
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -443,17 +452,11 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
-
 		//value=STRING
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_3_0() { return cValueSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 	}
 
 	public class EIntElements extends AbstractParserRuleElementFinder {
@@ -509,89 +512,88 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cStringEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cString1Keyword_0_0 = (Keyword)cStringEnumLiteralDeclaration_0.eContents().get(0);
+		private final Keyword cStringStringKeyword_0_0 = (Keyword)cStringEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cIntegerEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cInteger2Keyword_1_0 = (Keyword)cIntegerEnumLiteralDeclaration_1.eContents().get(0);
+		private final Keyword cIntegerIntegerKeyword_1_0 = (Keyword)cIntegerEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cTextEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cText3Keyword_2_0 = (Keyword)cTextEnumLiteralDeclaration_2.eContents().get(0);
+		private final Keyword cTextTextKeyword_2_0 = (Keyword)cTextEnumLiteralDeclaration_2.eContents().get(0);
 		private final EnumLiteralDeclaration cDateEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cDate4Keyword_3_0 = (Keyword)cDateEnumLiteralDeclaration_3.eContents().get(0);
+		private final Keyword cDateDateKeyword_3_0 = (Keyword)cDateEnumLiteralDeclaration_3.eContents().get(0);
 		private final EnumLiteralDeclaration cTimeEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cTime5Keyword_4_0 = (Keyword)cTimeEnumLiteralDeclaration_4.eContents().get(0);
+		private final Keyword cTimeTimeKeyword_4_0 = (Keyword)cTimeEnumLiteralDeclaration_4.eContents().get(0);
 		private final EnumLiteralDeclaration cEmailEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cEmail6Keyword_5_0 = (Keyword)cEmailEnumLiteralDeclaration_5.eContents().get(0);
+		private final Keyword cEmailEmailKeyword_5_0 = (Keyword)cEmailEnumLiteralDeclaration_5.eContents().get(0);
 		private final EnumLiteralDeclaration cBooleanEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cBoolean7Keyword_6_0 = (Keyword)cBooleanEnumLiteralDeclaration_6.eContents().get(0);
+		private final Keyword cBooleanBooleanKeyword_6_0 = (Keyword)cBooleanEnumLiteralDeclaration_6.eContents().get(0);
 		private final EnumLiteralDeclaration cYearEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cYear8Keyword_7_0 = (Keyword)cYearEnumLiteralDeclaration_7.eContents().get(0);
+		private final Keyword cYearYearKeyword_7_0 = (Keyword)cYearEnumLiteralDeclaration_7.eContents().get(0);
 		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
-		private final Keyword cNone0Keyword_8_0 = (Keyword)cNoneEnumLiteralDeclaration_8.eContents().get(0);
+		private final Keyword cNoneNoneKeyword_8_0 = (Keyword)cNoneEnumLiteralDeclaration_8.eContents().get(0);
 		
 		//enum AttributeType:
-		//	String="1" | Integer="2" | Text="3" | Date="4" | Time="5" | Email="6" | Boolean="7" | Year="8" | None="0";
+		//	String | Integer | Text | Date | Time | Email | Boolean | Year | None;
 		public EnumRule getRule() { return rule; }
 
-		//String="1" | Integer="2" | Text="3" | Date="4" | Time="5" | Email="6" | Boolean="7" | Year="8" | None="0"
+		//String | Integer | Text | Date | Time | Email | Boolean | Year | None
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//String="1"
+		//String
 		public EnumLiteralDeclaration getStringEnumLiteralDeclaration_0() { return cStringEnumLiteralDeclaration_0; }
 
-		//"1"
-		public Keyword getString1Keyword_0_0() { return cString1Keyword_0_0; }
+		//"String"
+		public Keyword getStringStringKeyword_0_0() { return cStringStringKeyword_0_0; }
 
-		//Integer="2"
+		//Integer
 		public EnumLiteralDeclaration getIntegerEnumLiteralDeclaration_1() { return cIntegerEnumLiteralDeclaration_1; }
 
-		//"2"
-		public Keyword getInteger2Keyword_1_0() { return cInteger2Keyword_1_0; }
+		//"Integer"
+		public Keyword getIntegerIntegerKeyword_1_0() { return cIntegerIntegerKeyword_1_0; }
 
-		//Text="3"
+		//Text
 		public EnumLiteralDeclaration getTextEnumLiteralDeclaration_2() { return cTextEnumLiteralDeclaration_2; }
 
-		//"3"
-		public Keyword getText3Keyword_2_0() { return cText3Keyword_2_0; }
+		//"Text"
+		public Keyword getTextTextKeyword_2_0() { return cTextTextKeyword_2_0; }
 
-		//Date="4"
+		//Date
 		public EnumLiteralDeclaration getDateEnumLiteralDeclaration_3() { return cDateEnumLiteralDeclaration_3; }
 
-		//"4"
-		public Keyword getDate4Keyword_3_0() { return cDate4Keyword_3_0; }
+		//"Date"
+		public Keyword getDateDateKeyword_3_0() { return cDateDateKeyword_3_0; }
 
-		//Time="5"
+		//Time
 		public EnumLiteralDeclaration getTimeEnumLiteralDeclaration_4() { return cTimeEnumLiteralDeclaration_4; }
 
-		//"5"
-		public Keyword getTime5Keyword_4_0() { return cTime5Keyword_4_0; }
+		//"Time"
+		public Keyword getTimeTimeKeyword_4_0() { return cTimeTimeKeyword_4_0; }
 
-		//Email="6"
+		//Email
 		public EnumLiteralDeclaration getEmailEnumLiteralDeclaration_5() { return cEmailEnumLiteralDeclaration_5; }
 
-		//"6"
-		public Keyword getEmail6Keyword_5_0() { return cEmail6Keyword_5_0; }
+		//"Email"
+		public Keyword getEmailEmailKeyword_5_0() { return cEmailEmailKeyword_5_0; }
 
-		//Boolean="7"
+		//Boolean
 		public EnumLiteralDeclaration getBooleanEnumLiteralDeclaration_6() { return cBooleanEnumLiteralDeclaration_6; }
 
-		//"7"
-		public Keyword getBoolean7Keyword_6_0() { return cBoolean7Keyword_6_0; }
+		//"Boolean"
+		public Keyword getBooleanBooleanKeyword_6_0() { return cBooleanBooleanKeyword_6_0; }
 
-		//Year="8"
+		//Year
 		public EnumLiteralDeclaration getYearEnumLiteralDeclaration_7() { return cYearEnumLiteralDeclaration_7; }
 
-		//"8"
-		public Keyword getYear8Keyword_7_0() { return cYear8Keyword_7_0; }
+		//"Year"
+		public Keyword getYearYearKeyword_7_0() { return cYearYearKeyword_7_0; }
 
-		//None="0"
+		//None
 		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_8() { return cNoneEnumLiteralDeclaration_8; }
 
-		//"0"
-		public Keyword getNone0Keyword_8_0() { return cNone0Keyword_8_0; }
+		//"None"
+		public Keyword getNoneNoneKeyword_8_0() { return cNoneNoneKeyword_8_0; }
 	}
 	
 	private final EntityModelElements pEntityModel;
 	private final EntityModelElementElements pEntityModelElement;
-	private final NamedElementElements pNamedElement;
 	private final EntityElements pEntity;
 	private final AttributeElements pAttribute;
 	private final RelationshipElements pRelationship;
@@ -613,7 +615,6 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pEntityModel = new EntityModelElements();
 		this.pEntityModelElement = new EntityModelElementElements();
-		this.pNamedElement = new NamedElementElements();
 		this.pEntity = new EntityElements();
 		this.pAttribute = new AttributeElements();
 		this.pRelationship = new RelationshipElements();
@@ -653,7 +654,8 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//// implement your grammar here, starting with the root element: EntityModel
-	//EntityModel: //instantiates the class
+	// EntityModel: //instantiates the class
+	//
 	//	{EntityModel} entityModelElements+=EntityModelElement* //EntityModel contains 0...* EntityModelElements
 	//;
 	public EntityModelElements getEntityModelAccess() {
@@ -674,19 +676,17 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		return getEntityModelElementAccess().getRule();
 	}
 
-	//NamedElement:
-	//	Entity | Feature | Enumeration | Literal name=STRING;
-	public NamedElementElements getNamedElementAccess() {
-		return pNamedElement;
-	}
-	
-	public ParserRule getNamedElementRule() {
-		return getNamedElementAccess().getRule();
-	}
-
+	////TODO: NOTE THAT IT IS NOT A MISTAKE WHEN IT GIVES THE ERROR IN THE TESTFILE: "COULD NOT RESOLVE REFERENCE TO ATTRIBUTE TITLE". 
+	//
+	////ONLY HAPPENS WITH EXTENSION CLASSES WHERE TITLE REFERS TO THE TITLE OF ITS SUPER CLASS. SO TO FIX IT SHOULD ACTUALLY BE 
+	//
+	////PUBLICATION.TITLE IN THE TESTFILE. 
+	//
+	////THIS PROBLEM CAN ONLY BE FIXED USING SCOPING. LOOK AT THIS DISCUSSION THREAD FROM TUWEL:https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53736
+	//
 	//Entity:
-	//	"entity" name=ID ("extends" superType=[Entity])? //?? name from NamedElement modeled, as the NamedElement instantiates an entity + has name from itself (NamedElement)??
-	//	"{" ("id" id=[Attribute|QualifiedName]) ("," features+=Feature)* "}";
+	//	"entity" name=ID ("extends" superType=[Entity] ("," superType=[Entity])*)? "{" "id" id=[Attribute|QualifiedName] ","
+	//	((features+=Feature ",")* features+=Feature) "}";
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}
@@ -696,7 +696,8 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	"attribute" name=ID "*"? ":" type=AttributeType (":" enumeration=[Enumeration|QualifiedName])? //TODO how to display '*' when mandatory --> can't be modeled? 
+	//	"attribute" name=ID "*"? ":" type=AttributeType (":" enumeration=[Enumeration|QualifiedName])?
+	//	//TODO how to display '*' when mandatory --> can't be modeled? 
 	//;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
@@ -707,7 +708,7 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Relationship:
-	//	"reference" name=ID ":" target=[Entity|QualifiedName] ("[" lowerBound=INT "..." upperBound=INT "]") ("opposite-of"
+	//	"reference" name=ID ":" target=[Entity|QualifiedName] "[" lowerBound=EInt ".." upperBound=EInt "]" ("opposite-of"
 	//	opposite=[Relationship|QualifiedName])?;
 	public RelationshipElements getRelationshipAccess() {
 		return pRelationship;
@@ -718,7 +719,7 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum AttributeType:
-	//	String="1" | Integer="2" | Text="3" | Date="4" | Time="5" | Email="6" | Boolean="7" | Year="8" | None="0";
+	//	String | Integer | Text | Date | Time | Email | Boolean | Year | None;
 	public AttributeTypeElements getAttributeTypeAccess() {
 		return unknownRuleAttributeType;
 	}
@@ -738,7 +739,7 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Enumeration:
-	//	"enum" name=ID "{" literals+=Literal+ "," "}";
+	//	"enum" name=ID "{" (literals+=Literal ",")* literals+=Literal "}";
 	public EnumerationElements getEnumerationAccess() {
 		return pEnumeration;
 	}
@@ -748,7 +749,7 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Literal:
-	//	name=ID "=" "\"" value=STRING "\"";
+	//	name=ID "=" value=STRING;
 	public LiteralElements getLiteralAccess() {
 		return pLiteral;
 	}
