@@ -11,5 +11,5 @@ package at.ac.tuwien.big.forms.form.scoping;
  *
  */
 public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
-
+	
 }
