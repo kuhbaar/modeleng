@@ -22,7 +22,7 @@ EntityModelElement returns EntityModelElement:
 //THIS PROBLEM CAN ONLY BE FIXED USING SCOPING. LOOK AT THIS DISCUSSION THREAD FROM TUWEL:https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53736
 
 Entity returns Entity:
-  'entity' name = ID ('extends' superType = [Entity] (',' superType = [Entity])*)? 
+  'entity' name = ID ('extends' superType = [Entity])? 
   '{'  
      'id' id=[Attribute|QualifiedName] ','
      (
