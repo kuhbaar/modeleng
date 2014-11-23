@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
-import at.ac.tuwien.big.forms.Attribute;
 import at.ac.tuwien.big.forms.Entity;
 import at.ac.tuwien.big.forms.Feature;
 import at.ac.tuwien.big.forms.FormsPackage;
