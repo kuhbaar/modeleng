@@ -15,13 +15,16 @@ import org.eclipse.xtext.scoping.Scopes;
 
 import at.ac.tuwien.big.forms.Attribute;
 import at.ac.tuwien.big.forms.AttributePageElement;
+import at.ac.tuwien.big.forms.AttributeValueCondition;
 import at.ac.tuwien.big.forms.Entity;
 import at.ac.tuwien.big.forms.Feature;
 import at.ac.tuwien.big.forms.Form;
 import at.ac.tuwien.big.forms.FormsPackage;
 import at.ac.tuwien.big.forms.Relationship;
 import at.ac.tuwien.big.forms.RelationshipPageElement;
+import at.ac.tuwien.big.forms.impl.ColumnImpl;
 import at.ac.tuwien.big.forms.impl.FormImpl;
+import at.ac.tuwien.big.forms.impl.RelationshipPageElementImpl;
 
 
 /**
@@ -32,15 +35,22 @@ import at.ac.tuwien.big.forms.impl.FormImpl;
  *
  */
 public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+	//TODO works, but ctrl+space doesnt show the correct scope, https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=54021
 	
 	/* An attribute page element has to reference an attribute of the entity the containing form references. */
+	// A column of a table can only reference attributes of the entity of the form the table edits.
 	public IScope scope_AttributePageElement_attribute(AttributePageElement ape, EReference ref){
 		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE)){
-			Entity e = getForm(ape).getEntity();
+			Entity e;
+			if(ape instanceof ColumnImpl){
+				e = getEditingForm(ape).getEntity();
+				System.out.println("GOT Editing Form of Column?! :" + e.getName());
+			}
+			else
+				e = getForm(ape).getEntity();
 			return Scopes.scopeFor(getEntitiesAttributes(e));
 		}
 		return IScope.NULLSCOPE;
-		//TODO works, but ctrl+space doesnt show the correct scope, https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=54021
 	}
 	
 	// A relationship page element has to reference a relationship of the entity the containing form references.
@@ -53,12 +63,17 @@ public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDe
 	}
 	
 	// An attribute value condition has to reference an attribute of the entity the containing form references.
+	public IScope scope_AttributeValueCondition_attribute(AttributeValueCondition avc, EReference ref){
+		if(ref.equals(FormsPackage.Literals.RELATIONSHIP_PAGE_ELEMENT__RELATIONSHIP)){
+			Entity e = getForm(avc).getEntity();
+			return Scopes.scopeFor(getEntitiesAttributes(e));
+		}
+		return IScope.NULLSCOPE;
+	}
 	
 	// A selection field is only allowed to reference an attribute of type Boolean or an attribute which has a reference to an enumeration.
 	
 	// A relationship page element has to reference a form of the same form model as editing form.
-	
-	// A column of a table can only reference attributes of the entity of the form the table edits.
 	
 	private Form getForm(EObject o) {
 		EObject container = o.eContainer();
@@ -66,9 +81,19 @@ public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDe
 			if(container == null)
 				return null;
 			container = container.eContainer();
-
 		}
 		return (Form) container;
+	}
+	
+	private Form getEditingForm(EObject o){
+		EObject container = o.eContainer();
+		while (!(container instanceof RelationshipPageElementImpl)){
+			if(container == null)
+				return null;
+			container = container.eContainer();
+
+		}
+		return (Form) ((RelationshipPageElement) container).getEditingForm();
 	}
 	
 	private Collection<Relationship> getEntitiesRelationships(Entity e){
