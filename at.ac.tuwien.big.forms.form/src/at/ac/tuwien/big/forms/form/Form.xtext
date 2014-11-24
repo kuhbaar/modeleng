@@ -42,7 +42,7 @@ AttributeValueCondition returns AttributeValueCondition:
 ;
 
 enum CompositeConditionType returns CompositeConditionType:
-  And = 'And' | Or='Or'
+  And = 'and' | Or='or'
 ;
 
 enum ConditionType returns ConditionType:
