@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalFormParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'And'", "'Or'", "'Hide'", "'Show'", "'Enable'", "'Disable'", "'None'", "'form'", "'handles'", "'{'", "'}'", "'page'", "','", "'with'", "'composite-condition'", "':'", "'('", "')'", "'?'", "'attribute-condition'", "'=='", "'table'", "'edits'", "'list'", "'time-selection-field'", "'date-selection-field'", "'column'", "'selection-field'", "'text-area'", "'text-field'", "'format'", "'.'", "'welcome'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'and'", "'or'", "'Hide'", "'Show'", "'Enable'", "'Disable'", "'None'", "'form'", "'handles'", "'{'", "'}'", "'page'", "','", "'with'", "'composite-condition'", "':'", "'('", "')'", "'?'", "'attribute-condition'", "'=='", "'table'", "'edits'", "'list'", "'time-selection-field'", "'date-selection-field'", "'column'", "'selection-field'", "'text-area'", "'text-field'", "'format'", "'.'", "'welcome'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -2370,13 +2370,13 @@ public class InternalFormParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeConditionType__Alternatives"
-    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:767:1: rule__CompositeConditionType__Alternatives : ( ( ( 'And' ) ) | ( ( 'Or' ) ) );
+    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:767:1: rule__CompositeConditionType__Alternatives : ( ( ( 'and' ) ) | ( ( 'or' ) ) );
     public final void rule__CompositeConditionType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:771:1: ( ( ( 'And' ) ) | ( ( 'Or' ) ) )
+            // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:771:1: ( ( ( 'and' ) ) | ( ( 'or' ) ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2395,16 +2395,16 @@ public class InternalFormParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:772:1: ( ( 'And' ) )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:772:1: ( ( 'and' ) )
                     {
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:772:1: ( ( 'And' ) )
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:773:1: ( 'And' )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:772:1: ( ( 'and' ) )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:773:1: ( 'and' )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getCompositeConditionTypeAccess().getAndEnumLiteralDeclaration_0()); 
                     }
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:774:1: ( 'And' )
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:774:3: 'And'
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:774:1: ( 'and' )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:774:3: 'and'
                     {
                     match(input,11,FollowSets000.FOLLOW_11_in_rule__CompositeConditionType__Alternatives1604); if (state.failed) return ;
 
@@ -2420,16 +2420,16 @@ public class InternalFormParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:779:6: ( ( 'Or' ) )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:779:6: ( ( 'or' ) )
                     {
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:779:6: ( ( 'Or' ) )
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:780:1: ( 'Or' )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:779:6: ( ( 'or' ) )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:780:1: ( 'or' )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getCompositeConditionTypeAccess().getOrEnumLiteralDeclaration_1()); 
                     }
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:781:1: ( 'Or' )
-                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:781:3: 'Or'
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:781:1: ( 'or' )
+                    // ../at.ac.tuwien.big.forms.form.ui/src-gen/at/ac/tuwien/big/forms/form/ui/contentassist/antlr/internal/InternalForm.g:781:3: 'or'
                     {
                     match(input,12,FollowSets000.FOLLOW_12_in_rule__CompositeConditionType__Alternatives1625); if (state.failed) return ;
 

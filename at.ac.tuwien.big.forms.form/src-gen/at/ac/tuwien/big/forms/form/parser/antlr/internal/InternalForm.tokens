@@ -5,13 +5,12 @@
 ':'=20
 '=='=25
 '?'=23
-'And'=37
 'Disable'=42
 'Enable'=41
 'Hide'=39
 'None'=43
-'Or'=38
 'Show'=40
+'and'=37
 'attribute-condition'=24
 'column'=31
 'composite-condition'=19
@@ -21,6 +20,7 @@
 'format'=35
 'handles'=13
 'list'=28
+'or'=38
 'page'=16
 'selection-field'=32
 'table'=26

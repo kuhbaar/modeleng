@@ -1000,22 +1000,22 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOrOrKeyword_1_0 = (Keyword)cOrEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum CompositeConditionType:
-		//	And | Or;
+		//	And="and" | Or="or";
 		public EnumRule getRule() { return rule; }
 
-		//And | Or
+		//And="and" | Or="or"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//And
+		//And="and"
 		public EnumLiteralDeclaration getAndEnumLiteralDeclaration_0() { return cAndEnumLiteralDeclaration_0; }
 
-		//"And"
+		//"and"
 		public Keyword getAndAndKeyword_0_0() { return cAndAndKeyword_0_0; }
 
-		//Or
+		//Or="or"
 		public EnumLiteralDeclaration getOrEnumLiteralDeclaration_1() { return cOrEnumLiteralDeclaration_1; }
 
-		//"Or"
+		//"or"
 		public Keyword getOrOrKeyword_1_0() { return cOrOrKeyword_1_0; }
 	}
 
@@ -1229,7 +1229,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum CompositeConditionType:
-	//	And | Or;
+	//	And="and" | Or="or";
 	public CompositeConditionTypeElements getCompositeConditionTypeAccess() {
 		return unknownRuleCompositeConditionType;
 	}

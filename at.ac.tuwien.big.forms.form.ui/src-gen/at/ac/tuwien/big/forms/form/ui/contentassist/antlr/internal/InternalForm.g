@@ -771,14 +771,14 @@ rule__CompositeConditionType__Alternatives
 :
 (
 { before(grammarAccess.getCompositeConditionTypeAccess().getAndEnumLiteralDeclaration_0()); }
-(	'And' 
+(	'and' 
 )
 { after(grammarAccess.getCompositeConditionTypeAccess().getAndEnumLiteralDeclaration_0()); }
 )
 
     |(
 { before(grammarAccess.getCompositeConditionTypeAccess().getOrEnumLiteralDeclaration_1()); }
-(	'Or' 
+(	'or' 
 )
 { after(grammarAccess.getCompositeConditionTypeAccess().getOrEnumLiteralDeclaration_1()); }
 )
