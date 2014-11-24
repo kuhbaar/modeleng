@@ -5,10 +5,10 @@ package at.ac.tuwien.big.forms.form.scoping;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
@@ -25,7 +25,6 @@ import at.ac.tuwien.big.forms.Relationship;
 import at.ac.tuwien.big.forms.RelationshipPageElement;
 import at.ac.tuwien.big.forms.impl.ColumnImpl;
 import at.ac.tuwien.big.forms.impl.FormImpl;
-import at.ac.tuwien.big.forms.impl.FormModelImpl;
 import at.ac.tuwien.big.forms.impl.RelationshipPageElementImpl;
 import at.ac.tuwien.big.forms.impl.SelectionFieldImpl;
 
@@ -48,22 +47,25 @@ public class FormScopeProvider extends
 	// A column of a table can only reference attributes of the entity of the
 	// form the table edits.
 
-	public IScope scope_AttributePageElement_attribute(AttributePageElement ape, EReference ref){
-		  if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE)){
-		   Entity e;
-		   if(ape instanceof ColumnImpl){
-		    e = getEditingForm(ape).getEntity();
-		   }
-		   else if(ape instanceof SelectionFieldImpl) {
-		    e = getForm(ape).getEntity();
-		    return Scopes.scopeFor(filterAttributesOfTypeBooleanOrHasReferenceToEnumeration(getEntitiesAttributes(e)));
-		    
-		   }
-		   else
-		    return Scopes.scopeFor(getEntitiesAttributes(getForm(ape).getEntity()));
-		  }
-		  return IScope.NULLSCOPE;
-		 }
+	// A selection field is only allowed to reference an attribute of type
+	// Boolean or an attribute which has a reference to an enumeration.
+
+	public IScope scope_AttributePageElement_attribute(
+			AttributePageElement ape, EReference ref) {
+		if (ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE)) {
+			Entity e;
+			if (ape instanceof ColumnImpl) {
+				e = getEditingForm(ape).getEntity();
+			} else {
+				e = getForm(ape).getEntity();
+				if (ape instanceof SelectionFieldImpl)
+					return Scopes
+							.scopeFor(filterAttributes(getEntitiesAttributes(e)));
+			}
+			return Scopes.scopeFor(getEntitiesAttributes(e));
+		}
+		return IScope.NULLSCOPE;
+	}
 
 	// A relationship page element has to reference a relationship of the entity
 	// the containing form references.
@@ -80,23 +82,21 @@ public class FormScopeProvider extends
 	// the containing form references.
 	public IScope scope_AttributeValueCondition_attribute(
 			AttributeValueCondition avc, EReference ref) {
-		if (ref.equals(FormsPackage.Literals.RELATIONSHIP_PAGE_ELEMENT__RELATIONSHIP)) {
+		if (ref.equals(FormsPackage.Literals.ATTRIBUTE_VALUE_CONDITION__ATTRIBUTE)) {
 			Entity e = getForm(avc).getEntity();
 			return Scopes.scopeFor(getEntitiesAttributes(e));
 		}
 		return IScope.NULLSCOPE;
 	}
 
-	// A selection field is only allowed to reference an attribute of type
-	// Boolean or an attribute which has a reference to an enumeration.
-
 	// A relationship page element has to reference a form of the same form
 	// model as editing form.
 	public IScope scope_RelationshipPageElement_editingForm(
 			RelationshipPageElement rpe, EReference ref) {
 		if (ref.equals(FormsPackage.Literals.RELATIONSHIP_PAGE_ELEMENT__EDITING_FORM)) {
-			return Scopes.scopeFor(getFormModel(rpe.getEditingForm())
-					.getForms());
+			FormModel f = (FormModel) EcoreUtil.getRootContainer(rpe);
+			// System.err.println(f.getForms().toString());
+			return Scopes.scopeFor(f.getForms());
 		}
 		return IScope.NULLSCOPE;
 	}
@@ -122,27 +122,18 @@ public class FormScopeProvider extends
 		return (Form) ((RelationshipPageElement) container).getEditingForm();
 	}
 
-	private FormModel getFormModel(EObject o) {
-		EObject container = o.eContainer();
-		while (!(container instanceof FormModelImpl)) {
-			if (container == null)
-				return null;
-			container = container.eContainer();
+	private Collection<Attribute> filterAttributes(Collection<Attribute> coll) {
+		Collection<Attribute> rm = new HashSet<Attribute>();
+		for (Attribute a : coll) {
+			if (!a.getType().equals(AttributeType.BOOLEAN)
+					&& a.getEnumeration() == null) {
+				rm.add(a);
+			}
 		}
-		return (FormModel) container;
+		coll.removeAll(rm);
+		return coll;
 	}
 
-	private Collection<Attribute> filterAttributesOfTypeBooleanOrHasReferenceToEnumeration(Collection<Attribute> coll) {
-		  Iterator<Attribute> it = coll.iterator();
-		  while(it.hasNext()) {
-		   Attribute at = it.next();
-		   if(!at.getType().equals(AttributeType.BOOLEAN) && at.getEnumeration() == null) {
-		    coll.remove(at);
-		   }
-		  }
-		  return coll;
-		 }
-	
 	private Collection<Relationship> getEntitiesRelationships(Entity e) {
 		Collection<Feature> feats = new HashSet<Feature>();
 		feats.addAll(e.getFeatures());
