@@ -27,16 +27,16 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// implement your grammar here, starting with the root element: FormModel
 		//FormModel:
-		//	{FormModel} forms+=Form*;
+		//	{FormModel} forms+=Form+;
 		public ParserRule getRule() { return rule; }
 
-		//{FormModel} forms+=Form*
+		//{FormModel} forms+=Form+
 		public Group getGroup() { return cGroup; }
 
 		//{FormModel}
 		public Action getFormModelAction_0() { return cFormModelAction_0; }
 
-		//forms+=Form*
+		//forms+=Form+
 		public Assignment getFormsAssignment_1() { return cFormsAssignment_1; }
 
 		//Form
@@ -51,28 +51,28 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFormKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTitleAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_4_0 = (RuleCall)cTitleAssignment_4.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cHandlesKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cEntityAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cEntityEntityCrossReference_7_0 = (CrossReference)cEntityAssignment_7.eContents().get(0);
-		private final RuleCall cEntityEntityQualifiedNameParserRuleCall_7_0_1 = (RuleCall)cEntityEntityCrossReference_7_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cPagesAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cPagesPageParserRuleCall_9_0 = (RuleCall)cPagesAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cTitleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTitleEStringParserRuleCall_3_0 = (RuleCall)cTitleAssignment_3.eContents().get(0);
+		private final Assignment cDescriptionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDescriptionEStringParserRuleCall_4_0 = (RuleCall)cDescriptionAssignment_4.eContents().get(0);
+		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cEntityAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cEntityEntityCrossReference_6_0 = (CrossReference)cEntityAssignment_6.eContents().get(0);
+		private final RuleCall cEntityEntityQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cEntityEntityCrossReference_6_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cPagesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cPagesPageParserRuleCall_8_0 = (RuleCall)cPagesAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Form:
-		//	welcomeForm?="welcome"? "form" name=ID "\"" title=STRING "\"" "handles" entity=[Entity|QualifiedName] "{"
-		//	pages+=Page* //TODO: description missing?
-		// "}";
+		//	welcomeForm?="welcome"? "form" name=ID title=EString description=EString? "handles" entity=[Entity|QualifiedName] "{"
+		//	pages+=Page* //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
+		//	"}";
 		public ParserRule getRule() { return rule; }
 
-		//welcomeForm?="welcome"? "form" name=ID "\"" title=STRING "\"" "handles" entity=[Entity|QualifiedName] "{" pages+=Page*
-		////TODO: description missing?
-		// "}"
+		//welcomeForm?="welcome"? "form" name=ID title=EString description=EString? "handles" entity=[Entity|QualifiedName] "{"
+		//pages+=Page* //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
+		//"}"
 		public Group getGroup() { return cGroup; }
 
 		//welcomeForm?="welcome"?
@@ -90,142 +90,154 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_3() { return cQuotationMarkKeyword_3; }
+		//title=EString
+		public Assignment getTitleAssignment_3() { return cTitleAssignment_3; }
 
-		//title=STRING
-		public Assignment getTitleAssignment_4() { return cTitleAssignment_4; }
+		//EString
+		public RuleCall getTitleEStringParserRuleCall_3_0() { return cTitleEStringParserRuleCall_3_0; }
 
-		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_4_0() { return cTitleSTRINGTerminalRuleCall_4_0; }
+		//description=EString?
+		public Assignment getDescriptionAssignment_4() { return cDescriptionAssignment_4; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_5() { return cQuotationMarkKeyword_5; }
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_4_0() { return cDescriptionEStringParserRuleCall_4_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_6() { return cHandlesKeyword_6; }
+		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
 
 		//entity=[Entity|QualifiedName]
-		public Assignment getEntityAssignment_7() { return cEntityAssignment_7; }
+		public Assignment getEntityAssignment_6() { return cEntityAssignment_6; }
 
 		//[Entity|QualifiedName]
-		public CrossReference getEntityEntityCrossReference_7_0() { return cEntityEntityCrossReference_7_0; }
+		public CrossReference getEntityEntityCrossReference_6_0() { return cEntityEntityCrossReference_6_0; }
 
 		//QualifiedName
-		public RuleCall getEntityEntityQualifiedNameParserRuleCall_7_0_1() { return cEntityEntityQualifiedNameParserRuleCall_7_0_1; }
+		public RuleCall getEntityEntityQualifiedNameParserRuleCall_6_0_1() { return cEntityEntityQualifiedNameParserRuleCall_6_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
 
 		//pages+=Page*
-		public Assignment getPagesAssignment_9() { return cPagesAssignment_9; }
+		public Assignment getPagesAssignment_8() { return cPagesAssignment_8; }
 
 		//Page
-		public RuleCall getPagesPageParserRuleCall_9_0() { return cPagesPageParserRuleCall_9_0; }
+		public RuleCall getPagesPageParserRuleCall_8_0() { return cPagesPageParserRuleCall_8_0; }
 
-		////TODO: description missing?
-		// "}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		////TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+
+	public class EStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EString returns ecore::EString:
+		//	STRING | ID;
+		public ParserRule getRule() { return rule; }
+
+		//STRING | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class PageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Page");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPageKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTitleAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_2_0 = (RuleCall)cTitleAssignment_2.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cPageElementsAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cPageElementsPageElementParserRuleCall_5_0_0 = (RuleCall)cPageElementsAssignment_5_0.eContents().get(0);
-		private final Keyword cCommaKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cConditionAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cConditionConditionParserRuleCall_7_0 = (RuleCall)cConditionAssignment_7.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cPageElementsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cPageElementsPageElementParserRuleCall_3_0_0 = (RuleCall)cPageElementsAssignment_3_0.eContents().get(0);
+		private final Keyword cCommaKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cPageElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPageElementsPageElementParserRuleCall_4_0 = (RuleCall)cPageElementsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cWithKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cConditionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cConditionConditionParserRuleCall_6_1_0 = (RuleCall)cConditionAssignment_6_1.eContents().get(0);
 		
 		//Page:
-		//	"page" "\"" title=STRING "\"" "{" (pageElements+=PageElement ","?)* "}" condition=Condition?;
+		//	"page" title=STRING "{" (pageElements+=PageElement ",")* pageElements+=PageElement "}" ("with" condition=Condition)?;
 		public ParserRule getRule() { return rule; }
 
-		//"page" "\"" title=STRING "\"" "{" (pageElements+=PageElement ","?)* "}" condition=Condition?
+		//"page" title=STRING "{" (pageElements+=PageElement ",")* pageElements+=PageElement "}" ("with" condition=Condition)?
 		public Group getGroup() { return cGroup; }
 
 		//"page"
 		public Keyword getPageKeyword_0() { return cPageKeyword_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_1() { return cQuotationMarkKeyword_1; }
-
 		//title=STRING
-		public Assignment getTitleAssignment_2() { return cTitleAssignment_2; }
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
 
 		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_2_0() { return cTitleSTRINGTerminalRuleCall_2_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_3() { return cQuotationMarkKeyword_3; }
+		public RuleCall getTitleSTRINGTerminalRuleCall_1_0() { return cTitleSTRINGTerminalRuleCall_1_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//(pageElements+=PageElement ","?)*
-		public Group getGroup_5() { return cGroup_5; }
+		//(pageElements+=PageElement ",")*
+		public Group getGroup_3() { return cGroup_3; }
 
 		//pageElements+=PageElement
-		public Assignment getPageElementsAssignment_5_0() { return cPageElementsAssignment_5_0; }
+		public Assignment getPageElementsAssignment_3_0() { return cPageElementsAssignment_3_0; }
 
 		//PageElement
-		public RuleCall getPageElementsPageElementParserRuleCall_5_0_0() { return cPageElementsPageElementParserRuleCall_5_0_0; }
+		public RuleCall getPageElementsPageElementParserRuleCall_3_0_0() { return cPageElementsPageElementParserRuleCall_3_0_0; }
 
-		//","?
-		public Keyword getCommaKeyword_5_1() { return cCommaKeyword_5_1; }
+		//","
+		public Keyword getCommaKeyword_3_1() { return cCommaKeyword_3_1; }
+
+		//pageElements+=PageElement
+		public Assignment getPageElementsAssignment_4() { return cPageElementsAssignment_4; }
+
+		//PageElement
+		public RuleCall getPageElementsPageElementParserRuleCall_4_0() { return cPageElementsPageElementParserRuleCall_4_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 
-		//condition=Condition?
-		public Assignment getConditionAssignment_7() { return cConditionAssignment_7; }
+		//("with" condition=Condition)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"with"
+		public Keyword getWithKeyword_6_0() { return cWithKeyword_6_0; }
+
+		//condition=Condition
+		public Assignment getConditionAssignment_6_1() { return cConditionAssignment_6_1; }
 
 		//Condition
-		public RuleCall getConditionConditionParserRuleCall_7_0() { return cConditionConditionParserRuleCall_7_0; }
+		public RuleCall getConditionConditionParserRuleCall_6_1_0() { return cConditionConditionParserRuleCall_6_1_0; }
 	}
 
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Condition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cWithKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cAttributeValueConditionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cWithKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cCompositeConditionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cAttributeValueConditionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCompositeConditionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Condition:
-		//	"with" AttributeValueCondition | "with" CompositeCondition;
+		//	AttributeValueCondition | CompositeCondition;
 		public ParserRule getRule() { return rule; }
 
-		//"with" AttributeValueCondition | "with" CompositeCondition
+		//AttributeValueCondition | CompositeCondition
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"with" AttributeValueCondition
-		public Group getGroup_0() { return cGroup_0; }
-
-		//"with"
-		public Keyword getWithKeyword_0_0() { return cWithKeyword_0_0; }
-
 		//AttributeValueCondition
-		public RuleCall getAttributeValueConditionParserRuleCall_0_1() { return cAttributeValueConditionParserRuleCall_0_1; }
-
-		//"with" CompositeCondition
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"with"
-		public Keyword getWithKeyword_1_0() { return cWithKeyword_1_0; }
+		public RuleCall getAttributeValueConditionParserRuleCall_0() { return cAttributeValueConditionParserRuleCall_0; }
 
 		//CompositeCondition
-		public RuleCall getCompositeConditionParserRuleCall_1_1() { return cCompositeConditionParserRuleCall_1_1; }
+		public RuleCall getCompositeConditionParserRuleCall_1() { return cCompositeConditionParserRuleCall_1; }
 	}
 
 	public class CompositeConditionElements extends AbstractParserRuleElementFinder {
@@ -233,28 +245,74 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCompositeConditionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cConditionIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionIDIDTerminalRuleCall_1_0 = (RuleCall)cConditionIDAssignment_1.eContents().get(0);
+		private final RuleCall cConditionIDEStringParserRuleCall_1_0 = (RuleCall)cConditionIDAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cComposedConditionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cComposedConditionsAttributeValueConditionParserRuleCall_4_0 = (RuleCall)cComposedConditionsAssignment_4.eContents().get(0);
+		private final Assignment cCompositionTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cCompositionTypeCompositeConditionTypeEnumRuleCall_5_0 = (RuleCall)cCompositionTypeAssignment_5.eContents().get(0);
+		private final Assignment cComposedConditionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cComposedConditionsAttributeValueConditionParserRuleCall_6_0 = (RuleCall)cComposedConditionsAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cQuestionMarkKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cTypeConditionTypeEnumRuleCall_9_0 = (RuleCall)cTypeAssignment_9.eContents().get(0);
 		
-		////TODO: how to do this?
-		// CompositeCondition:
-		//	"composite-condition" conditionID=ID ":";
+		////TODO: Just put in attributevalueCondition to make it easy. Change to Condition later.
+		//CompositeCondition:
+		//	"composite-condition" conditionID=EString ":" "(" composedConditions+=AttributeValueCondition
+		//	compositionType=CompositeConditionType composedConditions+=AttributeValueCondition ")" "?" type=ConditionType;
 		public ParserRule getRule() { return rule; }
 
-		//"composite-condition" conditionID=ID ":"
+		//"composite-condition" conditionID=EString ":" "(" composedConditions+=AttributeValueCondition
+		//compositionType=CompositeConditionType composedConditions+=AttributeValueCondition ")" "?" type=ConditionType
 		public Group getGroup() { return cGroup; }
 
 		//"composite-condition"
 		public Keyword getCompositeConditionKeyword_0() { return cCompositeConditionKeyword_0; }
 
-		//conditionID=ID
+		//conditionID=EString
 		public Assignment getConditionIDAssignment_1() { return cConditionIDAssignment_1; }
 
-		//ID
-		public RuleCall getConditionIDIDTerminalRuleCall_1_0() { return cConditionIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getConditionIDEStringParserRuleCall_1_0() { return cConditionIDEStringParserRuleCall_1_0; }
 
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+
+		//composedConditions+=AttributeValueCondition
+		public Assignment getComposedConditionsAssignment_4() { return cComposedConditionsAssignment_4; }
+
+		//AttributeValueCondition
+		public RuleCall getComposedConditionsAttributeValueConditionParserRuleCall_4_0() { return cComposedConditionsAttributeValueConditionParserRuleCall_4_0; }
+
+		//compositionType=CompositeConditionType
+		public Assignment getCompositionTypeAssignment_5() { return cCompositionTypeAssignment_5; }
+
+		//CompositeConditionType
+		public RuleCall getCompositionTypeCompositeConditionTypeEnumRuleCall_5_0() { return cCompositionTypeCompositeConditionTypeEnumRuleCall_5_0; }
+
+		//composedConditions+=AttributeValueCondition
+		public Assignment getComposedConditionsAssignment_6() { return cComposedConditionsAssignment_6; }
+
+		//AttributeValueCondition
+		public RuleCall getComposedConditionsAttributeValueConditionParserRuleCall_6_0() { return cComposedConditionsAttributeValueConditionParserRuleCall_6_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_8() { return cQuestionMarkKeyword_8; }
+
+		//type=ConditionType
+		public Assignment getTypeAssignment_9() { return cTypeAssignment_9; }
+
+		//ConditionType
+		public RuleCall getTypeConditionTypeEnumRuleCall_9_0() { return cTypeConditionTypeEnumRuleCall_9_0; }
 	}
 
 	public class AttributeValueConditionElements extends AbstractParserRuleElementFinder {
@@ -262,34 +320,35 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAttributeConditionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cConditionIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionIDIDTerminalRuleCall_1_0 = (RuleCall)cConditionIDAssignment_1.eContents().get(0);
+		private final RuleCall cConditionIDEStringParserRuleCall_1_0 = (RuleCall)cConditionIDAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAttributeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cAttributeAttributeCrossReference_3_0 = (CrossReference)cAttributeAssignment_3.eContents().get(0);
 		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cAttributeAttributeCrossReference_3_0.eContents().get(1);
 		private final Keyword cEqualsSignEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cValueSTRINGTerminalRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
+		private final RuleCall cValueEStringParserRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
 		private final Keyword cQuestionMarkKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cTypeConditionTypeEnumRuleCall_7_0 = (RuleCall)cTypeAssignment_7.eContents().get(0);
 		
 		//AttributeValueCondition:
-		//	"attribute-condition" conditionID=ID ":" attribute=[Attribute|QualifiedName] "==" value=STRING "?"
+		//	"attribute-condition" conditionID=EString ":" attribute=[Attribute|QualifiedName] "==" value=EString "?"
 		//	type=ConditionType;
 		public ParserRule getRule() { return rule; }
 
-		//"attribute-condition" conditionID=ID ":" attribute=[Attribute|QualifiedName] "==" value=STRING "?" type=ConditionType
+		//"attribute-condition" conditionID=EString ":" attribute=[Attribute|QualifiedName] "==" value=EString "?"
+		//type=ConditionType
 		public Group getGroup() { return cGroup; }
 
 		//"attribute-condition"
 		public Keyword getAttributeConditionKeyword_0() { return cAttributeConditionKeyword_0; }
 
-		//conditionID=ID
+		//conditionID=EString
 		public Assignment getConditionIDAssignment_1() { return cConditionIDAssignment_1; }
 
-		//ID
-		public RuleCall getConditionIDIDTerminalRuleCall_1_0() { return cConditionIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getConditionIDEStringParserRuleCall_1_0() { return cConditionIDEStringParserRuleCall_1_0; }
 
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -306,11 +365,11 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		//"=="
 		public Keyword getEqualsSignEqualsSignKeyword_4() { return cEqualsSignEqualsSignKeyword_4; }
 
-		//value=STRING
+		//value=EString
 		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
 
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_5_0() { return cValueSTRINGTerminalRuleCall_5_0; }
+		//EString
+		public RuleCall getValueEStringParserRuleCall_5_0() { return cValueEStringParserRuleCall_5_0; }
 
 		//"?"
 		public Keyword getQuestionMarkKeyword_6() { return cQuestionMarkKeyword_6; }
@@ -367,97 +426,97 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTableKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRelationshipAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cRelationshipRelationshipCrossReference_6_0 = (CrossReference)cRelationshipAssignment_6.eContents().get(0);
-		private final RuleCall cRelationshipRelationshipQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cRelationshipRelationshipCrossReference_6_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Assignment cColumnsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
-		private final RuleCall cColumnsColumnParserRuleCall_8_0_0 = (RuleCall)cColumnsAssignment_8_0.eContents().get(0);
-		private final Keyword cCommaKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cEditsKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cEditingFormAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final CrossReference cEditingFormFormCrossReference_11_0 = (CrossReference)cEditingFormAssignment_11.eContents().get(0);
-		private final RuleCall cEditingFormFormQualifiedNameParserRuleCall_11_0_1 = (RuleCall)cEditingFormFormCrossReference_11_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRelationshipAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cRelationshipRelationshipCrossReference_4_0 = (CrossReference)cRelationshipAssignment_4.eContents().get(0);
+		private final RuleCall cRelationshipRelationshipQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cRelationshipRelationshipCrossReference_4_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cColumnsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cColumnsColumnParserRuleCall_6_0_0 = (RuleCall)cColumnsAssignment_6_0.eContents().get(0);
+		private final Keyword cCommaKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cColumnsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cColumnsColumnParserRuleCall_7_0 = (RuleCall)cColumnsAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cEditsKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cEditingFormAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final CrossReference cEditingFormFormCrossReference_10_0 = (CrossReference)cEditingFormAssignment_10.eContents().get(0);
+		private final RuleCall cEditingFormFormQualifiedNameParserRuleCall_10_0_1 = (RuleCall)cEditingFormFormCrossReference_10_0.eContents().get(1);
 		
 		//Table:
-		//	"table" elementID=ID "\"" label=STRING "\"" "handles" relationship=[Relationship|QualifiedName] "{" (columns+=Column
-		//	",")* "}" "edits" editingForm=[Form|QualifiedName];
+		//	"table" elementID=EString label=EString "handles" relationship=[Relationship|QualifiedName] "{" (columns+=Column
+		//	",")* columns+=Column "}" "edits" editingForm=[Form|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"table" elementID=ID "\"" label=STRING "\"" "handles" relationship=[Relationship|QualifiedName] "{" (columns+=Column
-		//",")* "}" "edits" editingForm=[Form|QualifiedName]
+		//"table" elementID=EString label=EString "handles" relationship=[Relationship|QualifiedName] "{" (columns+=Column ",")*
+		//columns+=Column "}" "edits" editingForm=[Form|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"table"
 		public Keyword getTableKeyword_0() { return cTableKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//relationship=[Relationship|QualifiedName]
-		public Assignment getRelationshipAssignment_6() { return cRelationshipAssignment_6; }
+		public Assignment getRelationshipAssignment_4() { return cRelationshipAssignment_4; }
 
 		//[Relationship|QualifiedName]
-		public CrossReference getRelationshipRelationshipCrossReference_6_0() { return cRelationshipRelationshipCrossReference_6_0; }
+		public CrossReference getRelationshipRelationshipCrossReference_4_0() { return cRelationshipRelationshipCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getRelationshipRelationshipQualifiedNameParserRuleCall_6_0_1() { return cRelationshipRelationshipQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getRelationshipRelationshipQualifiedNameParserRuleCall_4_0_1() { return cRelationshipRelationshipQualifiedNameParserRuleCall_4_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//(columns+=Column ",")*
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//columns+=Column
-		public Assignment getColumnsAssignment_8_0() { return cColumnsAssignment_8_0; }
+		public Assignment getColumnsAssignment_6_0() { return cColumnsAssignment_6_0; }
 
 		//Column
-		public RuleCall getColumnsColumnParserRuleCall_8_0_0() { return cColumnsColumnParserRuleCall_8_0_0; }
+		public RuleCall getColumnsColumnParserRuleCall_6_0_0() { return cColumnsColumnParserRuleCall_6_0_0; }
 
 		//","
-		public Keyword getCommaKeyword_8_1() { return cCommaKeyword_8_1; }
+		public Keyword getCommaKeyword_6_1() { return cCommaKeyword_6_1; }
+
+		//columns+=Column
+		public Assignment getColumnsAssignment_7() { return cColumnsAssignment_7; }
+
+		//Column
+		public RuleCall getColumnsColumnParserRuleCall_7_0() { return cColumnsColumnParserRuleCall_7_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 
 		//"edits"
-		public Keyword getEditsKeyword_10() { return cEditsKeyword_10; }
+		public Keyword getEditsKeyword_9() { return cEditsKeyword_9; }
 
 		//editingForm=[Form|QualifiedName]
-		public Assignment getEditingFormAssignment_11() { return cEditingFormAssignment_11; }
+		public Assignment getEditingFormAssignment_10() { return cEditingFormAssignment_10; }
 
 		//[Form|QualifiedName]
-		public CrossReference getEditingFormFormCrossReference_11_0() { return cEditingFormFormCrossReference_11_0; }
+		public CrossReference getEditingFormFormCrossReference_10_0() { return cEditingFormFormCrossReference_10_0; }
 
 		//QualifiedName
-		public RuleCall getEditingFormFormQualifiedNameParserRuleCall_11_0_1() { return cEditingFormFormQualifiedNameParserRuleCall_11_0_1; }
+		public RuleCall getEditingFormFormQualifiedNameParserRuleCall_10_0_1() { return cEditingFormFormQualifiedNameParserRuleCall_10_0_1; }
 	}
 
 	public class ListElements extends AbstractParserRuleElementFinder {
@@ -465,73 +524,65 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cListKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cRelationshipAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cRelationshipRelationshipCrossReference_6_0 = (CrossReference)cRelationshipAssignment_6.eContents().get(0);
-		private final RuleCall cRelationshipRelationshipQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cRelationshipRelationshipCrossReference_6_0.eContents().get(1);
-		private final Keyword cEditsKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cEditingFormAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cEditingFormFormCrossReference_8_0 = (CrossReference)cEditingFormAssignment_8.eContents().get(0);
-		private final RuleCall cEditingFormFormQualifiedNameParserRuleCall_8_0_1 = (RuleCall)cEditingFormFormCrossReference_8_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRelationshipAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cRelationshipRelationshipCrossReference_4_0 = (CrossReference)cRelationshipAssignment_4.eContents().get(0);
+		private final RuleCall cRelationshipRelationshipQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cRelationshipRelationshipCrossReference_4_0.eContents().get(1);
+		private final Keyword cEditsKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cEditingFormAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cEditingFormFormCrossReference_6_0 = (CrossReference)cEditingFormAssignment_6.eContents().get(0);
+		private final RuleCall cEditingFormFormQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cEditingFormFormCrossReference_6_0.eContents().get(1);
 		
 		//List:
-		//	"list" elementID=ID "\"" label=STRING "\"" "handles" relationship=[Relationship|QualifiedName] "edits"
+		//	"list" elementID=EString label=EString "handles" relationship=[Relationship|QualifiedName] "edits"
 		//	editingForm=[Form|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"list" elementID=ID "\"" label=STRING "\"" "handles" relationship=[Relationship|QualifiedName] "edits"
+		//"list" elementID=EString label=EString "handles" relationship=[Relationship|QualifiedName] "edits"
 		//editingForm=[Form|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"list"
 		public Keyword getListKeyword_0() { return cListKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//relationship=[Relationship|QualifiedName]
-		public Assignment getRelationshipAssignment_6() { return cRelationshipAssignment_6; }
+		public Assignment getRelationshipAssignment_4() { return cRelationshipAssignment_4; }
 
 		//[Relationship|QualifiedName]
-		public CrossReference getRelationshipRelationshipCrossReference_6_0() { return cRelationshipRelationshipCrossReference_6_0; }
+		public CrossReference getRelationshipRelationshipCrossReference_4_0() { return cRelationshipRelationshipCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getRelationshipRelationshipQualifiedNameParserRuleCall_6_0_1() { return cRelationshipRelationshipQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getRelationshipRelationshipQualifiedNameParserRuleCall_4_0_1() { return cRelationshipRelationshipQualifiedNameParserRuleCall_4_0_1; }
 
 		//"edits"
-		public Keyword getEditsKeyword_7() { return cEditsKeyword_7; }
+		public Keyword getEditsKeyword_5() { return cEditsKeyword_5; }
 
 		//editingForm=[Form|QualifiedName]
-		public Assignment getEditingFormAssignment_8() { return cEditingFormAssignment_8; }
+		public Assignment getEditingFormAssignment_6() { return cEditingFormAssignment_6; }
 
 		//[Form|QualifiedName]
-		public CrossReference getEditingFormFormCrossReference_8_0() { return cEditingFormFormCrossReference_8_0; }
+		public CrossReference getEditingFormFormCrossReference_6_0() { return cEditingFormFormCrossReference_6_0; }
 
 		//QualifiedName
-		public RuleCall getEditingFormFormQualifiedNameParserRuleCall_8_0_1() { return cEditingFormFormQualifiedNameParserRuleCall_8_0_1; }
+		public RuleCall getEditingFormFormQualifiedNameParserRuleCall_6_0_1() { return cEditingFormFormQualifiedNameParserRuleCall_6_0_1; }
 	}
 
 	public class AttributePageElementElements extends AbstractParserRuleElementFinder {
@@ -575,55 +626,47 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTimeSelectionFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAttributeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cAttributeAttributeCrossReference_6_0 = (CrossReference)cAttributeAssignment_6.eContents().get(0);
-		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cAttributeAttributeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributeAttributeCrossReference_4_0 = (CrossReference)cAttributeAssignment_4.eContents().get(0);
+		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cAttributeAttributeCrossReference_4_0.eContents().get(1);
 		
 		//TimeSelectionField:
-		//	"time-selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+		//	"time-selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"time-selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName]
+		//"time-selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"time-selection-field"
 		public Keyword getTimeSelectionFieldKeyword_0() { return cTimeSelectionFieldKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//attribute=[Attribute|QualifiedName]
-		public Assignment getAttributeAssignment_6() { return cAttributeAssignment_6; }
+		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getAttributeAttributeCrossReference_6_0() { return cAttributeAttributeCrossReference_6_0; }
+		public CrossReference getAttributeAttributeCrossReference_4_0() { return cAttributeAttributeCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_6_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_4_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_4_0_1; }
 	}
 
 	public class DateSelectionFieldElements extends AbstractParserRuleElementFinder {
@@ -631,55 +674,47 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDateSelectionFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAttributeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cAttributeAttributeCrossReference_6_0 = (CrossReference)cAttributeAssignment_6.eContents().get(0);
-		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cAttributeAttributeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributeAttributeCrossReference_4_0 = (CrossReference)cAttributeAssignment_4.eContents().get(0);
+		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cAttributeAttributeCrossReference_4_0.eContents().get(1);
 		
 		//DateSelectionField:
-		//	"date-selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+		//	"date-selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"date-selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName]
+		//"date-selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"date-selection-field"
 		public Keyword getDateSelectionFieldKeyword_0() { return cDateSelectionFieldKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//attribute=[Attribute|QualifiedName]
-		public Assignment getAttributeAssignment_6() { return cAttributeAssignment_6; }
+		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getAttributeAttributeCrossReference_6_0() { return cAttributeAttributeCrossReference_6_0; }
+		public CrossReference getAttributeAttributeCrossReference_4_0() { return cAttributeAttributeCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_6_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_4_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_4_0_1; }
 	}
 
 	public class ColumnElements extends AbstractParserRuleElementFinder {
@@ -687,55 +722,47 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cColumnKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAttributeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cAttributeAttributeCrossReference_6_0 = (CrossReference)cAttributeAssignment_6.eContents().get(0);
-		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cAttributeAttributeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributeAttributeCrossReference_4_0 = (CrossReference)cAttributeAssignment_4.eContents().get(0);
+		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cAttributeAttributeCrossReference_4_0.eContents().get(1);
 		
 		//Column:
-		//	"column" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+		//	"column" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"column" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName]
+		//"column" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"column"
 		public Keyword getColumnKeyword_0() { return cColumnKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//attribute=[Attribute|QualifiedName]
-		public Assignment getAttributeAssignment_6() { return cAttributeAssignment_6; }
+		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getAttributeAttributeCrossReference_6_0() { return cAttributeAttributeCrossReference_6_0; }
+		public CrossReference getAttributeAttributeCrossReference_4_0() { return cAttributeAttributeCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_6_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_4_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_4_0_1; }
 	}
 
 	public class SelectionFieldElements extends AbstractParserRuleElementFinder {
@@ -743,55 +770,47 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSelectionFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAttributeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cAttributeAttributeCrossReference_6_0 = (CrossReference)cAttributeAssignment_6.eContents().get(0);
-		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cAttributeAttributeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributeAttributeCrossReference_4_0 = (CrossReference)cAttributeAssignment_4.eContents().get(0);
+		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cAttributeAttributeCrossReference_4_0.eContents().get(1);
 		
 		//SelectionField:
-		//	"selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+		//	"selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName]
+		//"selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"selection-field"
 		public Keyword getSelectionFieldKeyword_0() { return cSelectionFieldKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//attribute=[Attribute|QualifiedName]
-		public Assignment getAttributeAssignment_6() { return cAttributeAssignment_6; }
+		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getAttributeAttributeCrossReference_6_0() { return cAttributeAttributeCrossReference_6_0; }
+		public CrossReference getAttributeAttributeCrossReference_4_0() { return cAttributeAttributeCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_6_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_4_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_4_0_1; }
 	}
 
 	public class TextAreaElements extends AbstractParserRuleElementFinder {
@@ -799,55 +818,47 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTextAreaKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHandlesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAttributeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cAttributeAttributeCrossReference_6_0 = (CrossReference)cAttributeAssignment_6.eContents().get(0);
-		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cAttributeAttributeCrossReference_6_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Keyword cHandlesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributeAttributeCrossReference_4_0 = (CrossReference)cAttributeAssignment_4.eContents().get(0);
+		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cAttributeAttributeCrossReference_4_0.eContents().get(1);
 		
 		//TextArea:
-		//	"text-area" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+		//	"text-area" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"text-area" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName]
+		//"text-area" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"text-area"
 		public Keyword getTextAreaKeyword_0() { return cTextAreaKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
-
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_5() { return cHandlesKeyword_5; }
+		public Keyword getHandlesKeyword_3() { return cHandlesKeyword_3; }
 
 		//attribute=[Attribute|QualifiedName]
-		public Assignment getAttributeAssignment_6() { return cAttributeAssignment_6; }
+		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getAttributeAttributeCrossReference_6_0() { return cAttributeAttributeCrossReference_6_0; }
+		public CrossReference getAttributeAttributeCrossReference_4_0() { return cAttributeAttributeCrossReference_4_0; }
 
 		//QualifiedName
-		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_6_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_6_0_1; }
+		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_4_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_4_0_1; }
 	}
 
 	public class TextFieldElements extends AbstractParserRuleElementFinder {
@@ -855,72 +866,64 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTextFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementIDIDTerminalRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cFormatKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cFormatAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cFormatSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cFormatAssignment_5_1.eContents().get(0);
-		private final Keyword cHandlesKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cAttributeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cAttributeAttributeCrossReference_7_0 = (CrossReference)cAttributeAssignment_7.eContents().get(0);
-		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_7_0_1 = (RuleCall)cAttributeAttributeCrossReference_7_0.eContents().get(1);
+		private final RuleCall cElementIDEStringParserRuleCall_1_0 = (RuleCall)cElementIDAssignment_1.eContents().get(0);
+		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLabelEStringParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cFormatKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cFormatAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cFormatEStringParserRuleCall_3_1_0 = (RuleCall)cFormatAssignment_3_1.eContents().get(0);
+		private final Keyword cHandlesKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cAttributeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cAttributeAttributeCrossReference_5_0 = (CrossReference)cAttributeAssignment_5.eContents().get(0);
+		private final RuleCall cAttributeAttributeQualifiedNameParserRuleCall_5_0_1 = (RuleCall)cAttributeAttributeCrossReference_5_0.eContents().get(1);
 		
 		//TextField:
-		//	"text-field" elementID=ID "\"" label=STRING "\"" ("format" format=STRING)? "handles"
+		//	"text-field" elementID=EString label=EString ("format" format=EString)? "handles"
 		//	attribute=[Attribute|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"text-field" elementID=ID "\"" label=STRING "\"" ("format" format=STRING)? "handles" attribute=[Attribute|QualifiedName]
+		//"text-field" elementID=EString label=EString ("format" format=EString)? "handles" attribute=[Attribute|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"text-field"
 		public Keyword getTextFieldKeyword_0() { return cTextFieldKeyword_0; }
 
-		//elementID=ID
+		//elementID=EString
 		public Assignment getElementIDAssignment_1() { return cElementIDAssignment_1; }
 
-		//ID
-		public RuleCall getElementIDIDTerminalRuleCall_1_0() { return cElementIDIDTerminalRuleCall_1_0; }
+		//EString
+		public RuleCall getElementIDEStringParserRuleCall_1_0() { return cElementIDEStringParserRuleCall_1_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+		//label=EString
+		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
 
-		//label=STRING
-		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
+		//EString
+		public RuleCall getLabelEStringParserRuleCall_2_0() { return cLabelEStringParserRuleCall_2_0; }
 
-		//STRING
-		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_4() { return cQuotationMarkKeyword_4; }
-
-		//("format" format=STRING)?
-		public Group getGroup_5() { return cGroup_5; }
+		//("format" format=EString)?
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"format"
-		public Keyword getFormatKeyword_5_0() { return cFormatKeyword_5_0; }
+		public Keyword getFormatKeyword_3_0() { return cFormatKeyword_3_0; }
 
-		//format=STRING
-		public Assignment getFormatAssignment_5_1() { return cFormatAssignment_5_1; }
+		//format=EString
+		public Assignment getFormatAssignment_3_1() { return cFormatAssignment_3_1; }
 
-		//STRING
-		public RuleCall getFormatSTRINGTerminalRuleCall_5_1_0() { return cFormatSTRINGTerminalRuleCall_5_1_0; }
+		//EString
+		public RuleCall getFormatEStringParserRuleCall_3_1_0() { return cFormatEStringParserRuleCall_3_1_0; }
 
 		//"handles"
-		public Keyword getHandlesKeyword_6() { return cHandlesKeyword_6; }
+		public Keyword getHandlesKeyword_4() { return cHandlesKeyword_4; }
 
 		//attribute=[Attribute|QualifiedName]
-		public Assignment getAttributeAssignment_7() { return cAttributeAssignment_7; }
+		public Assignment getAttributeAssignment_5() { return cAttributeAssignment_5; }
 
 		//[Attribute|QualifiedName]
-		public CrossReference getAttributeAttributeCrossReference_7_0() { return cAttributeAttributeCrossReference_7_0; }
+		public CrossReference getAttributeAttributeCrossReference_5_0() { return cAttributeAttributeCrossReference_5_0; }
 
 		//QualifiedName
-		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_7_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_7_0_1; }
+		public RuleCall getAttributeAttributeQualifiedNameParserRuleCall_5_0_1() { return cAttributeAttributeQualifiedNameParserRuleCall_5_0_1; }
 	}
 
 	public class EIntElements extends AbstractParserRuleElementFinder {
@@ -929,7 +932,14 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//EInt returns ecore::EInt:
+		/// *TextField returns TextField: 
+		//'text-field'
+		//(elementID=EString)?
+		//label=EString
+		//(format=EString)?
+		//
+		//'handles' attribute=[Attribute|QualifiedName]
+		//;* / EInt returns ecore::EInt:
 		//	"-"? INT;
 		public ParserRule getRule() { return rule; }
 
@@ -976,84 +986,85 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "CompositeConditionType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cAndEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cAnd0Keyword_0_0 = (Keyword)cAndEnumLiteralDeclaration_0.eContents().get(0);
+		private final Keyword cAndAndKeyword_0_0 = (Keyword)cAndEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cOrEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cOr1Keyword_1_0 = (Keyword)cOrEnumLiteralDeclaration_1.eContents().get(0);
+		private final Keyword cOrOrKeyword_1_0 = (Keyword)cOrEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum CompositeConditionType:
-		//	And="0" | Or="1";
+		//	And | Or;
 		public EnumRule getRule() { return rule; }
 
-		//And="0" | Or="1"
+		//And | Or
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//And="0"
+		//And
 		public EnumLiteralDeclaration getAndEnumLiteralDeclaration_0() { return cAndEnumLiteralDeclaration_0; }
 
-		//"0"
-		public Keyword getAnd0Keyword_0_0() { return cAnd0Keyword_0_0; }
+		//"And"
+		public Keyword getAndAndKeyword_0_0() { return cAndAndKeyword_0_0; }
 
-		//Or="1"
+		//Or
 		public EnumLiteralDeclaration getOrEnumLiteralDeclaration_1() { return cOrEnumLiteralDeclaration_1; }
 
-		//"1"
-		public Keyword getOr1Keyword_1_0() { return cOr1Keyword_1_0; }
+		//"Or"
+		public Keyword getOrOrKeyword_1_0() { return cOrOrKeyword_1_0; }
 	}
 
 	public class ConditionTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ConditionType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cHideEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cHide0Keyword_0_0 = (Keyword)cHideEnumLiteralDeclaration_0.eContents().get(0);
+		private final Keyword cHideHideKeyword_0_0 = (Keyword)cHideEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cShowEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cShow1Keyword_1_0 = (Keyword)cShowEnumLiteralDeclaration_1.eContents().get(0);
+		private final Keyword cShowShowKeyword_1_0 = (Keyword)cShowEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cEnableEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cEnable2Keyword_2_0 = (Keyword)cEnableEnumLiteralDeclaration_2.eContents().get(0);
+		private final Keyword cEnableEnableKeyword_2_0 = (Keyword)cEnableEnumLiteralDeclaration_2.eContents().get(0);
 		private final EnumLiteralDeclaration cDisableEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cDisable3Keyword_3_0 = (Keyword)cDisableEnumLiteralDeclaration_3.eContents().get(0);
+		private final Keyword cDisableDisableKeyword_3_0 = (Keyword)cDisableEnumLiteralDeclaration_3.eContents().get(0);
 		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cNone4Keyword_4_0 = (Keyword)cNoneEnumLiteralDeclaration_4.eContents().get(0);
+		private final Keyword cNoneNoneKeyword_4_0 = (Keyword)cNoneEnumLiteralDeclaration_4.eContents().get(0);
 		
 		//enum ConditionType:
-		//	Hide="0" | Show="1" | Enable="2" | Disable="3" | None="4";
+		//	Hide | Show | Enable | Disable | None;
 		public EnumRule getRule() { return rule; }
 
-		//Hide="0" | Show="1" | Enable="2" | Disable="3" | None="4"
+		//Hide | Show | Enable | Disable | None
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Hide="0"
+		//Hide
 		public EnumLiteralDeclaration getHideEnumLiteralDeclaration_0() { return cHideEnumLiteralDeclaration_0; }
 
-		//"0"
-		public Keyword getHide0Keyword_0_0() { return cHide0Keyword_0_0; }
+		//"Hide"
+		public Keyword getHideHideKeyword_0_0() { return cHideHideKeyword_0_0; }
 
-		//Show="1"
+		//Show
 		public EnumLiteralDeclaration getShowEnumLiteralDeclaration_1() { return cShowEnumLiteralDeclaration_1; }
 
-		//"1"
-		public Keyword getShow1Keyword_1_0() { return cShow1Keyword_1_0; }
+		//"Show"
+		public Keyword getShowShowKeyword_1_0() { return cShowShowKeyword_1_0; }
 
-		//Enable="2"
+		//Enable
 		public EnumLiteralDeclaration getEnableEnumLiteralDeclaration_2() { return cEnableEnumLiteralDeclaration_2; }
 
-		//"2"
-		public Keyword getEnable2Keyword_2_0() { return cEnable2Keyword_2_0; }
+		//"Enable"
+		public Keyword getEnableEnableKeyword_2_0() { return cEnableEnableKeyword_2_0; }
 
-		//Disable="3"
+		//Disable
 		public EnumLiteralDeclaration getDisableEnumLiteralDeclaration_3() { return cDisableEnumLiteralDeclaration_3; }
 
-		//"3"
-		public Keyword getDisable3Keyword_3_0() { return cDisable3Keyword_3_0; }
+		//"Disable"
+		public Keyword getDisableDisableKeyword_3_0() { return cDisableDisableKeyword_3_0; }
 
-		//None="4"
+		//None
 		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_4() { return cNoneEnumLiteralDeclaration_4; }
 
-		//"4"
-		public Keyword getNone4Keyword_4_0() { return cNone4Keyword_4_0; }
+		//"None"
+		public Keyword getNoneNoneKeyword_4_0() { return cNoneNoneKeyword_4_0; }
 	}
 	
 	private final FormModelElements pFormModel;
 	private final FormElements pForm;
+	private final EStringElements pEString;
 	private final PageElements pPage;
 	private final ConditionElements pCondition;
 	private final CompositeConditionElements pCompositeCondition;
@@ -1085,6 +1096,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pFormModel = new FormModelElements();
 		this.pForm = new FormElements();
+		this.pEString = new EStringElements();
 		this.pPage = new PageElements();
 		this.pCondition = new ConditionElements();
 		this.pCompositeCondition = new CompositeConditionElements();
@@ -1135,7 +1147,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//// implement your grammar here, starting with the root element: FormModel
 	//FormModel:
-	//	{FormModel} forms+=Form*;
+	//	{FormModel} forms+=Form+;
 	public FormModelElements getFormModelAccess() {
 		return pFormModel;
 	}
@@ -1145,9 +1157,9 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Form:
-	//	welcomeForm?="welcome"? "form" name=ID "\"" title=STRING "\"" "handles" entity=[Entity|QualifiedName] "{"
-	//	pages+=Page* //TODO: description missing?
-	// "}";
+	//	welcomeForm?="welcome"? "form" name=ID title=EString description=EString? "handles" entity=[Entity|QualifiedName] "{"
+	//	pages+=Page* //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
+	//	"}";
 	public FormElements getFormAccess() {
 		return pForm;
 	}
@@ -1156,8 +1168,18 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		return getFormAccess().getRule();
 	}
 
+	//EString returns ecore::EString:
+	//	STRING | ID;
+	public EStringElements getEStringAccess() {
+		return pEString;
+	}
+	
+	public ParserRule getEStringRule() {
+		return getEStringAccess().getRule();
+	}
+
 	//Page:
-	//	"page" "\"" title=STRING "\"" "{" (pageElements+=PageElement ","?)* "}" condition=Condition?;
+	//	"page" title=STRING "{" (pageElements+=PageElement ",")* pageElements+=PageElement "}" ("with" condition=Condition)?;
 	public PageElements getPageAccess() {
 		return pPage;
 	}
@@ -1167,7 +1189,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Condition:
-	//	"with" AttributeValueCondition | "with" CompositeCondition;
+	//	AttributeValueCondition | CompositeCondition;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}
@@ -1176,9 +1198,10 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		return getConditionAccess().getRule();
 	}
 
-	////TODO: how to do this?
-	// CompositeCondition:
-	//	"composite-condition" conditionID=ID ":";
+	////TODO: Just put in attributevalueCondition to make it easy. Change to Condition later.
+	//CompositeCondition:
+	//	"composite-condition" conditionID=EString ":" "(" composedConditions+=AttributeValueCondition
+	//	compositionType=CompositeConditionType composedConditions+=AttributeValueCondition ")" "?" type=ConditionType;
 	public CompositeConditionElements getCompositeConditionAccess() {
 		return pCompositeCondition;
 	}
@@ -1188,7 +1211,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AttributeValueCondition:
-	//	"attribute-condition" conditionID=ID ":" attribute=[Attribute|QualifiedName] "==" value=STRING "?"
+	//	"attribute-condition" conditionID=EString ":" attribute=[Attribute|QualifiedName] "==" value=EString "?"
 	//	type=ConditionType;
 	public AttributeValueConditionElements getAttributeValueConditionAccess() {
 		return pAttributeValueCondition;
@@ -1199,7 +1222,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum CompositeConditionType:
-	//	And="0" | Or="1";
+	//	And | Or;
 	public CompositeConditionTypeElements getCompositeConditionTypeAccess() {
 		return unknownRuleCompositeConditionType;
 	}
@@ -1209,7 +1232,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ConditionType:
-	//	Hide="0" | Show="1" | Enable="2" | Disable="3" | None="4";
+	//	Hide | Show | Enable | Disable | None;
 	public ConditionTypeElements getConditionTypeAccess() {
 		return unknownRuleConditionType;
 	}
@@ -1239,8 +1262,8 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Table:
-	//	"table" elementID=ID "\"" label=STRING "\"" "handles" relationship=[Relationship|QualifiedName] "{" (columns+=Column
-	//	",")* "}" "edits" editingForm=[Form|QualifiedName];
+	//	"table" elementID=EString label=EString "handles" relationship=[Relationship|QualifiedName] "{" (columns+=Column
+	//	",")* columns+=Column "}" "edits" editingForm=[Form|QualifiedName];
 	public TableElements getTableAccess() {
 		return pTable;
 	}
@@ -1250,7 +1273,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//List:
-	//	"list" elementID=ID "\"" label=STRING "\"" "handles" relationship=[Relationship|QualifiedName] "edits"
+	//	"list" elementID=EString label=EString "handles" relationship=[Relationship|QualifiedName] "edits"
 	//	editingForm=[Form|QualifiedName];
 	public ListElements getListAccess() {
 		return pList;
@@ -1271,7 +1294,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TimeSelectionField:
-	//	"time-selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+	//	"time-selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 	public TimeSelectionFieldElements getTimeSelectionFieldAccess() {
 		return pTimeSelectionField;
 	}
@@ -1281,7 +1304,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DateSelectionField:
-	//	"date-selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+	//	"date-selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 	public DateSelectionFieldElements getDateSelectionFieldAccess() {
 		return pDateSelectionField;
 	}
@@ -1291,7 +1314,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Column:
-	//	"column" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+	//	"column" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 	public ColumnElements getColumnAccess() {
 		return pColumn;
 	}
@@ -1301,7 +1324,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelectionField:
-	//	"selection-field" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+	//	"selection-field" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 	public SelectionFieldElements getSelectionFieldAccess() {
 		return pSelectionField;
 	}
@@ -1311,7 +1334,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TextArea:
-	//	"text-area" elementID=ID "\"" label=STRING "\"" "handles" attribute=[Attribute|QualifiedName];
+	//	"text-area" elementID=EString label=EString "handles" attribute=[Attribute|QualifiedName];
 	public TextAreaElements getTextAreaAccess() {
 		return pTextArea;
 	}
@@ -1321,7 +1344,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TextField:
-	//	"text-field" elementID=ID "\"" label=STRING "\"" ("format" format=STRING)? "handles"
+	//	"text-field" elementID=EString label=EString ("format" format=EString)? "handles"
 	//	attribute=[Attribute|QualifiedName];
 	public TextFieldElements getTextFieldAccess() {
 		return pTextField;
@@ -1331,7 +1354,14 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		return getTextFieldAccess().getRule();
 	}
 
-	//EInt returns ecore::EInt:
+	/// *TextField returns TextField: 
+	//'text-field'
+	//(elementID=EString)?
+	//label=EString
+	//(format=EString)?
+	//
+	//'handles' attribute=[Attribute|QualifiedName]
+	//;* / EInt returns ecore::EInt:
 	//	"-"? INT;
 	public EIntElements getEIntAccess() {
 		return pEInt;

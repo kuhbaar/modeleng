@@ -94,7 +94,7 @@ public abstract class AbstractEntitySemanticSequencer extends AbstractDelegating
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (superType=[Entity|ID] superType=[Entity|ID]*)? id=[Attribute|QualifiedName] features+=Feature* features+=Feature)
+	 *     (name=ID superType=[Entity|ID]? id=[Attribute|QualifiedName] features+=Feature* features+=Feature)
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

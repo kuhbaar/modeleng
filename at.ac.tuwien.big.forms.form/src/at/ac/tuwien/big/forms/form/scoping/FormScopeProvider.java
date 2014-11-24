@@ -9,16 +9,28 @@ import java.util.HashSet;
 
 
 
+
+
+
+
+
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
+import at.ac.tuwien.big.forms.Attribute;
 import at.ac.tuwien.big.forms.AttributePageElement;
 import at.ac.tuwien.big.forms.Entity;
 import at.ac.tuwien.big.forms.Feature;
 import at.ac.tuwien.big.forms.Form;
+import at.ac.tuwien.big.forms.FormModel;
 import at.ac.tuwien.big.forms.FormsPackage;
 import at.ac.tuwien.big.forms.Page;
+import at.ac.tuwien.big.forms.TextField;
+import at.ac.tuwien.big.forms.impl.FormsPackageImpl;
 
 /**
  * This class contains custom scoping description.
@@ -30,25 +42,56 @@ import at.ac.tuwien.big.forms.Page;
 public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
 	
 	/* An attribute page element has to reference an attribute of the entity the containing form references. */
-	
-	/*public IScope scope_AttributePageElement_attribute(AttributePageElement ape, EReference ref){
+	public IScope scope_AttributePageElement_attribute(AttributePageElement ape, EReference ref){
+		Page p = (Page) ape.eContainer();
+		Form f = (Form) p.eContainer();
+		/*EObject o = ape.eContainer();
+		while (!(o instanceof Form)){
+			o = o.eContainer();
+			if(o == null)
+				return IScope.NULLSCOPE;
+		}
+		
+		Form f = (Form) o;*/
+		Entity e = f.getEntity();
+		
 		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE))
-			return Scopes.scopeFor(getAllEntityAttributes(f));
-		return IScope.NULLSCOPE;
-	}*/
-	public IScope scope_Form_pages(Form f, EReference ref){
-		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE))
-			return Scopes.scopeFor(getAllEntityAttributes(f));
+			return Scopes.scopeFor(getAllMemberAttributes(e));
 		return IScope.NULLSCOPE;
 	}
 	
-	private Collection<Page> getAllEntityAttributes(Form f){
-		Collection<Page> allAttr = new HashSet<Page>();
-		Collection<Feature> feats = f.getEntity().getFeatures(); // feats to show in scoping
+	private Collection<Attribute> getAllMemberAttributes(Entity entity) {
+		Collection<Feature> allMemberAttributes = new HashSet<Feature>();
+		allMemberAttributes.addAll(entity.getFeatures());
 		
-		//search for Form containing the ape
+		Entity st = entity.getSuperType();
 		
+		while(st != null){
+			allMemberAttributes.addAll(st.getFeatures());
+			st = st.getSuperType();
+		}
+		
+		Collection<Attribute> allAttr = new HashSet<Attribute>();
+		for (Feature f : allMemberAttributes){
+			if(f instanceof Attribute)
+				allAttr.add((Attribute) f);
+		}
 		
 		return allAttr;
 	}
+	/*private Collection<Attribute> getAllEntityAttributes(AttributePageElement ape){
+		Collection<Attribute> allAttr = new HashSet<Attribute>();
+		
+		Form f = (Form) ape.eContainer().eContainer();
+		
+		//Form f = (Form) EcoreUtil.getRootContainer(ape);
+		System.out.println("DEBUG Mode working?!");
+		Collection<Feature> feats = f.getEntity().getFeatures(); // feats to show in scoping
+		for(Feature fe : feats){
+			if(fe instanceof Attribute)
+				allAttr.add((Attribute) fe);
+		}
+		
+		return allAttr;
+	}*/
 }

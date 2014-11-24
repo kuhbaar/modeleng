@@ -79,11 +79,6 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSuperTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final CrossReference cSuperTypeEntityCrossReference_2_1_0 = (CrossReference)cSuperTypeAssignment_2_1.eContents().get(0);
 		private final RuleCall cSuperTypeEntityIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_1_0.eContents().get(1);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cSuperTypeAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final CrossReference cSuperTypeEntityCrossReference_2_2_1_0 = (CrossReference)cSuperTypeAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cSuperTypeEntityIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cIdKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cIdAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -108,12 +103,12 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		////THIS PROBLEM CAN ONLY BE FIXED USING SCOPING. LOOK AT THIS DISCUSSION THREAD FROM TUWEL:https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53736
 		//
 		//Entity:
-		//	"entity" name=ID ("extends" superType=[Entity] ("," superType=[Entity])*)? "{" "id" id=[Attribute|QualifiedName] ","
-		//	((features+=Feature ",")* features+=Feature) "}";
+		//	"entity" name=ID ("extends" superType=[Entity])? "{" "id" id=[Attribute|QualifiedName] "," ((features+=Feature ",")*
+		//	features+=Feature) "}";
 		public ParserRule getRule() { return rule; }
 
-		//"entity" name=ID ("extends" superType=[Entity] ("," superType=[Entity])*)? "{" "id" id=[Attribute|QualifiedName] ","
-		//((features+=Feature ",")* features+=Feature) "}"
+		//"entity" name=ID ("extends" superType=[Entity])? "{" "id" id=[Attribute|QualifiedName] "," ((features+=Feature ",")*
+		//features+=Feature) "}"
 		public Group getGroup() { return cGroup; }
 
 		//"entity"
@@ -125,7 +120,7 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("extends" superType=[Entity] ("," superType=[Entity])*)?
+		//("extends" superType=[Entity])?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"extends"
@@ -139,21 +134,6 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getSuperTypeEntityIDTerminalRuleCall_2_1_0_1() { return cSuperTypeEntityIDTerminalRuleCall_2_1_0_1; }
-
-		//("," superType=[Entity])*
-		public Group getGroup_2_2() { return cGroup_2_2; }
-
-		//","
-		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
-
-		//superType=[Entity]
-		public Assignment getSuperTypeAssignment_2_2_1() { return cSuperTypeAssignment_2_2_1; }
-
-		//[Entity]
-		public CrossReference getSuperTypeEntityCrossReference_2_2_1_0() { return cSuperTypeEntityCrossReference_2_2_1_0; }
-
-		//ID
-		public RuleCall getSuperTypeEntityIDTerminalRuleCall_2_2_1_0_1() { return cSuperTypeEntityIDTerminalRuleCall_2_2_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -685,8 +665,8 @@ public class EntityGrammarAccess extends AbstractGrammarElementFinder {
 	////THIS PROBLEM CAN ONLY BE FIXED USING SCOPING. LOOK AT THIS DISCUSSION THREAD FROM TUWEL:https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53736
 	//
 	//Entity:
-	//	"entity" name=ID ("extends" superType=[Entity] ("," superType=[Entity])*)? "{" "id" id=[Attribute|QualifiedName] ","
-	//	((features+=Feature ",")* features+=Feature) "}";
+	//	"entity" name=ID ("extends" superType=[Entity])? "{" "id" id=[Attribute|QualifiedName] "," ((features+=Feature ",")*
+	//	features+=Feature) "}";
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}

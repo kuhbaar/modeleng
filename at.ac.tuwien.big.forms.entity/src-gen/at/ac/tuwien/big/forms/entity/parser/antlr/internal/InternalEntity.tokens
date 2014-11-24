@@ -1,5 +1,5 @@
 '*'=18
-','=13
+','=15
 '-'=27
 '.'=28
 '..'=22
@@ -20,10 +20,10 @@
 'entity'=11
 'enum'=25
 'extends'=12
-'id'=15
+'id'=14
 'opposite-of'=24
 'reference'=20
-'{'=14
+'{'=13
 '}'=16
 RULE_ANY_OTHER=10
 RULE_ID=4

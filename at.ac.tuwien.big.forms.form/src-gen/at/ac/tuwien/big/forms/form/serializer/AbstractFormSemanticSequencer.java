@@ -139,7 +139,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (conditionID=ID attribute=[Attribute|QualifiedName] value=STRING type=ConditionType)
+	 *     (conditionID=EString attribute=[Attribute|QualifiedName] value=EString type=ConditionType)
 	 */
 	protected void sequence_AttributeValueCondition(EObject context, AttributeValueCondition semanticObject) {
 		if(errorAcceptor != null) {
@@ -154,9 +154,9 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAttributeValueConditionAccess().getConditionIDIDTerminalRuleCall_1_0(), semanticObject.getConditionID());
+		feeder.accept(grammarAccess.getAttributeValueConditionAccess().getConditionIDEStringParserRuleCall_1_0(), semanticObject.getConditionID());
 		feeder.accept(grammarAccess.getAttributeValueConditionAccess().getAttributeAttributeQualifiedNameParserRuleCall_3_0_1(), semanticObject.getAttribute());
-		feeder.accept(grammarAccess.getAttributeValueConditionAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAttributeValueConditionAccess().getValueEStringParserRuleCall_5_0(), semanticObject.getValue());
 		feeder.accept(grammarAccess.getAttributeValueConditionAccess().getTypeConditionTypeEnumRuleCall_7_0(), semanticObject.getType());
 		feeder.finish();
 	}
@@ -164,7 +164,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING attribute=[Attribute|QualifiedName])
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_Column(EObject context, Column semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -173,7 +173,13 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     conditionID=ID
+	 *     (
+	 *         conditionID=EString 
+	 *         composedConditions+=AttributeValueCondition 
+	 *         compositionType=CompositeConditionType 
+	 *         composedConditions+=AttributeValueCondition 
+	 *         type=ConditionType
+	 *     )
 	 */
 	protected void sequence_CompositeCondition(EObject context, CompositeCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -182,7 +188,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING attribute=[Attribute|QualifiedName])
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_DateSelectionField(EObject context, DateSelectionField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -191,7 +197,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (forms+=Form*)
+	 *     forms+=Form+
 	 */
 	protected void sequence_FormModel(EObject context, FormModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -200,7 +206,14 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (welcomeForm?='welcome'? name=ID title=STRING entity=[Entity|QualifiedName] pages+=Page*)
+	 *     (
+	 *         welcomeForm?='welcome'? 
+	 *         name=ID 
+	 *         title=EString 
+	 *         description=EString? 
+	 *         entity=[Entity|QualifiedName] 
+	 *         pages+=Page*
+	 *     )
 	 */
 	protected void sequence_Form(EObject context, Form semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -209,7 +222,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING relationship=[Relationship|QualifiedName] editingForm=[Form|QualifiedName])
+	 *     (elementID=EString label=EString relationship=[Relationship|QualifiedName] editingForm=[Form|QualifiedName])
 	 */
 	protected void sequence_List(EObject context, List semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -218,7 +231,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (title=STRING pageElements+=PageElement* condition=Condition?)
+	 *     (title=STRING pageElements+=PageElement* pageElements+=PageElement condition=Condition?)
 	 */
 	protected void sequence_Page(EObject context, Page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -227,7 +240,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING attribute=[Attribute|QualifiedName])
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_SelectionField(EObject context, SelectionField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -236,7 +249,14 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING relationship=[Relationship|QualifiedName] columns+=Column* editingForm=[Form|QualifiedName])
+	 *     (
+	 *         elementID=EString 
+	 *         label=EString 
+	 *         relationship=[Relationship|QualifiedName] 
+	 *         columns+=Column* 
+	 *         columns+=Column 
+	 *         editingForm=[Form|QualifiedName]
+	 *     )
 	 */
 	protected void sequence_Table(EObject context, Table semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -245,7 +265,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING attribute=[Attribute|QualifiedName])
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_TextArea(EObject context, TextArea semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -254,7 +274,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING format=STRING? attribute=[Attribute|QualifiedName])
+	 *     (elementID=EString label=EString format=EString? attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_TextField(EObject context, TextField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -263,7 +283,7 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (elementID=ID label=STRING attribute=[Attribute|QualifiedName])
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_TimeSelectionField(EObject context, TimeSelectionField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

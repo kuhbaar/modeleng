@@ -23,10 +23,9 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalFormParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'welcome'", "'form'", "'\"'", "'handles'", "'{'", "'}'", "'page'", "','", "'with'", "'composite-condition'", "':'", "'attribute-condition'", "'=='", "'?'", "'table'", "'edits'", "'list'", "'time-selection-field'", "'date-selection-field'", "'column'", "'selection-field'", "'text-area'", "'text-field'", "'format'", "'.'", "'0'", "'1'", "'2'", "'3'", "'4'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'welcome'", "'form'", "'handles'", "'{'", "'}'", "'page'", "','", "'with'", "'composite-condition'", "':'", "'('", "')'", "'?'", "'attribute-condition'", "'=='", "'table'", "'edits'", "'list'", "'time-selection-field'", "'date-selection-field'", "'column'", "'selection-field'", "'text-area'", "'text-field'", "'format'", "'.'", "'And'", "'Or'", "'Hide'", "'Show'", "'Enable'", "'Disable'", "'None'"
     };
     public static final int RULE_ID=4;
-    public static final int T__40=40;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -38,30 +37,34 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int T__31=31;
-    public static final int RULE_STRING=5;
-    public static final int T__32=32;
-    public static final int T__33=33;
     public static final int T__16=16;
-    public static final int T__34=34;
     public static final int T__15=15;
-    public static final int T__35=35;
     public static final int T__18=18;
-    public static final int T__36=36;
     public static final int T__17=17;
-    public static final int T__37=37;
     public static final int T__12=12;
-    public static final int T__38=38;
     public static final int T__11=11;
-    public static final int T__39=39;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_STRING=5;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=9;
 
     // delegates
@@ -143,7 +146,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormModel"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:77:1: ruleFormModel returns [EObject current=null] : ( () ( (lv_forms_1_0= ruleForm ) )* ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:77:1: ruleFormModel returns [EObject current=null] : ( () ( (lv_forms_1_0= ruleForm ) )+ ) ;
     public final EObject ruleFormModel() throws RecognitionException {
         EObject current = null;
 
@@ -153,11 +156,11 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:80:28: ( ( () ( (lv_forms_1_0= ruleForm ) )* ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:1: ( () ( (lv_forms_1_0= ruleForm ) )* )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:80:28: ( ( () ( (lv_forms_1_0= ruleForm ) )+ ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:1: ( () ( (lv_forms_1_0= ruleForm ) )+ )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:1: ( () ( (lv_forms_1_0= ruleForm ) )* )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:2: () ( (lv_forms_1_0= ruleForm ) )*
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:1: ( () ( (lv_forms_1_0= ruleForm ) )+ )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:2: () ( (lv_forms_1_0= ruleForm ) )+
             {
             // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:81:2: ()
             // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:82:5: 
@@ -172,7 +175,8 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:87:2: ( (lv_forms_1_0= ruleForm ) )*
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:87:2: ( (lv_forms_1_0= ruleForm ) )+
+            int cnt1=0;
             loop1:
             do {
                 int alt1=2;
@@ -221,8 +225,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop1;
+            	    if ( cnt1 >= 1 ) break loop1;
+            	    if (state.backtracking>0) {state.failed=true; return current;}
+                        EarlyExitException eee =
+                            new EarlyExitException(1, input);
+                        throw eee;
                 }
+                cnt1++;
             } while (true);
 
 
@@ -288,30 +297,31 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForm"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:122:1: ruleForm returns [EObject current=null] : ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '\"' ( (lv_title_4_0= RULE_STRING ) ) otherlv_5= '\"' otherlv_6= 'handles' ( ( ruleQualifiedName ) ) otherlv_8= '{' ( (lv_pages_9_0= rulePage ) )* otherlv_10= '}' ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:122:1: ruleForm returns [EObject current=null] : ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) ( (lv_title_3_0= ruleEString ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( (lv_pages_8_0= rulePage ) )* otherlv_9= '}' ) ;
     public final EObject ruleForm() throws RecognitionException {
         EObject current = null;
 
         Token lv_welcomeForm_0_0=null;
         Token otherlv_1=null;
         Token lv_name_2_0=null;
-        Token otherlv_3=null;
-        Token lv_title_4_0=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        EObject lv_pages_9_0 = null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        AntlrDatatypeRuleToken lv_title_3_0 = null;
+
+        AntlrDatatypeRuleToken lv_description_4_0 = null;
+
+        EObject lv_pages_8_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:125:28: ( ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '\"' ( (lv_title_4_0= RULE_STRING ) ) otherlv_5= '\"' otherlv_6= 'handles' ( ( ruleQualifiedName ) ) otherlv_8= '{' ( (lv_pages_9_0= rulePage ) )* otherlv_10= '}' ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:1: ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '\"' ( (lv_title_4_0= RULE_STRING ) ) otherlv_5= '\"' otherlv_6= 'handles' ( ( ruleQualifiedName ) ) otherlv_8= '{' ( (lv_pages_9_0= rulePage ) )* otherlv_10= '}' )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:125:28: ( ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) ( (lv_title_3_0= ruleEString ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( (lv_pages_8_0= rulePage ) )* otherlv_9= '}' ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:1: ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) ( (lv_title_3_0= ruleEString ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( (lv_pages_8_0= rulePage ) )* otherlv_9= '}' )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:1: ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '\"' ( (lv_title_4_0= RULE_STRING ) ) otherlv_5= '\"' otherlv_6= 'handles' ( ( ruleQualifiedName ) ) otherlv_8= '{' ( (lv_pages_9_0= rulePage ) )* otherlv_10= '}' )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:2: ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '\"' ( (lv_title_4_0= RULE_STRING ) ) otherlv_5= '\"' otherlv_6= 'handles' ( ( ruleQualifiedName ) ) otherlv_8= '{' ( (lv_pages_9_0= rulePage ) )* otherlv_10= '}'
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:1: ( ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) ( (lv_title_3_0= ruleEString ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( (lv_pages_8_0= rulePage ) )* otherlv_9= '}' )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:2: ( (lv_welcomeForm_0_0= 'welcome' ) )? otherlv_1= 'form' ( (lv_name_2_0= RULE_ID ) ) ( (lv_title_3_0= ruleEString ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( (lv_pages_8_0= rulePage ) )* otherlv_9= '}'
             {
             // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:126:2: ( (lv_welcomeForm_0_0= 'welcome' ) )?
             int alt2=2;
@@ -386,34 +396,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleForm290); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_3, grammarAccess.getFormAccess().getQuotationMarkKeyword_3());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:167:1: ( (lv_title_4_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:168:1: (lv_title_4_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:163:2: ( (lv_title_3_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:164:1: (lv_title_3_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:168:1: (lv_title_4_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:169:3: lv_title_4_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:164:1: (lv_title_3_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:165:3: lv_title_3_0= ruleEString
             {
-            lv_title_4_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleForm307); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_title_4_0, grammarAccess.getFormAccess().getTitleSTRINGTerminalRuleCall_4_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getFormAccess().getTitleEStringParserRuleCall_3_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleForm299);
+            lv_title_3_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getFormRule());
+              	            current = createModelElementForParent(grammarAccess.getFormRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"title",
-                      		lv_title_4_0, 
-                      		"STRING");
+                      		lv_title_3_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -422,23 +431,63 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleForm324); if (state.failed) return current;
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:181:2: ( (lv_description_4_0= ruleEString ) )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( ((LA3_0>=RULE_ID && LA3_0<=RULE_STRING)) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:182:1: (lv_description_4_0= ruleEString )
+                    {
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:182:1: (lv_description_4_0= ruleEString )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:183:3: lv_description_4_0= ruleEString
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getFormAccess().getDescriptionEStringParserRuleCall_4_0()); 
+                      	    
+                    }
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleForm320);
+                    lv_description_4_0=ruleEString();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getFormRule());
+                      	        }
+                             		set(
+                             			current, 
+                             			"description",
+                              		lv_description_4_0, 
+                              		"EString");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_5=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleForm333); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_5, grammarAccess.getFormAccess().getQuotationMarkKeyword_5());
+                  	newLeafNode(otherlv_5, grammarAccess.getFormAccess().getHandlesKeyword_5());
                   
             }
-            otherlv_6=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleForm336); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_6, grammarAccess.getFormAccess().getHandlesKeyword_6());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:193:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:194:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:203:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:204:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:194:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:195:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:204:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:205:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -449,10 +498,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getFormAccess().getEntityEntityCrossReference_7_0()); 
+              	        newCompositeNode(grammarAccess.getFormAccess().getEntityEntityCrossReference_6_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleForm359);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleForm356);
             ruleQualifiedName();
 
             state._fsp--;
@@ -468,37 +517,37 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleForm371); if (state.failed) return current;
+            otherlv_7=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleForm368); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_8, grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_8());
+                  	newLeafNode(otherlv_7, grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_7());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:212:1: ( (lv_pages_9_0= rulePage ) )*
-            loop3:
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:222:1: ( (lv_pages_8_0= rulePage ) )*
+            loop4:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-                if ( (LA3_0==17) ) {
-                    alt3=1;
+                if ( (LA4_0==16) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt4) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:213:1: (lv_pages_9_0= rulePage )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:223:1: (lv_pages_8_0= rulePage )
             	    {
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:213:1: (lv_pages_9_0= rulePage )
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:214:3: lv_pages_9_0= rulePage
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:223:1: (lv_pages_8_0= rulePage )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:224:3: lv_pages_8_0= rulePage
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getFormAccess().getPagesPageParserRuleCall_9_0()); 
+            	      	        newCompositeNode(grammarAccess.getFormAccess().getPagesPageParserRuleCall_8_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_rulePage_in_ruleForm392);
-            	    lv_pages_9_0=rulePage();
+            	    pushFollow(FollowSets000.FOLLOW_rulePage_in_ruleForm389);
+            	    lv_pages_8_0=rulePage();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -510,7 +559,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	             		add(
             	             			current, 
             	             			"pages",
-            	              		lv_pages_9_0, 
+            	              		lv_pages_8_0, 
             	              		"Page");
             	      	        afterParserOrEnumRuleCall();
             	      	    
@@ -523,14 +572,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop4;
                 }
             } while (true);
 
-            otherlv_10=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleForm405); if (state.failed) return current;
+            otherlv_9=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleForm402); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_10, grammarAccess.getFormAccess().getRightCurlyBracketKeyword_10());
+                  	newLeafNode(otherlv_9, grammarAccess.getFormAccess().getRightCurlyBracketKeyword_9());
                   
             }
 
@@ -555,8 +604,136 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleForm"
 
 
+    // $ANTLR start "entryRuleEString"
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:252:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    public final String entryRuleEString() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleEString = null;
+
+
+        try {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:253:2: (iv_ruleEString= ruleEString EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:254:2: iv_ruleEString= ruleEString EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getEStringRule()); 
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString439);
+            iv_ruleEString=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleEString.getText(); 
+            }
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString450); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEString"
+
+
+    // $ANTLR start "ruleEString"
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:261:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_STRING_0=null;
+        Token this_ID_1=null;
+
+         enterRule(); 
+            
+        try {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:264:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:265:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:265:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_STRING) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==RULE_ID) ) {
+                alt5=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:265:6: this_STRING_0= RULE_STRING
+                    {
+                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString490); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		current.merge(this_STRING_0);
+                          
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                          newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
+                          
+                    }
+
+                    }
+                    break;
+                case 2 :
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:273:10: this_ID_1= RULE_ID
+                    {
+                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString516); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		current.merge(this_ID_1);
+                          
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                          newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEString"
+
+
     // $ANTLR start "entryRulePage"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:242:1: entryRulePage returns [EObject current=null] : iv_rulePage= rulePage EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:288:1: entryRulePage returns [EObject current=null] : iv_rulePage= rulePage EOF ;
     public final EObject entryRulePage() throws RecognitionException {
         EObject current = null;
 
@@ -564,13 +741,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:243:2: (iv_rulePage= rulePage EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:244:2: iv_rulePage= rulePage EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:289:2: (iv_rulePage= rulePage EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:290:2: iv_rulePage= rulePage EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPageRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_rulePage_in_entryRulePage441);
+            pushFollow(FollowSets000.FOLLOW_rulePage_in_entryRulePage561);
             iv_rulePage=rulePage();
 
             state._fsp--;
@@ -578,7 +755,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePage; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePage451); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePage571); if (state.failed) return current;
 
             }
 
@@ -596,17 +773,18 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePage"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:251:1: rulePage returns [EObject current=null] : (otherlv_0= 'page' otherlv_1= '\"' ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '\"' otherlv_4= '{' ( ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )? )* otherlv_7= '}' ( (lv_condition_8_0= ruleCondition ) )? ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:297:1: rulePage returns [EObject current=null] : (otherlv_0= 'page' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )* ( (lv_pageElements_5_0= rulePageElement ) ) otherlv_6= '}' (otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) ) )? ) ;
     public final EObject rulePage() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_title_2_0=null;
-        Token otherlv_3=null;
+        Token lv_title_1_0=null;
+        Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
+        EObject lv_pageElements_3_0 = null;
+
         EObject lv_pageElements_5_0 = null;
 
         EObject lv_condition_8_0 = null;
@@ -615,34 +793,28 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:254:28: ( (otherlv_0= 'page' otherlv_1= '\"' ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '\"' otherlv_4= '{' ( ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )? )* otherlv_7= '}' ( (lv_condition_8_0= ruleCondition ) )? ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:255:1: (otherlv_0= 'page' otherlv_1= '\"' ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '\"' otherlv_4= '{' ( ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )? )* otherlv_7= '}' ( (lv_condition_8_0= ruleCondition ) )? )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:300:28: ( (otherlv_0= 'page' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )* ( (lv_pageElements_5_0= rulePageElement ) ) otherlv_6= '}' (otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) ) )? ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:301:1: (otherlv_0= 'page' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )* ( (lv_pageElements_5_0= rulePageElement ) ) otherlv_6= '}' (otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) ) )? )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:255:1: (otherlv_0= 'page' otherlv_1= '\"' ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '\"' otherlv_4= '{' ( ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )? )* otherlv_7= '}' ( (lv_condition_8_0= ruleCondition ) )? )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:255:3: otherlv_0= 'page' otherlv_1= '\"' ( (lv_title_2_0= RULE_STRING ) ) otherlv_3= '\"' otherlv_4= '{' ( ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )? )* otherlv_7= '}' ( (lv_condition_8_0= ruleCondition ) )?
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:301:1: (otherlv_0= 'page' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )* ( (lv_pageElements_5_0= rulePageElement ) ) otherlv_6= '}' (otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) ) )? )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:301:3: otherlv_0= 'page' ( (lv_title_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )* ( (lv_pageElements_5_0= rulePageElement ) ) otherlv_6= '}' (otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) ) )?
             {
-            otherlv_0=(Token)match(input,17,FollowSets000.FOLLOW_17_in_rulePage488); if (state.failed) return current;
+            otherlv_0=(Token)match(input,16,FollowSets000.FOLLOW_16_in_rulePage608); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getPageAccess().getPageKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePage500); if (state.failed) return current;
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:305:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:306:1: (lv_title_1_0= RULE_STRING )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:306:1: (lv_title_1_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:307:3: lv_title_1_0= RULE_STRING
+            {
+            lv_title_1_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rulePage625); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getPageAccess().getQuotationMarkKeyword_1());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:263:1: ( (lv_title_2_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:264:1: (lv_title_2_0= RULE_STRING )
-            {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:264:1: (lv_title_2_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:265:3: lv_title_2_0= RULE_STRING
-            {
-            lv_title_2_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rulePage517); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_title_2_0, grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_2_0()); 
+              			newLeafNode(lv_title_1_0, grammarAccess.getPageAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
               		
             }
             if ( state.backtracking==0 ) {
@@ -653,7 +825,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                      		setWithLastConsumed(
                      			current, 
                      			"title",
-                      		lv_title_2_0, 
+                      		lv_title_1_0, 
                       		"STRING");
               	    
             }
@@ -663,46 +835,34 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePage534); if (state.failed) return current;
+            otherlv_2=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePage642); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_3, grammarAccess.getPageAccess().getQuotationMarkKeyword_3());
+                  	newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
                   
             }
-            otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_rulePage546); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_4, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_4());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:289:1: ( ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )? )*
-            loop5:
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:327:1: ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )*
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
-
-                if ( (LA5_0==25||(LA5_0>=27 && LA5_0<=33)) ) {
-                    alt5=1;
-                }
-
-
-                switch (alt5) {
+                int alt6=2;
+                alt6 = dfa6.predict(input);
+                switch (alt6) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:289:2: ( (lv_pageElements_5_0= rulePageElement ) ) (otherlv_6= ',' )?
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:327:2: ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ','
             	    {
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:289:2: ( (lv_pageElements_5_0= rulePageElement ) )
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:290:1: (lv_pageElements_5_0= rulePageElement )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:327:2: ( (lv_pageElements_3_0= rulePageElement ) )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:328:1: (lv_pageElements_3_0= rulePageElement )
             	    {
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:290:1: (lv_pageElements_5_0= rulePageElement )
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:291:3: lv_pageElements_5_0= rulePageElement
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:328:1: (lv_pageElements_3_0= rulePageElement )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:329:3: lv_pageElements_3_0= rulePageElement
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getPageAccess().getPageElementsPageElementParserRuleCall_5_0_0()); 
+            	      	        newCompositeNode(grammarAccess.getPageAccess().getPageElementsPageElementParserRuleCall_3_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_rulePageElement_in_rulePage568);
-            	    lv_pageElements_5_0=rulePageElement();
+            	    pushFollow(FollowSets000.FOLLOW_rulePageElement_in_rulePage664);
+            	    lv_pageElements_3_0=rulePageElement();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -714,7 +874,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	             		add(
             	             			current, 
             	             			"pageElements",
-            	              		lv_pageElements_5_0, 
+            	              		lv_pageElements_3_0, 
             	              		"PageElement");
             	      	        afterParserOrEnumRuleCall();
             	      	    
@@ -725,64 +885,91 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:307:2: (otherlv_6= ',' )?
-            	    int alt4=2;
-            	    int LA4_0 = input.LA(1);
+            	    otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_17_in_rulePage676); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
 
-            	    if ( (LA4_0==18) ) {
-            	        alt4=1;
+            	          	newLeafNode(otherlv_4, grammarAccess.getPageAccess().getCommaKeyword_3_1());
+            	          
             	    }
-            	    switch (alt4) {
-            	        case 1 :
-            	            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:307:4: otherlv_6= ','
-            	            {
-            	            otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePage581); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	                  	newLeafNode(otherlv_6, grammarAccess.getPageAccess().getCommaKeyword_5_1());
-            	                  
-            	            }
-
-            	            }
-            	            break;
-
-            	    }
-
 
             	    }
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop6;
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,16,FollowSets000.FOLLOW_16_in_rulePage597); if (state.failed) return current;
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:349:3: ( (lv_pageElements_5_0= rulePageElement ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:350:1: (lv_pageElements_5_0= rulePageElement )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:350:1: (lv_pageElements_5_0= rulePageElement )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:351:3: lv_pageElements_5_0= rulePageElement
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getPageAccess().getPageElementsPageElementParserRuleCall_4_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_rulePageElement_in_rulePage699);
+            lv_pageElements_5_0=rulePageElement();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_6());
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getPageRule());
+              	        }
+                     		add(
+                     			current, 
+                     			"pageElements",
+                      		lv_pageElements_5_0, 
+                      		"PageElement");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,15,FollowSets000.FOLLOW_15_in_rulePage711); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_6, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_5());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:315:1: ( (lv_condition_8_0= ruleCondition ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:371:1: (otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==19) ) {
-                alt6=1;
+            if ( (LA7_0==18) ) {
+                alt7=1;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:316:1: (lv_condition_8_0= ruleCondition )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:371:3: otherlv_7= 'with' ( (lv_condition_8_0= ruleCondition ) )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:316:1: (lv_condition_8_0= ruleCondition )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:317:3: lv_condition_8_0= ruleCondition
+                    otherlv_7=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePage724); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_7, grammarAccess.getPageAccess().getWithKeyword_6_0());
+                          
+                    }
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:375:1: ( (lv_condition_8_0= ruleCondition ) )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:376:1: (lv_condition_8_0= ruleCondition )
+                    {
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:376:1: (lv_condition_8_0= ruleCondition )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:377:3: lv_condition_8_0= ruleCondition
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getPageAccess().getConditionConditionParserRuleCall_7_0()); 
+                      	        newCompositeNode(grammarAccess.getPageAccess().getConditionConditionParserRuleCall_6_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleCondition_in_rulePage618);
+                    pushFollow(FollowSets000.FOLLOW_ruleCondition_in_rulePage745);
                     lv_condition_8_0=ruleCondition();
 
                     state._fsp--;
@@ -800,6 +987,9 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
+
+                    }
+
 
                     }
 
@@ -832,7 +1022,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCondition"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:341:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:401:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -840,13 +1030,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:342:2: (iv_ruleCondition= ruleCondition EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:343:2: iv_ruleCondition= ruleCondition EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:402:2: (iv_ruleCondition= ruleCondition EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:403:2: iv_ruleCondition= ruleCondition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConditionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleCondition_in_entryRuleCondition655);
+            pushFollow(FollowSets000.FOLLOW_ruleCondition_in_entryRuleCondition783);
             iv_ruleCondition=ruleCondition();
 
             state._fsp--;
@@ -854,7 +1044,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCondition; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCondition665); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCondition793); if (state.failed) return current;
 
             }
 
@@ -872,117 +1062,80 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:350:1: ruleCondition returns [EObject current=null] : ( (otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition ) | (otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:410:1: ruleCondition returns [EObject current=null] : (this_AttributeValueCondition_0= ruleAttributeValueCondition | this_CompositeCondition_1= ruleCompositeCondition ) ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        EObject this_AttributeValueCondition_1 = null;
+        EObject this_AttributeValueCondition_0 = null;
 
-        EObject this_CompositeCondition_3 = null;
+        EObject this_CompositeCondition_1 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:353:28: ( ( (otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition ) | (otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:354:1: ( (otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition ) | (otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:413:28: ( (this_AttributeValueCondition_0= ruleAttributeValueCondition | this_CompositeCondition_1= ruleCompositeCondition ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:414:1: (this_AttributeValueCondition_0= ruleAttributeValueCondition | this_CompositeCondition_1= ruleCompositeCondition )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:354:1: ( (otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition ) | (otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:414:1: (this_AttributeValueCondition_0= ruleAttributeValueCondition | this_CompositeCondition_1= ruleCompositeCondition )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==19) ) {
-                int LA7_1 = input.LA(2);
-
-                if ( (LA7_1==20) ) {
-                    alt7=2;
-                }
-                else if ( (LA7_1==22) ) {
-                    alt7=1;
-                }
-                else {
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 7, 1, input);
-
-                    throw nvae;
-                }
+            if ( (LA8_0==24) ) {
+                alt8=1;
+            }
+            else if ( (LA8_0==19) ) {
+                alt8=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:354:2: (otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:415:5: this_AttributeValueCondition_0= ruleAttributeValueCondition
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:354:2: (otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:354:4: otherlv_0= 'with' this_AttributeValueCondition_1= ruleAttributeValueCondition
-                    {
-                    otherlv_0=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleCondition703); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_0, grammarAccess.getConditionAccess().getWithKeyword_0_0());
-                          
-                    }
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getConditionAccess().getAttributeValueConditionParserRuleCall_0_1()); 
+                              newCompositeNode(grammarAccess.getConditionAccess().getAttributeValueConditionParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleAttributeValueCondition_in_ruleCondition725);
-                    this_AttributeValueCondition_1=ruleAttributeValueCondition();
+                    pushFollow(FollowSets000.FOLLOW_ruleAttributeValueCondition_in_ruleCondition840);
+                    this_AttributeValueCondition_0=ruleAttributeValueCondition();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_AttributeValueCondition_1; 
+                              current = this_AttributeValueCondition_0; 
                               afterParserOrEnumRuleCall();
                           
                     }
-
-                    }
-
 
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:368:6: (otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:425:5: this_CompositeCondition_1= ruleCompositeCondition
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:368:6: (otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:368:8: otherlv_2= 'with' this_CompositeCondition_3= ruleCompositeCondition
-                    {
-                    otherlv_2=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleCondition744); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_2, grammarAccess.getConditionAccess().getWithKeyword_1_0());
-                          
-                    }
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getConditionAccess().getCompositeConditionParserRuleCall_1_1()); 
+                              newCompositeNode(grammarAccess.getConditionAccess().getCompositeConditionParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleCompositeCondition_in_ruleCondition766);
-                    this_CompositeCondition_3=ruleCompositeCondition();
+                    pushFollow(FollowSets000.FOLLOW_ruleCompositeCondition_in_ruleCondition867);
+                    this_CompositeCondition_1=ruleCompositeCondition();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_CompositeCondition_3; 
+                              current = this_CompositeCondition_1; 
                               afterParserOrEnumRuleCall();
                           
                     }
-
-                    }
-
 
                     }
                     break;
@@ -1009,7 +1162,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompositeCondition"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:389:1: entryRuleCompositeCondition returns [EObject current=null] : iv_ruleCompositeCondition= ruleCompositeCondition EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:441:1: entryRuleCompositeCondition returns [EObject current=null] : iv_ruleCompositeCondition= ruleCompositeCondition EOF ;
     public final EObject entryRuleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1017,13 +1170,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:390:2: (iv_ruleCompositeCondition= ruleCompositeCondition EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:391:2: iv_ruleCompositeCondition= ruleCompositeCondition EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:442:2: (iv_ruleCompositeCondition= ruleCompositeCondition EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:443:2: iv_ruleCompositeCondition= ruleCompositeCondition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCompositeConditionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleCompositeCondition_in_entryRuleCompositeCondition802);
+            pushFollow(FollowSets000.FOLLOW_ruleCompositeCondition_in_entryRuleCompositeCondition902);
             iv_ruleCompositeCondition=ruleCompositeCondition();
 
             state._fsp--;
@@ -1031,7 +1184,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCompositeCondition; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCompositeCondition812); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCompositeCondition912); if (state.failed) return current;
 
             }
 
@@ -1049,51 +1202,68 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositeCondition"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:398:1: ruleCompositeCondition returns [EObject current=null] : (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:450:1: ruleCompositeCondition returns [EObject current=null] : (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= '(' ( (lv_composedConditions_4_0= ruleAttributeValueCondition ) ) ( (lv_compositionType_5_0= ruleCompositeConditionType ) ) ( (lv_composedConditions_6_0= ruleAttributeValueCondition ) ) otherlv_7= ')' otherlv_8= '?' ( (lv_type_9_0= ruleConditionType ) ) ) ;
     public final EObject ruleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_conditionID_1_0=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        AntlrDatatypeRuleToken lv_conditionID_1_0 = null;
+
+        EObject lv_composedConditions_4_0 = null;
+
+        Enumerator lv_compositionType_5_0 = null;
+
+        EObject lv_composedConditions_6_0 = null;
+
+        Enumerator lv_type_9_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:401:28: ( (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:402:1: (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:453:28: ( (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= '(' ( (lv_composedConditions_4_0= ruleAttributeValueCondition ) ) ( (lv_compositionType_5_0= ruleCompositeConditionType ) ) ( (lv_composedConditions_6_0= ruleAttributeValueCondition ) ) otherlv_7= ')' otherlv_8= '?' ( (lv_type_9_0= ruleConditionType ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:454:1: (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= '(' ( (lv_composedConditions_4_0= ruleAttributeValueCondition ) ) ( (lv_compositionType_5_0= ruleCompositeConditionType ) ) ( (lv_composedConditions_6_0= ruleAttributeValueCondition ) ) otherlv_7= ')' otherlv_8= '?' ( (lv_type_9_0= ruleConditionType ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:402:1: (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:402:3: otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':'
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:454:1: (otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= '(' ( (lv_composedConditions_4_0= ruleAttributeValueCondition ) ) ( (lv_compositionType_5_0= ruleCompositeConditionType ) ) ( (lv_composedConditions_6_0= ruleAttributeValueCondition ) ) otherlv_7= ')' otherlv_8= '?' ( (lv_type_9_0= ruleConditionType ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:454:3: otherlv_0= 'composite-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' otherlv_3= '(' ( (lv_composedConditions_4_0= ruleAttributeValueCondition ) ) ( (lv_compositionType_5_0= ruleCompositeConditionType ) ) ( (lv_composedConditions_6_0= ruleAttributeValueCondition ) ) otherlv_7= ')' otherlv_8= '?' ( (lv_type_9_0= ruleConditionType ) )
             {
-            otherlv_0=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleCompositeCondition849); if (state.failed) return current;
+            otherlv_0=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleCompositeCondition949); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getCompositeConditionAccess().getCompositeConditionKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:406:1: ( (lv_conditionID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:407:1: (lv_conditionID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:458:1: ( (lv_conditionID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:459:1: (lv_conditionID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:407:1: (lv_conditionID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:408:3: lv_conditionID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:459:1: (lv_conditionID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:460:3: lv_conditionID_1_0= ruleEString
             {
-            lv_conditionID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleCompositeCondition866); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_conditionID_1_0, grammarAccess.getCompositeConditionAccess().getConditionIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCompositeCondition970);
+            lv_conditionID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getCompositeConditionRule());
+              	            current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"conditionID",
                       		lv_conditionID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -1102,12 +1272,170 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleCompositeCondition883); if (state.failed) return current;
+            otherlv_2=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleCompositeCondition982); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getCompositeConditionAccess().getColonKeyword_2());
                   
             }
+            otherlv_3=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleCompositeCondition994); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_3, grammarAccess.getCompositeConditionAccess().getLeftParenthesisKeyword_3());
+                  
+            }
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:484:1: ( (lv_composedConditions_4_0= ruleAttributeValueCondition ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:485:1: (lv_composedConditions_4_0= ruleAttributeValueCondition )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:485:1: (lv_composedConditions_4_0= ruleAttributeValueCondition )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:486:3: lv_composedConditions_4_0= ruleAttributeValueCondition
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getCompositeConditionAccess().getComposedConditionsAttributeValueConditionParserRuleCall_4_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleAttributeValueCondition_in_ruleCompositeCondition1015);
+            lv_composedConditions_4_0=ruleAttributeValueCondition();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+              	        }
+                     		add(
+                     			current, 
+                     			"composedConditions",
+                      		lv_composedConditions_4_0, 
+                      		"AttributeValueCondition");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:502:2: ( (lv_compositionType_5_0= ruleCompositeConditionType ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:503:1: (lv_compositionType_5_0= ruleCompositeConditionType )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:503:1: (lv_compositionType_5_0= ruleCompositeConditionType )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:504:3: lv_compositionType_5_0= ruleCompositeConditionType
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getCompositeConditionAccess().getCompositionTypeCompositeConditionTypeEnumRuleCall_5_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleCompositeConditionType_in_ruleCompositeCondition1036);
+            lv_compositionType_5_0=ruleCompositeConditionType();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"compositionType",
+                      		lv_compositionType_5_0, 
+                      		"CompositeConditionType");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:520:2: ( (lv_composedConditions_6_0= ruleAttributeValueCondition ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:521:1: (lv_composedConditions_6_0= ruleAttributeValueCondition )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:521:1: (lv_composedConditions_6_0= ruleAttributeValueCondition )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:522:3: lv_composedConditions_6_0= ruleAttributeValueCondition
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getCompositeConditionAccess().getComposedConditionsAttributeValueConditionParserRuleCall_6_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleAttributeValueCondition_in_ruleCompositeCondition1057);
+            lv_composedConditions_6_0=ruleAttributeValueCondition();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+              	        }
+                     		add(
+                     			current, 
+                     			"composedConditions",
+                      		lv_composedConditions_6_0, 
+                      		"AttributeValueCondition");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_7=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleCompositeCondition1069); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_7, grammarAccess.getCompositeConditionAccess().getRightParenthesisKeyword_7());
+                  
+            }
+            otherlv_8=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleCompositeCondition1081); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_8, grammarAccess.getCompositeConditionAccess().getQuestionMarkKeyword_8());
+                  
+            }
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:546:1: ( (lv_type_9_0= ruleConditionType ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:547:1: (lv_type_9_0= ruleConditionType )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:547:1: (lv_type_9_0= ruleConditionType )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:548:3: lv_type_9_0= ruleConditionType
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getCompositeConditionAccess().getTypeConditionTypeEnumRuleCall_9_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleConditionType_in_ruleCompositeCondition1102);
+            lv_type_9_0=ruleConditionType();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"type",
+                      		lv_type_9_0, 
+                      		"ConditionType");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
 
             }
 
@@ -1131,7 +1459,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeValueCondition"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:436:1: entryRuleAttributeValueCondition returns [EObject current=null] : iv_ruleAttributeValueCondition= ruleAttributeValueCondition EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:572:1: entryRuleAttributeValueCondition returns [EObject current=null] : iv_ruleAttributeValueCondition= ruleAttributeValueCondition EOF ;
     public final EObject entryRuleAttributeValueCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1139,13 +1467,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:437:2: (iv_ruleAttributeValueCondition= ruleAttributeValueCondition EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:438:2: iv_ruleAttributeValueCondition= ruleAttributeValueCondition EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:573:2: (iv_ruleAttributeValueCondition= ruleAttributeValueCondition EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:574:2: iv_ruleAttributeValueCondition= ruleAttributeValueCondition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAttributeValueConditionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleAttributeValueCondition_in_entryRuleAttributeValueCondition919);
+            pushFollow(FollowSets000.FOLLOW_ruleAttributeValueCondition_in_entryRuleAttributeValueCondition1138);
             iv_ruleAttributeValueCondition=ruleAttributeValueCondition();
 
             state._fsp--;
@@ -1153,7 +1481,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAttributeValueCondition; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributeValueCondition929); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributeValueCondition1148); if (state.failed) return current;
 
             }
 
@@ -1171,56 +1499,63 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeValueCondition"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:445:1: ruleAttributeValueCondition returns [EObject current=null] : (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:581:1: ruleAttributeValueCondition returns [EObject current=null] : (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) ) ;
     public final EObject ruleAttributeValueCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_conditionID_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token lv_value_5_0=null;
         Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_conditionID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_5_0 = null;
+
         Enumerator lv_type_7_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:448:28: ( (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:449:1: (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:584:28: ( (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:585:1: (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:449:1: (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:449:3: otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= RULE_ID ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:585:1: (otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:585:3: otherlv_0= 'attribute-condition' ( (lv_conditionID_1_0= ruleEString ) ) otherlv_2= ':' ( ( ruleQualifiedName ) ) otherlv_4= '==' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '?' ( (lv_type_7_0= ruleConditionType ) )
             {
-            otherlv_0=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleAttributeValueCondition966); if (state.failed) return current;
+            otherlv_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleAttributeValueCondition1185); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getAttributeValueConditionAccess().getAttributeConditionKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:453:1: ( (lv_conditionID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:454:1: (lv_conditionID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:589:1: ( (lv_conditionID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:590:1: (lv_conditionID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:454:1: (lv_conditionID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:455:3: lv_conditionID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:590:1: (lv_conditionID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:591:3: lv_conditionID_1_0= ruleEString
             {
-            lv_conditionID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAttributeValueCondition983); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_conditionID_1_0, grammarAccess.getAttributeValueConditionAccess().getConditionIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getAttributeValueConditionAccess().getConditionIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleAttributeValueCondition1206);
+            lv_conditionID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getAttributeValueConditionRule());
+              	            current = createModelElementForParent(grammarAccess.getAttributeValueConditionRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"conditionID",
                       		lv_conditionID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -1229,17 +1564,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleAttributeValueCondition1000); if (state.failed) return current;
+            otherlv_2=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleAttributeValueCondition1218); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getAttributeValueConditionAccess().getColonKeyword_2());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:475:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:476:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:611:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:612:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:476:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:477:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:612:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:613:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -1253,7 +1588,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getAttributeValueConditionAccess().getAttributeAttributeCrossReference_3_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleAttributeValueCondition1023);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleAttributeValueCondition1241);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1269,34 +1604,39 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleAttributeValueCondition1035); if (state.failed) return current;
+            otherlv_4=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleAttributeValueCondition1253); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getAttributeValueConditionAccess().getEqualsSignEqualsSignKeyword_4());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:494:1: ( (lv_value_5_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:495:1: (lv_value_5_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:630:1: ( (lv_value_5_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:631:1: (lv_value_5_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:495:1: (lv_value_5_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:496:3: lv_value_5_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:631:1: (lv_value_5_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:632:3: lv_value_5_0= ruleEString
             {
-            lv_value_5_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleAttributeValueCondition1052); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_value_5_0, grammarAccess.getAttributeValueConditionAccess().getValueSTRINGTerminalRuleCall_5_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getAttributeValueConditionAccess().getValueEStringParserRuleCall_5_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleAttributeValueCondition1274);
+            lv_value_5_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getAttributeValueConditionRule());
+              	            current = createModelElementForParent(grammarAccess.getAttributeValueConditionRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"value",
                       		lv_value_5_0, 
-                      		"STRING");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -1305,24 +1645,24 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleAttributeValueCondition1069); if (state.failed) return current;
+            otherlv_6=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleAttributeValueCondition1286); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getAttributeValueConditionAccess().getQuestionMarkKeyword_6());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:516:1: ( (lv_type_7_0= ruleConditionType ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:517:1: (lv_type_7_0= ruleConditionType )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:652:1: ( (lv_type_7_0= ruleConditionType ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:653:1: (lv_type_7_0= ruleConditionType )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:517:1: (lv_type_7_0= ruleConditionType )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:518:3: lv_type_7_0= ruleConditionType
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:653:1: (lv_type_7_0= ruleConditionType )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:654:3: lv_type_7_0= ruleConditionType
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getAttributeValueConditionAccess().getTypeConditionTypeEnumRuleCall_7_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleConditionType_in_ruleAttributeValueCondition1090);
+            pushFollow(FollowSets000.FOLLOW_ruleConditionType_in_ruleAttributeValueCondition1307);
             lv_type_7_0=ruleConditionType();
 
             state._fsp--;
@@ -1369,7 +1709,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePageElement"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:542:1: entryRulePageElement returns [EObject current=null] : iv_rulePageElement= rulePageElement EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:678:1: entryRulePageElement returns [EObject current=null] : iv_rulePageElement= rulePageElement EOF ;
     public final EObject entryRulePageElement() throws RecognitionException {
         EObject current = null;
 
@@ -1377,13 +1717,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:543:2: (iv_rulePageElement= rulePageElement EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:544:2: iv_rulePageElement= rulePageElement EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:679:2: (iv_rulePageElement= rulePageElement EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:680:2: iv_rulePageElement= rulePageElement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPageElementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_rulePageElement_in_entryRulePageElement1126);
+            pushFollow(FollowSets000.FOLLOW_rulePageElement_in_entryRulePageElement1343);
             iv_rulePageElement=rulePageElement();
 
             state._fsp--;
@@ -1391,7 +1731,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePageElement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePageElement1136); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePageElement1353); if (state.failed) return current;
 
             }
 
@@ -1409,7 +1749,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePageElement"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:551:1: rulePageElement returns [EObject current=null] : (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:687:1: rulePageElement returns [EObject current=null] : (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement ) ;
     public final EObject rulePageElement() throws RecognitionException {
         EObject current = null;
 
@@ -1421,36 +1761,36 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:554:28: ( (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:555:1: (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:690:28: ( (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:691:1: (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:555:1: (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:691:1: (this_AttributePageElement_0= ruleAttributePageElement | this_RelationshipPageElement_1= ruleRelationshipPageElement )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( ((LA8_0>=28 && LA8_0<=33)) ) {
-                alt8=1;
+            if ( ((LA9_0>=29 && LA9_0<=34)) ) {
+                alt9=1;
             }
-            else if ( (LA8_0==25||LA8_0==27) ) {
-                alt8=2;
+            else if ( (LA9_0==26||LA9_0==28) ) {
+                alt9=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:556:5: this_AttributePageElement_0= ruleAttributePageElement
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:692:5: this_AttributePageElement_0= ruleAttributePageElement
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getPageElementAccess().getAttributePageElementParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleAttributePageElement_in_rulePageElement1183);
+                    pushFollow(FollowSets000.FOLLOW_ruleAttributePageElement_in_rulePageElement1400);
                     this_AttributePageElement_0=ruleAttributePageElement();
 
                     state._fsp--;
@@ -1465,14 +1805,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:566:5: this_RelationshipPageElement_1= ruleRelationshipPageElement
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:702:5: this_RelationshipPageElement_1= ruleRelationshipPageElement
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getPageElementAccess().getRelationshipPageElementParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleRelationshipPageElement_in_rulePageElement1210);
+                    pushFollow(FollowSets000.FOLLOW_ruleRelationshipPageElement_in_rulePageElement1427);
                     this_RelationshipPageElement_1=ruleRelationshipPageElement();
 
                     state._fsp--;
@@ -1509,7 +1849,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelationshipPageElement"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:582:1: entryRuleRelationshipPageElement returns [EObject current=null] : iv_ruleRelationshipPageElement= ruleRelationshipPageElement EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:718:1: entryRuleRelationshipPageElement returns [EObject current=null] : iv_ruleRelationshipPageElement= ruleRelationshipPageElement EOF ;
     public final EObject entryRuleRelationshipPageElement() throws RecognitionException {
         EObject current = null;
 
@@ -1517,13 +1857,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:583:2: (iv_ruleRelationshipPageElement= ruleRelationshipPageElement EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:584:2: iv_ruleRelationshipPageElement= ruleRelationshipPageElement EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:719:2: (iv_ruleRelationshipPageElement= ruleRelationshipPageElement EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:720:2: iv_ruleRelationshipPageElement= ruleRelationshipPageElement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRelationshipPageElementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleRelationshipPageElement_in_entryRuleRelationshipPageElement1245);
+            pushFollow(FollowSets000.FOLLOW_ruleRelationshipPageElement_in_entryRuleRelationshipPageElement1462);
             iv_ruleRelationshipPageElement=ruleRelationshipPageElement();
 
             state._fsp--;
@@ -1531,7 +1871,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRelationshipPageElement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRelationshipPageElement1255); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRelationshipPageElement1472); if (state.failed) return current;
 
             }
 
@@ -1549,7 +1889,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelationshipPageElement"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:591:1: ruleRelationshipPageElement returns [EObject current=null] : (this_List_0= ruleList | this_Table_1= ruleTable ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:727:1: ruleRelationshipPageElement returns [EObject current=null] : (this_List_0= ruleList | this_Table_1= ruleTable ) ;
     public final EObject ruleRelationshipPageElement() throws RecognitionException {
         EObject current = null;
 
@@ -1561,36 +1901,36 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:594:28: ( (this_List_0= ruleList | this_Table_1= ruleTable ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:595:1: (this_List_0= ruleList | this_Table_1= ruleTable )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:730:28: ( (this_List_0= ruleList | this_Table_1= ruleTable ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:731:1: (this_List_0= ruleList | this_Table_1= ruleTable )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:595:1: (this_List_0= ruleList | this_Table_1= ruleTable )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:731:1: (this_List_0= ruleList | this_Table_1= ruleTable )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==27) ) {
-                alt9=1;
+            if ( (LA10_0==28) ) {
+                alt10=1;
             }
-            else if ( (LA9_0==25) ) {
-                alt9=2;
+            else if ( (LA10_0==26) ) {
+                alt10=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:596:5: this_List_0= ruleList
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:732:5: this_List_0= ruleList
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getRelationshipPageElementAccess().getListParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleList_in_ruleRelationshipPageElement1302);
+                    pushFollow(FollowSets000.FOLLOW_ruleList_in_ruleRelationshipPageElement1519);
                     this_List_0=ruleList();
 
                     state._fsp--;
@@ -1605,14 +1945,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:606:5: this_Table_1= ruleTable
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:742:5: this_Table_1= ruleTable
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getRelationshipPageElementAccess().getTableParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleTable_in_ruleRelationshipPageElement1329);
+                    pushFollow(FollowSets000.FOLLOW_ruleTable_in_ruleRelationshipPageElement1546);
                     this_Table_1=ruleTable();
 
                     state._fsp--;
@@ -1649,7 +1989,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTable"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:622:1: entryRuleTable returns [EObject current=null] : iv_ruleTable= ruleTable EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:758:1: entryRuleTable returns [EObject current=null] : iv_ruleTable= ruleTable EOF ;
     public final EObject entryRuleTable() throws RecognitionException {
         EObject current = null;
 
@@ -1657,13 +1997,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:623:2: (iv_ruleTable= ruleTable EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:624:2: iv_ruleTable= ruleTable EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:759:2: (iv_ruleTable= ruleTable EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:760:2: iv_ruleTable= ruleTable EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTableRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTable_in_entryRuleTable1364);
+            pushFollow(FollowSets000.FOLLOW_ruleTable_in_entryRuleTable1581);
             iv_ruleTable=ruleTable();
 
             state._fsp--;
@@ -1671,7 +2011,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleTable; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTable1374); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTable1591); if (state.failed) return current;
 
             }
 
@@ -1689,60 +2029,67 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTable"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:631:1: ruleTable returns [EObject current=null] : (otherlv_0= 'table' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ',' )* otherlv_10= '}' otherlv_11= 'edits' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:767:1: ruleTable returns [EObject current=null] : (otherlv_0= 'table' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= '{' ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )* ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= '}' otherlv_10= 'edits' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleTable() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
+        Token otherlv_3=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
         Token otherlv_9=null;
         Token otherlv_10=null;
-        Token otherlv_11=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
+        EObject lv_columns_6_0 = null;
+
         EObject lv_columns_8_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:634:28: ( (otherlv_0= 'table' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ',' )* otherlv_10= '}' otherlv_11= 'edits' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:635:1: (otherlv_0= 'table' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ',' )* otherlv_10= '}' otherlv_11= 'edits' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:770:28: ( (otherlv_0= 'table' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= '{' ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )* ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= '}' otherlv_10= 'edits' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:771:1: (otherlv_0= 'table' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= '{' ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )* ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= '}' otherlv_10= 'edits' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:635:1: (otherlv_0= 'table' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ',' )* otherlv_10= '}' otherlv_11= 'edits' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:635:3: otherlv_0= 'table' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= '{' ( ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ',' )* otherlv_10= '}' otherlv_11= 'edits' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:771:1: (otherlv_0= 'table' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= '{' ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )* ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= '}' otherlv_10= 'edits' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:771:3: otherlv_0= 'table' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= '{' ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )* ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= '}' otherlv_10= 'edits' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleTable1411); if (state.failed) return current;
+            otherlv_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleTable1628); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getTableAccess().getTableKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:639:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:640:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:775:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:776:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:640:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:641:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:776:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:777:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTable1428); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getTableAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTableAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTable1649);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTableRule());
+              	            current = createModelElementForParent(grammarAccess.getTableRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -1751,34 +2098,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTable1445); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getTableAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:661:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:662:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:793:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:794:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:662:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:663:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:794:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:795:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleTable1462); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getTableAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTableAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTable1670);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTableRule());
+              	            current = createModelElementForParent(grammarAccess.getTableRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -1787,23 +2133,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTable1479); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTable1682); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getTableAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getTableAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleTable1491); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getTableAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:687:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:688:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:815:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:816:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:688:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:689:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:816:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:817:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -1814,10 +2154,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getTableAccess().getRelationshipRelationshipCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getTableAccess().getRelationshipRelationshipCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTable1514);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTable1705);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1833,40 +2173,34 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleTable1526); if (state.failed) return current;
+            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleTable1717); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getTableAccess().getLeftCurlyBracketKeyword_7());
+                  	newLeafNode(otherlv_5, grammarAccess.getTableAccess().getLeftCurlyBracketKeyword_5());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:706:1: ( ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ',' )*
-            loop10:
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:834:1: ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )*
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
-
-                if ( (LA10_0==30) ) {
-                    alt10=1;
-                }
-
-
-                switch (alt10) {
+                int alt11=2;
+                alt11 = dfa11.predict(input);
+                switch (alt11) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:706:2: ( (lv_columns_8_0= ruleColumn ) ) otherlv_9= ','
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:834:2: ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ','
             	    {
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:706:2: ( (lv_columns_8_0= ruleColumn ) )
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:707:1: (lv_columns_8_0= ruleColumn )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:834:2: ( (lv_columns_6_0= ruleColumn ) )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:835:1: (lv_columns_6_0= ruleColumn )
             	    {
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:707:1: (lv_columns_8_0= ruleColumn )
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:708:3: lv_columns_8_0= ruleColumn
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:835:1: (lv_columns_6_0= ruleColumn )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:836:3: lv_columns_6_0= ruleColumn
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getTableAccess().getColumnsColumnParserRuleCall_8_0_0()); 
+            	      	        newCompositeNode(grammarAccess.getTableAccess().getColumnsColumnParserRuleCall_6_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleColumn_in_ruleTable1548);
-            	    lv_columns_8_0=ruleColumn();
+            	    pushFollow(FollowSets000.FOLLOW_ruleColumn_in_ruleTable1739);
+            	    lv_columns_6_0=ruleColumn();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -1878,7 +2212,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	             		add(
             	             			current, 
             	             			"columns",
-            	              		lv_columns_8_0, 
+            	              		lv_columns_6_0, 
             	              		"Column");
             	      	        afterParserOrEnumRuleCall();
             	      	    
@@ -1889,10 +2223,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_9=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleTable1560); if (state.failed) return current;
+            	    otherlv_7=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleTable1751); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	          	newLeafNode(otherlv_9, grammarAccess.getTableAccess().getCommaKeyword_8_1());
+            	          	newLeafNode(otherlv_7, grammarAccess.getTableAccess().getCommaKeyword_6_1());
             	          
             	    }
 
@@ -1900,27 +2234,62 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
-            otherlv_10=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleTable1574); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_10, grammarAccess.getTableAccess().getRightCurlyBracketKeyword_9());
-                  
-            }
-            otherlv_11=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleTable1586); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_11, grammarAccess.getTableAccess().getEditsKeyword_10());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:736:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:737:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:856:3: ( (lv_columns_8_0= ruleColumn ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:857:1: (lv_columns_8_0= ruleColumn )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:737:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:738:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:857:1: (lv_columns_8_0= ruleColumn )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:858:3: lv_columns_8_0= ruleColumn
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getTableAccess().getColumnsColumnParserRuleCall_7_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleColumn_in_ruleTable1774);
+            lv_columns_8_0=ruleColumn();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getTableRule());
+              	        }
+                     		add(
+                     			current, 
+                     			"columns",
+                      		lv_columns_8_0, 
+                      		"Column");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_9=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleTable1786); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_9, grammarAccess.getTableAccess().getRightCurlyBracketKeyword_8());
+                  
+            }
+            otherlv_10=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleTable1798); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_10, grammarAccess.getTableAccess().getEditsKeyword_9());
+                  
+            }
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:882:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:883:1: ( ruleQualifiedName )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:883:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:884:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -1931,10 +2300,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getTableAccess().getEditingFormFormCrossReference_11_0()); 
+              	        newCompositeNode(grammarAccess.getTableAccess().getEditingFormFormCrossReference_10_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTable1609);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTable1821);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1973,7 +2342,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleList"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:759:1: entryRuleList returns [EObject current=null] : iv_ruleList= ruleList EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:905:1: entryRuleList returns [EObject current=null] : iv_ruleList= ruleList EOF ;
     public final EObject entryRuleList() throws RecognitionException {
         EObject current = null;
 
@@ -1981,13 +2350,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:760:2: (iv_ruleList= ruleList EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:761:2: iv_ruleList= ruleList EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:906:2: (iv_ruleList= ruleList EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:907:2: iv_ruleList= ruleList EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getListRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleList_in_entryRuleList1645);
+            pushFollow(FollowSets000.FOLLOW_ruleList_in_entryRuleList1857);
             iv_ruleList=ruleList();
 
             state._fsp--;
@@ -1995,7 +2364,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleList; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleList1655); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleList1867); if (state.failed) return current;
 
             }
 
@@ -2013,55 +2382,60 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleList"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:768:1: ruleList returns [EObject current=null] : (otherlv_0= 'list' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= 'edits' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:914:1: ruleList returns [EObject current=null] : (otherlv_0= 'list' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= 'edits' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleList() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
+        Token otherlv_3=null;
         Token otherlv_5=null;
-        Token otherlv_7=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:771:28: ( (otherlv_0= 'list' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= 'edits' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:772:1: (otherlv_0= 'list' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= 'edits' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:917:28: ( (otherlv_0= 'list' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= 'edits' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:918:1: (otherlv_0= 'list' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= 'edits' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:772:1: (otherlv_0= 'list' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= 'edits' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:772:3: otherlv_0= 'list' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) otherlv_7= 'edits' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:918:1: (otherlv_0= 'list' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= 'edits' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:918:3: otherlv_0= 'list' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) otherlv_5= 'edits' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleList1692); if (state.failed) return current;
+            otherlv_0=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleList1904); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getListAccess().getListKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:776:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:777:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:922:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:923:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:777:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:778:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:923:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:924:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleList1709); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getListAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getListAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleList1925);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getListRule());
+              	            current = createModelElementForParent(grammarAccess.getListRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2070,34 +2444,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleList1726); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getListAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:798:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:799:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:940:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:941:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:799:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:800:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:941:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:942:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleList1743); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getListAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getListAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleList1946);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getListRule());
+              	            current = createModelElementForParent(grammarAccess.getListRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2106,23 +2479,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleList1760); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleList1958); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getListAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getListAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleList1772); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getListAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:824:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:825:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:962:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:963:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:825:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:826:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:963:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:964:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -2133,10 +2500,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getListAccess().getRelationshipRelationshipCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getListAccess().getRelationshipRelationshipCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleList1795);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleList1981);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2152,17 +2519,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleList1807); if (state.failed) return current;
+            otherlv_5=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleList1993); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getListAccess().getEditsKeyword_7());
+                  	newLeafNode(otherlv_5, grammarAccess.getListAccess().getEditsKeyword_5());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:843:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:844:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:981:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:982:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:844:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:845:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:982:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:983:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -2173,10 +2540,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getListAccess().getEditingFormFormCrossReference_8_0()); 
+              	        newCompositeNode(grammarAccess.getListAccess().getEditingFormFormCrossReference_6_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleList1830);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleList2016);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2215,7 +2582,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributePageElement"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:866:1: entryRuleAttributePageElement returns [EObject current=null] : iv_ruleAttributePageElement= ruleAttributePageElement EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1004:1: entryRuleAttributePageElement returns [EObject current=null] : iv_ruleAttributePageElement= ruleAttributePageElement EOF ;
     public final EObject entryRuleAttributePageElement() throws RecognitionException {
         EObject current = null;
 
@@ -2223,13 +2590,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:867:2: (iv_ruleAttributePageElement= ruleAttributePageElement EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:868:2: iv_ruleAttributePageElement= ruleAttributePageElement EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1005:2: (iv_ruleAttributePageElement= ruleAttributePageElement EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1006:2: iv_ruleAttributePageElement= ruleAttributePageElement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAttributePageElementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleAttributePageElement_in_entryRuleAttributePageElement1866);
+            pushFollow(FollowSets000.FOLLOW_ruleAttributePageElement_in_entryRuleAttributePageElement2052);
             iv_ruleAttributePageElement=ruleAttributePageElement();
 
             state._fsp--;
@@ -2237,7 +2604,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAttributePageElement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributePageElement1876); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributePageElement2062); if (state.failed) return current;
 
             }
 
@@ -2255,7 +2622,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributePageElement"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:875:1: ruleAttributePageElement returns [EObject current=null] : (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1013:1: ruleAttributePageElement returns [EObject current=null] : (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField ) ;
     public final EObject ruleAttributePageElement() throws RecognitionException {
         EObject current = null;
 
@@ -2275,60 +2642,60 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:878:28: ( (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:879:1: (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1016:28: ( (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1017:1: (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:879:1: (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField )
-            int alt11=6;
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1017:1: (this_TextField_0= ruleTextField | this_TextArea_1= ruleTextArea | this_SelectionField_2= ruleSelectionField | this_Column_3= ruleColumn | this_DateSelectionField_4= ruleDateSelectionField | this_TimeSelectionField_5= ruleTimeSelectionField )
+            int alt12=6;
             switch ( input.LA(1) ) {
+            case 34:
+                {
+                alt12=1;
+                }
+                break;
             case 33:
                 {
-                alt11=1;
+                alt12=2;
                 }
                 break;
             case 32:
                 {
-                alt11=2;
+                alt12=3;
                 }
                 break;
             case 31:
                 {
-                alt11=3;
+                alt12=4;
                 }
                 break;
             case 30:
                 {
-                alt11=4;
+                alt12=5;
                 }
                 break;
             case 29:
                 {
-                alt11=5;
-                }
-                break;
-            case 28:
-                {
-                alt11=6;
+                alt12=6;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:880:5: this_TextField_0= ruleTextField
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1018:5: this_TextField_0= ruleTextField
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAttributePageElementAccess().getTextFieldParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleTextField_in_ruleAttributePageElement1923);
+                    pushFollow(FollowSets000.FOLLOW_ruleTextField_in_ruleAttributePageElement2109);
                     this_TextField_0=ruleTextField();
 
                     state._fsp--;
@@ -2343,14 +2710,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:890:5: this_TextArea_1= ruleTextArea
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1028:5: this_TextArea_1= ruleTextArea
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAttributePageElementAccess().getTextAreaParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleTextArea_in_ruleAttributePageElement1950);
+                    pushFollow(FollowSets000.FOLLOW_ruleTextArea_in_ruleAttributePageElement2136);
                     this_TextArea_1=ruleTextArea();
 
                     state._fsp--;
@@ -2365,14 +2732,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:900:5: this_SelectionField_2= ruleSelectionField
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1038:5: this_SelectionField_2= ruleSelectionField
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAttributePageElementAccess().getSelectionFieldParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleSelectionField_in_ruleAttributePageElement1977);
+                    pushFollow(FollowSets000.FOLLOW_ruleSelectionField_in_ruleAttributePageElement2163);
                     this_SelectionField_2=ruleSelectionField();
 
                     state._fsp--;
@@ -2387,14 +2754,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:910:5: this_Column_3= ruleColumn
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1048:5: this_Column_3= ruleColumn
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAttributePageElementAccess().getColumnParserRuleCall_3()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleColumn_in_ruleAttributePageElement2004);
+                    pushFollow(FollowSets000.FOLLOW_ruleColumn_in_ruleAttributePageElement2190);
                     this_Column_3=ruleColumn();
 
                     state._fsp--;
@@ -2409,14 +2776,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:920:5: this_DateSelectionField_4= ruleDateSelectionField
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1058:5: this_DateSelectionField_4= ruleDateSelectionField
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAttributePageElementAccess().getDateSelectionFieldParserRuleCall_4()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleDateSelectionField_in_ruleAttributePageElement2031);
+                    pushFollow(FollowSets000.FOLLOW_ruleDateSelectionField_in_ruleAttributePageElement2217);
                     this_DateSelectionField_4=ruleDateSelectionField();
 
                     state._fsp--;
@@ -2431,14 +2798,14 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:930:5: this_TimeSelectionField_5= ruleTimeSelectionField
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1068:5: this_TimeSelectionField_5= ruleTimeSelectionField
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getAttributePageElementAccess().getTimeSelectionFieldParserRuleCall_5()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleTimeSelectionField_in_ruleAttributePageElement2058);
+                    pushFollow(FollowSets000.FOLLOW_ruleTimeSelectionField_in_ruleAttributePageElement2244);
                     this_TimeSelectionField_5=ruleTimeSelectionField();
 
                     state._fsp--;
@@ -2475,7 +2842,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeSelectionField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:946:1: entryRuleTimeSelectionField returns [EObject current=null] : iv_ruleTimeSelectionField= ruleTimeSelectionField EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1084:1: entryRuleTimeSelectionField returns [EObject current=null] : iv_ruleTimeSelectionField= ruleTimeSelectionField EOF ;
     public final EObject entryRuleTimeSelectionField() throws RecognitionException {
         EObject current = null;
 
@@ -2483,13 +2850,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:947:2: (iv_ruleTimeSelectionField= ruleTimeSelectionField EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:948:2: iv_ruleTimeSelectionField= ruleTimeSelectionField EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1085:2: (iv_ruleTimeSelectionField= ruleTimeSelectionField EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1086:2: iv_ruleTimeSelectionField= ruleTimeSelectionField EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTimeSelectionFieldRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTimeSelectionField_in_entryRuleTimeSelectionField2093);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeSelectionField_in_entryRuleTimeSelectionField2279);
             iv_ruleTimeSelectionField=ruleTimeSelectionField();
 
             state._fsp--;
@@ -2497,7 +2864,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleTimeSelectionField; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeSelectionField2103); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeSelectionField2289); if (state.failed) return current;
 
             }
 
@@ -2515,54 +2882,59 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeSelectionField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:955:1: ruleTimeSelectionField returns [EObject current=null] : (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1093:1: ruleTimeSelectionField returns [EObject current=null] : (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleTimeSelectionField() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:958:28: ( (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:959:1: (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1096:28: ( (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1097:1: (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:959:1: (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:959:3: otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1097:1: (otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1097:3: otherlv_0= 'time-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleTimeSelectionField2140); if (state.failed) return current;
+            otherlv_0=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleTimeSelectionField2326); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getTimeSelectionFieldAccess().getTimeSelectionFieldKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:963:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:964:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1101:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1102:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:964:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:965:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1102:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1103:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTimeSelectionField2157); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getTimeSelectionFieldAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTimeSelectionFieldAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTimeSelectionField2347);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTimeSelectionFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getTimeSelectionFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2571,34 +2943,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTimeSelectionField2174); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getTimeSelectionFieldAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:985:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:986:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1119:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1120:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:986:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:987:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1120:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1121:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleTimeSelectionField2191); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getTimeSelectionFieldAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTimeSelectionFieldAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTimeSelectionField2368);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTimeSelectionFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getTimeSelectionFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2607,23 +2978,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTimeSelectionField2208); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTimeSelectionField2380); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getTimeSelectionFieldAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getTimeSelectionFieldAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleTimeSelectionField2220); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getTimeSelectionFieldAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1011:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1012:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1141:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1142:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1012:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1013:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1142:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1143:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -2634,10 +2999,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getTimeSelectionFieldAccess().getAttributeAttributeCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getTimeSelectionFieldAccess().getAttributeAttributeCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTimeSelectionField2243);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTimeSelectionField2403);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2676,7 +3041,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDateSelectionField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1034:1: entryRuleDateSelectionField returns [EObject current=null] : iv_ruleDateSelectionField= ruleDateSelectionField EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1164:1: entryRuleDateSelectionField returns [EObject current=null] : iv_ruleDateSelectionField= ruleDateSelectionField EOF ;
     public final EObject entryRuleDateSelectionField() throws RecognitionException {
         EObject current = null;
 
@@ -2684,13 +3049,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1035:2: (iv_ruleDateSelectionField= ruleDateSelectionField EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1036:2: iv_ruleDateSelectionField= ruleDateSelectionField EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1165:2: (iv_ruleDateSelectionField= ruleDateSelectionField EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1166:2: iv_ruleDateSelectionField= ruleDateSelectionField EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDateSelectionFieldRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleDateSelectionField_in_entryRuleDateSelectionField2279);
+            pushFollow(FollowSets000.FOLLOW_ruleDateSelectionField_in_entryRuleDateSelectionField2439);
             iv_ruleDateSelectionField=ruleDateSelectionField();
 
             state._fsp--;
@@ -2698,7 +3063,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDateSelectionField; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDateSelectionField2289); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDateSelectionField2449); if (state.failed) return current;
 
             }
 
@@ -2716,54 +3081,59 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDateSelectionField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1043:1: ruleDateSelectionField returns [EObject current=null] : (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1173:1: ruleDateSelectionField returns [EObject current=null] : (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleDateSelectionField() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1046:28: ( (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1047:1: (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1176:28: ( (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1177:1: (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1047:1: (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1047:3: otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1177:1: (otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1177:3: otherlv_0= 'date-selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleDateSelectionField2326); if (state.failed) return current;
+            otherlv_0=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleDateSelectionField2486); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getDateSelectionFieldAccess().getDateSelectionFieldKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1051:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1052:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1181:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1182:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1052:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1053:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1182:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1183:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDateSelectionField2343); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getDateSelectionFieldAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getDateSelectionFieldAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleDateSelectionField2507);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getDateSelectionFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getDateSelectionFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2772,34 +3142,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleDateSelectionField2360); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getDateSelectionFieldAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1073:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1074:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1199:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1200:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1074:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1075:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1200:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1201:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleDateSelectionField2377); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getDateSelectionFieldAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getDateSelectionFieldAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleDateSelectionField2528);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getDateSelectionFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getDateSelectionFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2808,23 +3177,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleDateSelectionField2394); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleDateSelectionField2540); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getDateSelectionFieldAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getDateSelectionFieldAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleDateSelectionField2406); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getDateSelectionFieldAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1099:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1100:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1221:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1222:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1100:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1101:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1222:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1223:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -2835,10 +3198,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getDateSelectionFieldAccess().getAttributeAttributeCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getDateSelectionFieldAccess().getAttributeAttributeCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleDateSelectionField2429);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleDateSelectionField2563);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2877,7 +3240,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleColumn"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1122:1: entryRuleColumn returns [EObject current=null] : iv_ruleColumn= ruleColumn EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1244:1: entryRuleColumn returns [EObject current=null] : iv_ruleColumn= ruleColumn EOF ;
     public final EObject entryRuleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -2885,13 +3248,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1123:2: (iv_ruleColumn= ruleColumn EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1124:2: iv_ruleColumn= ruleColumn EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1245:2: (iv_ruleColumn= ruleColumn EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1246:2: iv_ruleColumn= ruleColumn EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getColumnRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleColumn_in_entryRuleColumn2465);
+            pushFollow(FollowSets000.FOLLOW_ruleColumn_in_entryRuleColumn2599);
             iv_ruleColumn=ruleColumn();
 
             state._fsp--;
@@ -2899,7 +3262,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleColumn; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleColumn2475); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleColumn2609); if (state.failed) return current;
 
             }
 
@@ -2917,54 +3280,59 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColumn"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1131:1: ruleColumn returns [EObject current=null] : (otherlv_0= 'column' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1253:1: ruleColumn returns [EObject current=null] : (otherlv_0= 'column' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleColumn() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1134:28: ( (otherlv_0= 'column' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1135:1: (otherlv_0= 'column' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1256:28: ( (otherlv_0= 'column' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1257:1: (otherlv_0= 'column' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1135:1: (otherlv_0= 'column' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1135:3: otherlv_0= 'column' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1257:1: (otherlv_0= 'column' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1257:3: otherlv_0= 'column' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleColumn2512); if (state.failed) return current;
+            otherlv_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleColumn2646); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getColumnAccess().getColumnKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1139:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1140:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1261:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1262:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1140:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1141:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1262:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1263:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleColumn2529); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getColumnAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getColumnAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleColumn2667);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getColumnRule());
+              	            current = createModelElementForParent(grammarAccess.getColumnRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -2973,34 +3341,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleColumn2546); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getColumnAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1161:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1162:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1279:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1280:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1162:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1163:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1280:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1281:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleColumn2563); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getColumnAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getColumnAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleColumn2688);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getColumnRule());
+              	            current = createModelElementForParent(grammarAccess.getColumnRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3009,23 +3376,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleColumn2580); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleColumn2700); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getColumnAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getColumnAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleColumn2592); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getColumnAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1187:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1188:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1301:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1302:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1188:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1189:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1302:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1303:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -3036,10 +3397,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getColumnAccess().getAttributeAttributeCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getColumnAccess().getAttributeAttributeCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleColumn2615);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleColumn2723);
             ruleQualifiedName();
 
             state._fsp--;
@@ -3078,7 +3439,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelectionField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1210:1: entryRuleSelectionField returns [EObject current=null] : iv_ruleSelectionField= ruleSelectionField EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1324:1: entryRuleSelectionField returns [EObject current=null] : iv_ruleSelectionField= ruleSelectionField EOF ;
     public final EObject entryRuleSelectionField() throws RecognitionException {
         EObject current = null;
 
@@ -3086,13 +3447,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1211:2: (iv_ruleSelectionField= ruleSelectionField EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1212:2: iv_ruleSelectionField= ruleSelectionField EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1325:2: (iv_ruleSelectionField= ruleSelectionField EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1326:2: iv_ruleSelectionField= ruleSelectionField EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSelectionFieldRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleSelectionField_in_entryRuleSelectionField2651);
+            pushFollow(FollowSets000.FOLLOW_ruleSelectionField_in_entryRuleSelectionField2759);
             iv_ruleSelectionField=ruleSelectionField();
 
             state._fsp--;
@@ -3100,7 +3461,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSelectionField; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSelectionField2661); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSelectionField2769); if (state.failed) return current;
 
             }
 
@@ -3118,54 +3479,59 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelectionField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1219:1: ruleSelectionField returns [EObject current=null] : (otherlv_0= 'selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1333:1: ruleSelectionField returns [EObject current=null] : (otherlv_0= 'selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleSelectionField() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1222:28: ( (otherlv_0= 'selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1223:1: (otherlv_0= 'selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1336:28: ( (otherlv_0= 'selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1337:1: (otherlv_0= 'selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1223:1: (otherlv_0= 'selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1223:3: otherlv_0= 'selection-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1337:1: (otherlv_0= 'selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1337:3: otherlv_0= 'selection-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleSelectionField2698); if (state.failed) return current;
+            otherlv_0=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleSelectionField2806); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getSelectionFieldAccess().getSelectionFieldKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1227:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1228:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1341:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1342:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1228:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1229:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1342:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1343:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleSelectionField2715); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getSelectionFieldAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getSelectionFieldAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleSelectionField2827);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getSelectionFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getSelectionFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3174,34 +3540,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleSelectionField2732); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getSelectionFieldAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1249:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1250:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1359:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1360:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1250:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1251:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1360:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1361:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleSelectionField2749); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getSelectionFieldAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getSelectionFieldAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleSelectionField2848);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getSelectionFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getSelectionFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3210,23 +3575,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleSelectionField2766); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleSelectionField2860); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getSelectionFieldAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getSelectionFieldAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleSelectionField2778); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getSelectionFieldAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1275:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1276:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1381:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1382:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1276:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1277:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1382:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1383:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -3237,10 +3596,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getSelectionFieldAccess().getAttributeAttributeCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getSelectionFieldAccess().getAttributeAttributeCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleSelectionField2801);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleSelectionField2883);
             ruleQualifiedName();
 
             state._fsp--;
@@ -3279,7 +3638,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextArea"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1298:1: entryRuleTextArea returns [EObject current=null] : iv_ruleTextArea= ruleTextArea EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1404:1: entryRuleTextArea returns [EObject current=null] : iv_ruleTextArea= ruleTextArea EOF ;
     public final EObject entryRuleTextArea() throws RecognitionException {
         EObject current = null;
 
@@ -3287,13 +3646,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1299:2: (iv_ruleTextArea= ruleTextArea EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1300:2: iv_ruleTextArea= ruleTextArea EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1405:2: (iv_ruleTextArea= ruleTextArea EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1406:2: iv_ruleTextArea= ruleTextArea EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTextAreaRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTextArea_in_entryRuleTextArea2837);
+            pushFollow(FollowSets000.FOLLOW_ruleTextArea_in_entryRuleTextArea2919);
             iv_ruleTextArea=ruleTextArea();
 
             state._fsp--;
@@ -3301,7 +3660,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleTextArea; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTextArea2847); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTextArea2929); if (state.failed) return current;
 
             }
 
@@ -3319,54 +3678,59 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextArea"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1307:1: ruleTextArea returns [EObject current=null] : (otherlv_0= 'text-area' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1413:1: ruleTextArea returns [EObject current=null] : (otherlv_0= 'text-area' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleTextArea() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1310:28: ( (otherlv_0= 'text-area' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1311:1: (otherlv_0= 'text-area' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1416:28: ( (otherlv_0= 'text-area' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1417:1: (otherlv_0= 'text-area' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1311:1: (otherlv_0= 'text-area' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1311:3: otherlv_0= 'text-area' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' otherlv_5= 'handles' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1417:1: (otherlv_0= 'text-area' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1417:3: otherlv_0= 'text-area' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) otherlv_3= 'handles' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleTextArea2884); if (state.failed) return current;
+            otherlv_0=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleTextArea2966); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getTextAreaAccess().getTextAreaKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1315:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1316:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1421:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1422:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1316:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1317:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1422:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1423:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTextArea2901); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getTextAreaAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTextAreaAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTextArea2987);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTextAreaRule());
+              	            current = createModelElementForParent(grammarAccess.getTextAreaRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3375,34 +3739,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTextArea2918); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getTextAreaAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1337:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1338:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1439:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1440:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1338:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1339:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1440:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1441:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleTextArea2935); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getTextAreaAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTextAreaAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTextArea3008);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTextAreaRule());
+              	            current = createModelElementForParent(grammarAccess.getTextAreaRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3411,23 +3774,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTextArea2952); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTextArea3020); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_4, grammarAccess.getTextAreaAccess().getQuotationMarkKeyword_4());
+                  	newLeafNode(otherlv_3, grammarAccess.getTextAreaAccess().getHandlesKeyword_3());
                   
             }
-            otherlv_5=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleTextArea2964); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_5, grammarAccess.getTextAreaAccess().getHandlesKeyword_5());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1363:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1364:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1461:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1462:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1364:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1365:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1462:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1463:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -3438,10 +3795,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getTextAreaAccess().getAttributeAttributeCrossReference_6_0()); 
+              	        newCompositeNode(grammarAccess.getTextAreaAccess().getAttributeAttributeCrossReference_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTextArea2987);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTextArea3043);
             ruleQualifiedName();
 
             state._fsp--;
@@ -3480,7 +3837,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1386:1: entryRuleTextField returns [EObject current=null] : iv_ruleTextField= ruleTextField EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1484:1: entryRuleTextField returns [EObject current=null] : iv_ruleTextField= ruleTextField EOF ;
     public final EObject entryRuleTextField() throws RecognitionException {
         EObject current = null;
 
@@ -3488,13 +3845,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1387:2: (iv_ruleTextField= ruleTextField EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1388:2: iv_ruleTextField= ruleTextField EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1485:2: (iv_ruleTextField= ruleTextField EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1486:2: iv_ruleTextField= ruleTextField EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTextFieldRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTextField_in_entryRuleTextField3023);
+            pushFollow(FollowSets000.FOLLOW_ruleTextField_in_entryRuleTextField3079);
             iv_ruleTextField=ruleTextField();
 
             state._fsp--;
@@ -3502,7 +3859,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleTextField; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTextField3033); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTextField3089); if (state.failed) return current;
 
             }
 
@@ -3520,56 +3877,62 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextField"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1395:1: ruleTextField returns [EObject current=null] : (otherlv_0= 'text-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' (otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) ) )? otherlv_7= 'handles' ( ( ruleQualifiedName ) ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1493:1: ruleTextField returns [EObject current=null] : (otherlv_0= 'text-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) (otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleTextField() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_elementID_1_0=null;
-        Token otherlv_2=null;
-        Token lv_label_3_0=null;
-        Token otherlv_4=null;
+        Token otherlv_3=null;
         Token otherlv_5=null;
-        Token lv_format_6_0=null;
-        Token otherlv_7=null;
+        AntlrDatatypeRuleToken lv_elementID_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_label_2_0 = null;
+
+        AntlrDatatypeRuleToken lv_format_4_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1398:28: ( (otherlv_0= 'text-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' (otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) ) )? otherlv_7= 'handles' ( ( ruleQualifiedName ) ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1399:1: (otherlv_0= 'text-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' (otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) ) )? otherlv_7= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1496:28: ( (otherlv_0= 'text-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) (otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1497:1: (otherlv_0= 'text-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) (otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1399:1: (otherlv_0= 'text-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' (otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) ) )? otherlv_7= 'handles' ( ( ruleQualifiedName ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1399:3: otherlv_0= 'text-field' ( (lv_elementID_1_0= RULE_ID ) ) otherlv_2= '\"' ( (lv_label_3_0= RULE_STRING ) ) otherlv_4= '\"' (otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) ) )? otherlv_7= 'handles' ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1497:1: (otherlv_0= 'text-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) (otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1497:3: otherlv_0= 'text-field' ( (lv_elementID_1_0= ruleEString ) ) ( (lv_label_2_0= ruleEString ) ) (otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) ) )? otherlv_5= 'handles' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleTextField3070); if (state.failed) return current;
+            otherlv_0=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTextField3126); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getTextFieldAccess().getTextFieldKeyword_0());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1403:1: ( (lv_elementID_1_0= RULE_ID ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1404:1: (lv_elementID_1_0= RULE_ID )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1501:1: ( (lv_elementID_1_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1502:1: (lv_elementID_1_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1404:1: (lv_elementID_1_0= RULE_ID )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1405:3: lv_elementID_1_0= RULE_ID
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1502:1: (lv_elementID_1_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1503:3: lv_elementID_1_0= ruleEString
             {
-            lv_elementID_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTextField3087); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_elementID_1_0, grammarAccess.getTextFieldAccess().getElementIDIDTerminalRuleCall_1_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTextFieldAccess().getElementIDEStringParserRuleCall_1_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTextField3147);
+            lv_elementID_1_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTextFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getTextFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"elementID",
                       		lv_elementID_1_0, 
-                      		"ID");
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3578,34 +3941,33 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTextField3104); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getTextFieldAccess().getQuotationMarkKeyword_2());
-                  
-            }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1425:1: ( (lv_label_3_0= RULE_STRING ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1426:1: (lv_label_3_0= RULE_STRING )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1519:2: ( (lv_label_2_0= ruleEString ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1520:1: (lv_label_2_0= ruleEString )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1426:1: (lv_label_3_0= RULE_STRING )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1427:3: lv_label_3_0= RULE_STRING
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1520:1: (lv_label_2_0= ruleEString )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1521:3: lv_label_2_0= ruleEString
             {
-            lv_label_3_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleTextField3121); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-
-              			newLeafNode(lv_label_3_0, grammarAccess.getTextFieldAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
-              		
+               
+              	        newCompositeNode(grammarAccess.getTextFieldAccess().getLabelEStringParserRuleCall_2_0()); 
+              	    
             }
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTextField3168);
+            lv_label_2_0=ruleEString();
+
+            state._fsp--;
+            if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getTextFieldRule());
+              	            current = createModelElementForParent(grammarAccess.getTextFieldRule());
               	        }
-                     		setWithLastConsumed(
+                     		set(
                      			current, 
                      			"label",
-                      		lv_label_3_0, 
-                      		"STRING");
+                      		lv_label_2_0, 
+                      		"EString");
+              	        afterParserOrEnumRuleCall();
               	    
             }
 
@@ -3614,51 +3976,50 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTextField3138); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1537:2: (otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-                  	newLeafNode(otherlv_4, grammarAccess.getTextFieldAccess().getQuotationMarkKeyword_4());
-                  
+            if ( (LA13_0==35) ) {
+                alt13=1;
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1447:1: (otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==34) ) {
-                alt12=1;
-            }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1447:3: otherlv_5= 'format' ( (lv_format_6_0= RULE_STRING ) )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1537:4: otherlv_3= 'format' ( (lv_format_4_0= ruleEString ) )
                     {
-                    otherlv_5=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTextField3151); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleTextField3181); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_5, grammarAccess.getTextFieldAccess().getFormatKeyword_5_0());
+                          	newLeafNode(otherlv_3, grammarAccess.getTextFieldAccess().getFormatKeyword_3_0());
                           
                     }
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1451:1: ( (lv_format_6_0= RULE_STRING ) )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1452:1: (lv_format_6_0= RULE_STRING )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1541:1: ( (lv_format_4_0= ruleEString ) )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1542:1: (lv_format_4_0= ruleEString )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1452:1: (lv_format_6_0= RULE_STRING )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1453:3: lv_format_6_0= RULE_STRING
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1542:1: (lv_format_4_0= ruleEString )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1543:3: lv_format_4_0= ruleEString
                     {
-                    lv_format_6_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleTextField3168); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-
-                      			newLeafNode(lv_format_6_0, grammarAccess.getTextFieldAccess().getFormatSTRINGTerminalRuleCall_5_1_0()); 
-                      		
+                       
+                      	        newCompositeNode(grammarAccess.getTextFieldAccess().getFormatEStringParserRuleCall_3_1_0()); 
+                      	    
                     }
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleTextField3202);
+                    lv_format_4_0=ruleEString();
+
+                    state._fsp--;
+                    if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getTextFieldRule());
+                      	            current = createModelElementForParent(grammarAccess.getTextFieldRule());
                       	        }
-                             		setWithLastConsumed(
+                             		set(
                              			current, 
                              			"format",
-                              		lv_format_6_0, 
-                              		"STRING");
+                              		lv_format_4_0, 
+                              		"EString");
+                      	        afterParserOrEnumRuleCall();
                       	    
                     }
 
@@ -3673,17 +4034,17 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleTextField3187); if (state.failed) return current;
+            otherlv_5=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleTextField3216); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getTextFieldAccess().getHandlesKeyword_6());
+                  	newLeafNode(otherlv_5, grammarAccess.getTextFieldAccess().getHandlesKeyword_4());
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1473:1: ( ( ruleQualifiedName ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1474:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1563:1: ( ( ruleQualifiedName ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1564:1: ( ruleQualifiedName )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1474:1: ( ruleQualifiedName )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1475:3: ruleQualifiedName
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1564:1: ( ruleQualifiedName )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1565:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -3694,10 +4055,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getTextFieldAccess().getAttributeAttributeCrossReference_7_0()); 
+              	        newCompositeNode(grammarAccess.getTextFieldAccess().getAttributeAttributeCrossReference_5_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTextField3210);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleTextField3239);
             ruleQualifiedName();
 
             state._fsp--;
@@ -3736,7 +4097,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1498:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1588:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -3744,13 +4105,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1499:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1500:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1589:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1590:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName3249);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName3278);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
@@ -3758,7 +4119,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedName.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedName3260); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedName3289); if (state.failed) return current;
 
             }
 
@@ -3776,7 +4137,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1507:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1597:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3787,13 +4148,13 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1510:28: ( (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1511:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1600:28: ( (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1601:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1511:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1511:6: this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1601:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1601:6: this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName3300); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName3329); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -3804,25 +4165,25 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1518:1: ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
-            loop13:
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1608:1: ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==35) && (synpred1_InternalForm())) {
-                    alt13=1;
+                if ( (LA14_0==36) && (synpred1_InternalForm())) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1518:2: ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1608:2: ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID
             	    {
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1518:2: ( ( '.' )=>kw= '.' )
-            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1518:3: ( '.' )=>kw= '.'
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1608:2: ( ( '.' )=>kw= '.' )
+            	    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1608:3: ( '.' )=>kw= '.'
             	    {
-            	    kw=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleQualifiedName3328); if (state.failed) return current;
+            	    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleQualifiedName3357); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -3832,7 +4193,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName3344); if (state.failed) return current;
+            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName3373); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_ID_2);
@@ -3848,7 +4209,7 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -3874,8 +4235,99 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleQualifiedName"
 
 
+    // $ANTLR start "ruleCompositeConditionType"
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1631:1: ruleCompositeConditionType returns [Enumerator current=null] : ( (enumLiteral_0= 'And' ) | (enumLiteral_1= 'Or' ) ) ;
+    public final Enumerator ruleCompositeConditionType() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+         enterRule(); 
+        try {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1633:28: ( ( (enumLiteral_0= 'And' ) | (enumLiteral_1= 'Or' ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1634:1: ( (enumLiteral_0= 'And' ) | (enumLiteral_1= 'Or' ) )
+            {
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1634:1: ( (enumLiteral_0= 'And' ) | (enumLiteral_1= 'Or' ) )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==37) ) {
+                alt15=1;
+            }
+            else if ( (LA15_0==38) ) {
+                alt15=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 15, 0, input);
+
+                throw nvae;
+            }
+            switch (alt15) {
+                case 1 :
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1634:2: (enumLiteral_0= 'And' )
+                    {
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1634:2: (enumLiteral_0= 'And' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1634:4: enumLiteral_0= 'And'
+                    {
+                    enumLiteral_0=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleCompositeConditionType3434); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getCompositeConditionTypeAccess().getAndEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_0, grammarAccess.getCompositeConditionTypeAccess().getAndEnumLiteralDeclaration_0()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1640:6: (enumLiteral_1= 'Or' )
+                    {
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1640:6: (enumLiteral_1= 'Or' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1640:8: enumLiteral_1= 'Or'
+                    {
+                    enumLiteral_1=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleCompositeConditionType3451); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getCompositeConditionTypeAccess().getOrEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_1, grammarAccess.getCompositeConditionTypeAccess().getOrEnumLiteralDeclaration_1()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCompositeConditionType"
+
+
     // $ANTLR start "ruleConditionType"
-    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1543:1: ruleConditionType returns [Enumerator current=null] : ( (enumLiteral_0= '0' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '2' ) | (enumLiteral_3= '3' ) | (enumLiteral_4= '4' ) ) ;
+    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1650:1: ruleConditionType returns [Enumerator current=null] : ( (enumLiteral_0= 'Hide' ) | (enumLiteral_1= 'Show' ) | (enumLiteral_2= 'Enable' ) | (enumLiteral_3= 'Disable' ) | (enumLiteral_4= 'None' ) ) ;
     public final Enumerator ruleConditionType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3887,53 +4339,53 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1545:28: ( ( (enumLiteral_0= '0' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '2' ) | (enumLiteral_3= '3' ) | (enumLiteral_4= '4' ) ) )
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1546:1: ( (enumLiteral_0= '0' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '2' ) | (enumLiteral_3= '3' ) | (enumLiteral_4= '4' ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1652:28: ( ( (enumLiteral_0= 'Hide' ) | (enumLiteral_1= 'Show' ) | (enumLiteral_2= 'Enable' ) | (enumLiteral_3= 'Disable' ) | (enumLiteral_4= 'None' ) ) )
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1653:1: ( (enumLiteral_0= 'Hide' ) | (enumLiteral_1= 'Show' ) | (enumLiteral_2= 'Enable' ) | (enumLiteral_3= 'Disable' ) | (enumLiteral_4= 'None' ) )
             {
-            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1546:1: ( (enumLiteral_0= '0' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '2' ) | (enumLiteral_3= '3' ) | (enumLiteral_4= '4' ) )
-            int alt14=5;
+            // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1653:1: ( (enumLiteral_0= 'Hide' ) | (enumLiteral_1= 'Show' ) | (enumLiteral_2= 'Enable' ) | (enumLiteral_3= 'Disable' ) | (enumLiteral_4= 'None' ) )
+            int alt16=5;
             switch ( input.LA(1) ) {
-            case 36:
-                {
-                alt14=1;
-                }
-                break;
-            case 37:
-                {
-                alt14=2;
-                }
-                break;
-            case 38:
-                {
-                alt14=3;
-                }
-                break;
             case 39:
                 {
-                alt14=4;
+                alt16=1;
                 }
                 break;
             case 40:
                 {
-                alt14=5;
+                alt16=2;
+                }
+                break;
+            case 41:
+                {
+                alt16=3;
+                }
+                break;
+            case 42:
+                {
+                alt16=4;
+                }
+                break;
+            case 43:
+                {
+                alt16=5;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt16) {
                 case 1 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1546:2: (enumLiteral_0= '0' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1653:2: (enumLiteral_0= 'Hide' )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1546:2: (enumLiteral_0= '0' )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1546:4: enumLiteral_0= '0'
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1653:2: (enumLiteral_0= 'Hide' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1653:4: enumLiteral_0= 'Hide'
                     {
-                    enumLiteral_0=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleConditionType3407); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleConditionType3496); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getConditionTypeAccess().getHideEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -3947,12 +4399,12 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1552:6: (enumLiteral_1= '1' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1659:6: (enumLiteral_1= 'Show' )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1552:6: (enumLiteral_1= '1' )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1552:8: enumLiteral_1= '1'
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1659:6: (enumLiteral_1= 'Show' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1659:8: enumLiteral_1= 'Show'
                     {
-                    enumLiteral_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleConditionType3424); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleConditionType3513); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getConditionTypeAccess().getShowEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -3966,12 +4418,12 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1558:6: (enumLiteral_2= '2' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1665:6: (enumLiteral_2= 'Enable' )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1558:6: (enumLiteral_2= '2' )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1558:8: enumLiteral_2= '2'
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1665:6: (enumLiteral_2= 'Enable' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1665:8: enumLiteral_2= 'Enable'
                     {
-                    enumLiteral_2=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleConditionType3441); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleConditionType3530); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getConditionTypeAccess().getEnableEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -3985,12 +4437,12 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1564:6: (enumLiteral_3= '3' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1671:6: (enumLiteral_3= 'Disable' )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1564:6: (enumLiteral_3= '3' )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1564:8: enumLiteral_3= '3'
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1671:6: (enumLiteral_3= 'Disable' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1671:8: enumLiteral_3= 'Disable'
                     {
-                    enumLiteral_3=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleConditionType3458); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleConditionType3547); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getConditionTypeAccess().getDisableEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -4004,12 +4456,12 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1570:6: (enumLiteral_4= '4' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1677:6: (enumLiteral_4= 'None' )
                     {
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1570:6: (enumLiteral_4= '4' )
-                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1570:8: enumLiteral_4= '4'
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1677:6: (enumLiteral_4= 'None' )
+                    // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1677:8: enumLiteral_4= 'None'
                     {
-                    enumLiteral_4=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleConditionType3475); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleConditionType3564); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getConditionTypeAccess().getNoneEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -4045,10 +4497,10 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalForm
     public final void synpred1_InternalForm_fragment() throws RecognitionException {   
-        // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1518:3: ( '.' )
-        // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1519:2: '.'
+        // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1608:3: ( '.' )
+        // ../at.ac.tuwien.big.forms.form/src-gen/at/ac/tuwien/big/forms/form/parser/antlr/internal/InternalForm.g:1609:2: '.'
         {
-        match(input,35,FollowSets000.FOLLOW_35_in_synpred1_InternalForm3319); if (state.failed) return ;
+        match(input,36,FollowSets000.FOLLOW_36_in_synpred1_InternalForm3348); if (state.failed) return ;
 
         }
     }
@@ -4072,6 +4524,218 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
     }
 
 
+    protected DFA6 dfa6 = new DFA6(this);
+    protected DFA11 dfa11 = new DFA11(this);
+    static final String DFA6_eotS =
+        "\142\uffff";
+    static final String DFA6_eofS =
+        "\142\uffff";
+    static final String DFA6_minS =
+        "\1\32\30\4\20\15\11\4\2\15\6\17\1\33\1\16\1\4\2\uffff\10\4\1\37"+
+        "\6\17\1\33\1\17\1\16\4\4\1\17\2\15\1\4\1\17\1\4\1\37\1\33\1\17\1"+
+        "\4\1\17\1\4\1\17";
+    static final String DFA6_maxS =
+        "\1\42\30\5\2\43\16\15\1\5\10\4\2\15\10\44\1\4\2\uffff\10\4\1\37"+
+        "\11\44\1\5\1\4\2\5\1\44\2\15\1\4\1\44\1\4\1\37\1\33\1\44\1\4\1\44"+
+        "\1\4\1\44";
+    static final String DFA6_acceptS =
+        "\75\uffff\1\2\1\1\43\uffff";
+    static final String DFA6_specialS =
+        "\142\uffff}>";
+    static final String[] DFA6_transitionS = {
+            "\1\10\1\uffff\1\7\1\6\1\5\1\4\1\3\1\2\1\1",
+            "\1\12\1\11",
+            "\1\14\1\13",
+            "\1\16\1\15",
+            "\1\20\1\17",
+            "\1\22\1\21",
+            "\1\24\1\23",
+            "\1\26\1\25",
+            "\1\30\1\27",
+            "\1\32\1\31",
+            "\1\32\1\31",
+            "\1\34\1\33",
+            "\1\34\1\33",
+            "\1\36\1\35",
+            "\1\36\1\35",
+            "\1\40\1\37",
+            "\1\40\1\37",
+            "\1\42\1\41",
+            "\1\42\1\41",
+            "\1\44\1\43",
+            "\1\44\1\43",
+            "\1\46\1\45",
+            "\1\46\1\45",
+            "\1\50\1\47",
+            "\1\50\1\47",
+            "\1\52\25\uffff\1\51",
+            "\1\52\25\uffff\1\51",
+            "\1\53",
+            "\1\53",
+            "\1\54",
+            "\1\54",
+            "\1\55",
+            "\1\55",
+            "\1\56",
+            "\1\56",
+            "\1\57",
+            "\1\57",
+            "\1\60",
+            "\1\60",
+            "\1\61",
+            "\1\61",
+            "\1\63\1\62",
+            "\1\64",
+            "\1\65",
+            "\1\66",
+            "\1\67",
+            "\1\70",
+            "\1\71",
+            "\1\72",
+            "\1\73",
+            "\1\52",
+            "\1\52",
+            "\1\75\1\uffff\1\76\22\uffff\1\74",
+            "\1\75\1\uffff\1\76\22\uffff\1\77",
+            "\1\75\1\uffff\1\76\22\uffff\1\100",
+            "\1\75\1\uffff\1\76\22\uffff\1\101",
+            "\1\75\1\uffff\1\76\22\uffff\1\102",
+            "\1\75\1\uffff\1\76\22\uffff\1\103",
+            "\1\105\10\uffff\1\104",
+            "\1\107\25\uffff\1\106",
+            "\1\110",
+            "",
+            "",
+            "\1\111",
+            "\1\112",
+            "\1\113",
+            "\1\114",
+            "\1\115",
+            "\1\116",
+            "\1\117",
+            "\1\120",
+            "\1\121",
+            "\1\75\1\uffff\1\76\22\uffff\1\74",
+            "\1\75\1\uffff\1\76\22\uffff\1\77",
+            "\1\75\1\uffff\1\76\22\uffff\1\100",
+            "\1\75\1\uffff\1\76\22\uffff\1\101",
+            "\1\75\1\uffff\1\76\22\uffff\1\102",
+            "\1\75\1\uffff\1\76\22\uffff\1\103",
+            "\1\105\10\uffff\1\104",
+            "\1\75\1\uffff\1\76\22\uffff\1\122",
+            "\1\107\25\uffff\1\106",
+            "\1\124\1\123",
+            "\1\125",
+            "\1\127\1\126",
+            "\1\127\1\126",
+            "\1\75\1\uffff\1\76\22\uffff\1\122",
+            "\1\130",
+            "\1\130",
+            "\1\131",
+            "\1\134\1\uffff\1\133\22\uffff\1\132",
+            "\1\135",
+            "\1\121",
+            "\1\136",
+            "\1\134\1\uffff\1\133\22\uffff\1\132",
+            "\1\137",
+            "\1\75\1\uffff\1\76\22\uffff\1\140",
+            "\1\141",
+            "\1\75\1\uffff\1\76\22\uffff\1\140"
+    };
+
+    static final short[] DFA6_eot = DFA.unpackEncodedString(DFA6_eotS);
+    static final short[] DFA6_eof = DFA.unpackEncodedString(DFA6_eofS);
+    static final char[] DFA6_min = DFA.unpackEncodedStringToUnsignedChars(DFA6_minS);
+    static final char[] DFA6_max = DFA.unpackEncodedStringToUnsignedChars(DFA6_maxS);
+    static final short[] DFA6_accept = DFA.unpackEncodedString(DFA6_acceptS);
+    static final short[] DFA6_special = DFA.unpackEncodedString(DFA6_specialS);
+    static final short[][] DFA6_transition;
+
+    static {
+        int numStates = DFA6_transitionS.length;
+        DFA6_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA6_transition[i] = DFA.unpackEncodedString(DFA6_transitionS[i]);
+        }
+    }
+
+    class DFA6 extends DFA {
+
+        public DFA6(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 6;
+            this.eot = DFA6_eot;
+            this.eof = DFA6_eof;
+            this.min = DFA6_min;
+            this.max = DFA6_max;
+            this.accept = DFA6_accept;
+            this.special = DFA6_special;
+            this.transition = DFA6_transition;
+        }
+        public String getDescription() {
+            return "()* loopback of 327:1: ( ( (lv_pageElements_3_0= rulePageElement ) ) otherlv_4= ',' )*";
+        }
+    }
+    static final String DFA11_eotS =
+        "\14\uffff";
+    static final String DFA11_eofS =
+        "\14\uffff";
+    static final String DFA11_minS =
+        "\1\37\3\4\2\15\1\4\1\17\1\4\2\uffff\1\17";
+    static final String DFA11_maxS =
+        "\1\37\3\5\2\15\1\4\1\44\1\4\2\uffff\1\44";
+    static final String DFA11_acceptS =
+        "\11\uffff\1\2\1\1\1\uffff";
+    static final String DFA11_specialS =
+        "\14\uffff}>";
+    static final String[] DFA11_transitionS = {
+            "\1\1",
+            "\1\3\1\2",
+            "\1\5\1\4",
+            "\1\5\1\4",
+            "\1\6",
+            "\1\6",
+            "\1\7",
+            "\1\11\1\uffff\1\12\22\uffff\1\10",
+            "\1\13",
+            "",
+            "",
+            "\1\11\1\uffff\1\12\22\uffff\1\10"
+    };
+
+    static final short[] DFA11_eot = DFA.unpackEncodedString(DFA11_eotS);
+    static final short[] DFA11_eof = DFA.unpackEncodedString(DFA11_eofS);
+    static final char[] DFA11_min = DFA.unpackEncodedStringToUnsignedChars(DFA11_minS);
+    static final char[] DFA11_max = DFA.unpackEncodedStringToUnsignedChars(DFA11_maxS);
+    static final short[] DFA11_accept = DFA.unpackEncodedString(DFA11_acceptS);
+    static final short[] DFA11_special = DFA.unpackEncodedString(DFA11_specialS);
+    static final short[][] DFA11_transition;
+
+    static {
+        int numStates = DFA11_transitionS.length;
+        DFA11_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA11_transition[i] = DFA.unpackEncodedString(DFA11_transitionS[i]);
+        }
+    }
+
+    class DFA11 extends DFA {
+
+        public DFA11(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 11;
+            this.eot = DFA11_eot;
+            this.eof = DFA11_eof;
+            this.min = DFA11_min;
+            this.max = DFA11_max;
+            this.accept = DFA11_accept;
+            this.special = DFA11_special;
+            this.transition = DFA11_transition;
+        }
+        public String getDescription() {
+            return "()* loopback of 834:1: ( ( (lv_columns_6_0= ruleColumn ) ) otherlv_7= ',' )*";
+        }
+    }
  
 
     
@@ -4083,156 +4747,151 @@ public class InternalFormParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_EOF_in_entryRuleForm187 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_11_in_ruleForm230 = new BitSet(new long[]{0x0000000000001000L});
         public static final BitSet FOLLOW_12_in_ruleForm256 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleForm273 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleForm290 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleForm307 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleForm324 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleForm336 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleForm359 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleForm371 = new BitSet(new long[]{0x0000000000030000L});
-        public static final BitSet FOLLOW_rulePage_in_ruleForm392 = new BitSet(new long[]{0x0000000000030000L});
-        public static final BitSet FOLLOW_16_in_ruleForm405 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePage_in_entryRulePage441 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePage451 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rulePage488 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_rulePage500 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rulePage517 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_rulePage534 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_rulePage546 = new BitSet(new long[]{0x00000003FA010000L});
-        public static final BitSet FOLLOW_rulePageElement_in_rulePage568 = new BitSet(new long[]{0x00000003FA050000L});
-        public static final BitSet FOLLOW_18_in_rulePage581 = new BitSet(new long[]{0x00000003FA010000L});
-        public static final BitSet FOLLOW_16_in_rulePage597 = new BitSet(new long[]{0x0000000000080002L});
-        public static final BitSet FOLLOW_ruleCondition_in_rulePage618 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition655 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCondition665 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_ruleCondition703 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_ruleAttributeValueCondition_in_ruleCondition725 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_ruleCondition744 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_ruleCompositeCondition_in_ruleCondition766 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCompositeCondition_in_entryRuleCompositeCondition802 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCompositeCondition812 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_ruleCompositeCondition849 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleCompositeCondition866 = new BitSet(new long[]{0x0000000000200000L});
-        public static final BitSet FOLLOW_21_in_ruleCompositeCondition883 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAttributeValueCondition_in_entryRuleAttributeValueCondition919 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAttributeValueCondition929 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_ruleAttributeValueCondition966 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeValueCondition983 = new BitSet(new long[]{0x0000000000200000L});
-        public static final BitSet FOLLOW_21_in_ruleAttributeValueCondition1000 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAttributeValueCondition1023 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleAttributeValueCondition1035 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleAttributeValueCondition1052 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_24_in_ruleAttributeValueCondition1069 = new BitSet(new long[]{0x000001F000000000L});
-        public static final BitSet FOLLOW_ruleConditionType_in_ruleAttributeValueCondition1090 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePageElement_in_entryRulePageElement1126 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePageElement1136 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAttributePageElement_in_rulePageElement1183 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRelationshipPageElement_in_rulePageElement1210 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRelationshipPageElement_in_entryRuleRelationshipPageElement1245 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRelationshipPageElement1255 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleList_in_ruleRelationshipPageElement1302 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTable_in_ruleRelationshipPageElement1329 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTable_in_entryRuleTable1364 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTable1374 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleTable1411 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTable1428 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTable1445 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleTable1462 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTable1479 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleTable1491 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTable1514 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleTable1526 = new BitSet(new long[]{0x0000000040010000L});
-        public static final BitSet FOLLOW_ruleColumn_in_ruleTable1548 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleTable1560 = new BitSet(new long[]{0x0000000040010000L});
-        public static final BitSet FOLLOW_16_in_ruleTable1574 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleTable1586 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTable1609 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleList_in_entryRuleList1645 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleList1655 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_ruleList1692 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleList1709 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleList1726 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleList1743 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleList1760 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleList1772 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleList1795 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleList1807 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleList1830 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAttributePageElement_in_entryRuleAttributePageElement1866 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAttributePageElement1876 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTextField_in_ruleAttributePageElement1923 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTextArea_in_ruleAttributePageElement1950 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSelectionField_in_ruleAttributePageElement1977 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleColumn_in_ruleAttributePageElement2004 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDateSelectionField_in_ruleAttributePageElement2031 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeSelectionField_in_ruleAttributePageElement2058 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeSelectionField_in_entryRuleTimeSelectionField2093 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTimeSelectionField2103 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleTimeSelectionField2140 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTimeSelectionField2157 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTimeSelectionField2174 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleTimeSelectionField2191 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTimeSelectionField2208 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleTimeSelectionField2220 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTimeSelectionField2243 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDateSelectionField_in_entryRuleDateSelectionField2279 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDateSelectionField2289 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_ruleDateSelectionField2326 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleDateSelectionField2343 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleDateSelectionField2360 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleDateSelectionField2377 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleDateSelectionField2394 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleDateSelectionField2406 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleDateSelectionField2429 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleColumn_in_entryRuleColumn2465 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleColumn2475 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_ruleColumn2512 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleColumn2529 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleColumn2546 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleColumn2563 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleColumn2580 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleColumn2592 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleColumn2615 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSelectionField_in_entryRuleSelectionField2651 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleSelectionField2661 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleSelectionField2698 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleSelectionField2715 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleSelectionField2732 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleSelectionField2749 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleSelectionField2766 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleSelectionField2778 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleSelectionField2801 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTextArea_in_entryRuleTextArea2837 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTextArea2847 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleTextArea2884 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTextArea2901 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTextArea2918 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleTextArea2935 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTextArea2952 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleTextArea2964 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTextArea2987 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTextField_in_entryRuleTextField3023 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTextField3033 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_ruleTextField3070 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTextField3087 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTextField3104 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleTextField3121 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleTextField3138 = new BitSet(new long[]{0x0000000400004000L});
-        public static final BitSet FOLLOW_34_in_ruleTextField3151 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleTextField3168 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_ruleTextField3187 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTextField3210 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName3249 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName3260 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName3300 = new BitSet(new long[]{0x0000000800000002L});
-        public static final BitSet FOLLOW_35_in_ruleQualifiedName3328 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName3344 = new BitSet(new long[]{0x0000000800000002L});
-        public static final BitSet FOLLOW_36_in_ruleConditionType3407 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleConditionType3424 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_38_in_ruleConditionType3441 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_39_in_ruleConditionType3458 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleConditionType3475 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_synpred1_InternalForm3319 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleForm273 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleForm299 = new BitSet(new long[]{0x0000000000002030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleForm320 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleForm333 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleForm356 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_14_in_ruleForm368 = new BitSet(new long[]{0x0000000000018000L});
+        public static final BitSet FOLLOW_rulePage_in_ruleForm389 = new BitSet(new long[]{0x0000000000018000L});
+        public static final BitSet FOLLOW_15_in_ruleForm402 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString439 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEString450 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString490 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleEString516 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePage_in_entryRulePage561 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePage571 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rulePage608 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rulePage625 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_14_in_rulePage642 = new BitSet(new long[]{0x00000007F4000000L});
+        public static final BitSet FOLLOW_rulePageElement_in_rulePage664 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_17_in_rulePage676 = new BitSet(new long[]{0x00000007F4000000L});
+        public static final BitSet FOLLOW_rulePageElement_in_rulePage699 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_rulePage711 = new BitSet(new long[]{0x0000000000040002L});
+        public static final BitSet FOLLOW_18_in_rulePage724 = new BitSet(new long[]{0x0000000001080000L});
+        public static final BitSet FOLLOW_ruleCondition_in_rulePage745 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition783 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCondition793 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributeValueCondition_in_ruleCondition840 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCompositeCondition_in_ruleCondition867 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCompositeCondition_in_entryRuleCompositeCondition902 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCompositeCondition912 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_ruleCompositeCondition949 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleCompositeCondition970 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_20_in_ruleCompositeCondition982 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_21_in_ruleCompositeCondition994 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_ruleAttributeValueCondition_in_ruleCompositeCondition1015 = new BitSet(new long[]{0x0000006000000000L});
+        public static final BitSet FOLLOW_ruleCompositeConditionType_in_ruleCompositeCondition1036 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_ruleAttributeValueCondition_in_ruleCompositeCondition1057 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_22_in_ruleCompositeCondition1069 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleCompositeCondition1081 = new BitSet(new long[]{0x00000F8000000000L});
+        public static final BitSet FOLLOW_ruleConditionType_in_ruleCompositeCondition1102 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributeValueCondition_in_entryRuleAttributeValueCondition1138 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAttributeValueCondition1148 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleAttributeValueCondition1185 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleAttributeValueCondition1206 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_20_in_ruleAttributeValueCondition1218 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAttributeValueCondition1241 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_25_in_ruleAttributeValueCondition1253 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleAttributeValueCondition1274 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleAttributeValueCondition1286 = new BitSet(new long[]{0x00000F8000000000L});
+        public static final BitSet FOLLOW_ruleConditionType_in_ruleAttributeValueCondition1307 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePageElement_in_entryRulePageElement1343 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePageElement1353 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributePageElement_in_rulePageElement1400 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRelationshipPageElement_in_rulePageElement1427 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRelationshipPageElement_in_entryRuleRelationshipPageElement1462 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRelationshipPageElement1472 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleList_in_ruleRelationshipPageElement1519 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTable_in_ruleRelationshipPageElement1546 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTable_in_entryRuleTable1581 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTable1591 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleTable1628 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTable1649 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTable1670 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleTable1682 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTable1705 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_14_in_ruleTable1717 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_ruleColumn_in_ruleTable1739 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_17_in_ruleTable1751 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_ruleColumn_in_ruleTable1774 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleTable1786 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_27_in_ruleTable1798 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTable1821 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleList_in_entryRuleList1857 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleList1867 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleList1904 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleList1925 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleList1946 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleList1958 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleList1981 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_27_in_ruleList1993 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleList2016 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributePageElement_in_entryRuleAttributePageElement2052 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAttributePageElement2062 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTextField_in_ruleAttributePageElement2109 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTextArea_in_ruleAttributePageElement2136 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSelectionField_in_ruleAttributePageElement2163 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleColumn_in_ruleAttributePageElement2190 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDateSelectionField_in_ruleAttributePageElement2217 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeSelectionField_in_ruleAttributePageElement2244 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeSelectionField_in_entryRuleTimeSelectionField2279 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTimeSelectionField2289 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_ruleTimeSelectionField2326 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTimeSelectionField2347 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTimeSelectionField2368 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleTimeSelectionField2380 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTimeSelectionField2403 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDateSelectionField_in_entryRuleDateSelectionField2439 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDateSelectionField2449 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_ruleDateSelectionField2486 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleDateSelectionField2507 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleDateSelectionField2528 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleDateSelectionField2540 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleDateSelectionField2563 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleColumn_in_entryRuleColumn2599 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleColumn2609 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleColumn2646 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleColumn2667 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleColumn2688 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleColumn2700 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleColumn2723 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSelectionField_in_entryRuleSelectionField2759 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleSelectionField2769 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_ruleSelectionField2806 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleSelectionField2827 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleSelectionField2848 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleSelectionField2860 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleSelectionField2883 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTextArea_in_entryRuleTextArea2919 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTextArea2929 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_ruleTextArea2966 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTextArea2987 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTextArea3008 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleTextArea3020 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTextArea3043 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTextField_in_entryRuleTextField3079 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTextField3089 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_34_in_ruleTextField3126 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTextField3147 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTextField3168 = new BitSet(new long[]{0x0000000800002000L});
+        public static final BitSet FOLLOW_35_in_ruleTextField3181 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleTextField3202 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleTextField3216 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTextField3239 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName3278 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName3289 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName3329 = new BitSet(new long[]{0x0000001000000002L});
+        public static final BitSet FOLLOW_36_in_ruleQualifiedName3357 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName3373 = new BitSet(new long[]{0x0000001000000002L});
+        public static final BitSet FOLLOW_37_in_ruleCompositeConditionType3434 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleCompositeConditionType3451 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_39_in_ruleConditionType3496 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleConditionType3513 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleConditionType3530 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleConditionType3547 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_ruleConditionType3564 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_synpred1_InternalForm3348 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

@@ -43,7 +43,6 @@ public class EntityParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityModelAccess().getGroup(), "rule__EntityModel__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup_2(), "rule__Entity__Group_2__0");
-					put(grammarAccess.getEntityAccess().getGroup_2_2(), "rule__Entity__Group_2_2__0");
 					put(grammarAccess.getEntityAccess().getGroup_7(), "rule__Entity__Group_7__0");
 					put(grammarAccess.getEntityAccess().getGroup_7_0(), "rule__Entity__Group_7_0__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
@@ -59,7 +58,6 @@ public class EntityParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityModelAccess().getEntityModelElementsAssignment_1(), "rule__EntityModel__EntityModelElementsAssignment_1");
 					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 					put(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_1(), "rule__Entity__SuperTypeAssignment_2_1");
-					put(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_2_1(), "rule__Entity__SuperTypeAssignment_2_2_1");
 					put(grammarAccess.getEntityAccess().getIdAssignment_5(), "rule__Entity__IdAssignment_5");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_7_0_0(), "rule__Entity__FeaturesAssignment_7_0_0");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_7_1(), "rule__Entity__FeaturesAssignment_7_1");
