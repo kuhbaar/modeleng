@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
+import at.ac.tuwien.big.forms.Attribute;
 import at.ac.tuwien.big.forms.Entity;
 import at.ac.tuwien.big.forms.Feature;
 import at.ac.tuwien.big.forms.FormsPackage;
@@ -28,7 +29,7 @@ public class EntityScopeProvider extends org.eclipse.xtext.scoping.impl.Abstract
 		return IScope.NULLSCOPE;
 	}
 	
-	private Collection<Feature> getAllMemberAttributes(Entity entity) {
+	private Collection<Attribute> getAllMemberAttributes(Entity entity) {
 		Collection<Feature> allMemberAttributes = new HashSet<Feature>();
 		allMemberAttributes.addAll(entity.getFeatures());
 		
@@ -39,7 +40,13 @@ public class EntityScopeProvider extends org.eclipse.xtext.scoping.impl.Abstract
 			st = st.getSuperType();
 		}
 		
-		return allMemberAttributes;
+		Collection<Attribute> allAttr = new HashSet<Attribute>();
+		for (Feature f : allMemberAttributes){
+			if(f instanceof Attribute)
+				allAttr.add((Attribute) f);
+		}
+		
+		return allAttr;
 	}
 
 }
