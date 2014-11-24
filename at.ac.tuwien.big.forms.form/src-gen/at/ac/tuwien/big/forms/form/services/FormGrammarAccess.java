@@ -66,13 +66,11 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Form:
 		//	welcomeForm?="welcome"? "form" name=ID title=EString description=EString? "handles" entity=[Entity|QualifiedName] "{"
-		//	pages+=Page* //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
-		//	"}";
+		//	pages+=Page* "}";
 		public ParserRule getRule() { return rule; }
 
 		//welcomeForm?="welcome"? "form" name=ID title=EString description=EString? "handles" entity=[Entity|QualifiedName] "{"
-		//pages+=Page* //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
-		//"}"
+		//pages+=Page* "}"
 		public Group getGroup() { return cGroup; }
 
 		//welcomeForm?="welcome"?
@@ -123,7 +121,6 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		//Page
 		public RuleCall getPagesPageParserRuleCall_8_0() { return cPagesPageParserRuleCall_8_0; }
 
-		////TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
@@ -259,7 +256,6 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cTypeConditionTypeEnumRuleCall_9_0 = (RuleCall)cTypeAssignment_9.eContents().get(0);
 		
-		////TODO: Just put in attributevalueCondition to make it easy. Change to Condition later.
 		//CompositeCondition:
 		//	"composite-condition" conditionID=EString ":" "(" composedConditions+=AttributeValueCondition
 		//	compositionType=CompositeConditionType composedConditions+=AttributeValueCondition ")" "?" type=ConditionType;
@@ -952,14 +948,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		/// *TextField returns TextField: 
-		//'text-field'
-		//(elementID=EString)?
-		//label=EString
-		//(format=EString)?
-		//
-		//'handles' attribute=[Attribute|QualifiedName]
-		//;* / EInt returns ecore::EInt:
+		//EInt returns ecore::EInt:
 		//	"-"? INT;
 		public ParserRule getRule() { return rule; }
 
@@ -1178,8 +1167,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Form:
 	//	welcomeForm?="welcome"? "form" name=ID title=EString description=EString? "handles" entity=[Entity|QualifiedName] "{"
-	//	pages+=Page* //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
-	//	"}";
+	//	pages+=Page* "}";
 	public FormElements getFormAccess() {
 		return pForm;
 	}
@@ -1218,7 +1206,6 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		return getConditionAccess().getRule();
 	}
 
-	////TODO: Just put in attributevalueCondition to make it easy. Change to Condition later.
 	//CompositeCondition:
 	//	"composite-condition" conditionID=EString ":" "(" composedConditions+=AttributeValueCondition
 	//	compositionType=CompositeConditionType composedConditions+=AttributeValueCondition ")" "?" type=ConditionType;
@@ -1374,14 +1361,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 		return getTextFieldAccess().getRule();
 	}
 
-	/// *TextField returns TextField: 
-	//'text-field'
-	//(elementID=EString)?
-	//label=EString
-	//(format=EString)?
-	//
-	//'handles' attribute=[Attribute|QualifiedName]
-	//;* / EInt returns ecore::EInt:
+	//EInt returns ecore::EInt:
 	//	"-"? INT;
 	public EIntElements getEIntAccess() {
 		return pEInt;

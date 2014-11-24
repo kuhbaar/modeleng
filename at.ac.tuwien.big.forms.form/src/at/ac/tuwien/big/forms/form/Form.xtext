@@ -14,7 +14,7 @@ FormModel returns FormModel:
 Form returns Form:
   (welcomeForm?='welcome')? 'form' name=ID title=EString (description=EString)? 'handles' entity=[Entity|QualifiedName] '{'
     (pages+=Page)*
-  '}' //TODO: description missing? look here: https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53709
+  '}'
 ;
 
 EString returns ecore::EString:
@@ -35,7 +35,6 @@ CompositeCondition returns CompositeCondition:
   'composite-condition' conditionID=EString':'
         '('composedConditions+=AttributeValueCondition compositionType=CompositeConditionType
            composedConditions+=AttributeValueCondition')' '?' type=ConditionType
-    //TODO: Just put in attributevalueCondition to make it easy. Change to Condition later.
 ;
 
 AttributeValueCondition returns AttributeValueCondition:
@@ -98,14 +97,6 @@ TextField returns TextField:
   'text-field' elementID=EString label=EString ('format' format=EString)? 'handles' attribute=[Attribute|QualifiedName]
 ;
 
-/*TextField returns TextField: 
-'text-field'
-(elementID=EString)?
-label=EString
-(format=EString)?
-
-'handles' attribute=[Attribute|QualifiedName]
-;*/
 
 EInt returns ecore::EInt:
   '-'? INT;
