@@ -46,9 +46,12 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case FormsPackage.COLUMN:
 				if(context == grammarAccess.getAttributePageElementRule() ||
-				   context == grammarAccess.getColumnRule() ||
-				   context == grammarAccess.getPageElementRule()) {
+				   context == grammarAccess.getColumnRule()) {
 					sequence_Column(context, (Column) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getPageElementRule()) {
+					sequence_Column_PageElement(context, (Column) semanticObject); 
 					return; 
 				}
 				else break;
@@ -61,9 +64,12 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case FormsPackage.DATE_SELECTION_FIELD:
 				if(context == grammarAccess.getAttributePageElementRule() ||
-				   context == grammarAccess.getDateSelectionFieldRule() ||
-				   context == grammarAccess.getPageElementRule()) {
+				   context == grammarAccess.getDateSelectionFieldRule()) {
 					sequence_DateSelectionField(context, (DateSelectionField) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getPageElementRule()) {
+					sequence_DateSelectionField_PageElement(context, (DateSelectionField) semanticObject); 
 					return; 
 				}
 				else break;
@@ -81,9 +87,12 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case FormsPackage.LIST:
 				if(context == grammarAccess.getListRule() ||
-				   context == grammarAccess.getPageElementRule() ||
 				   context == grammarAccess.getRelationshipPageElementRule()) {
 					sequence_List(context, (List) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getPageElementRule()) {
+					sequence_List_PageElement(context, (List) semanticObject); 
 					return; 
 				}
 				else break;
@@ -94,40 +103,55 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 				}
 				else break;
 			case FormsPackage.SELECTION_FIELD:
-				if(context == grammarAccess.getAttributePageElementRule() ||
-				   context == grammarAccess.getPageElementRule() ||
+				if(context == grammarAccess.getPageElementRule()) {
+					sequence_PageElement_SelectionField(context, (SelectionField) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAttributePageElementRule() ||
 				   context == grammarAccess.getSelectionFieldRule()) {
 					sequence_SelectionField(context, (SelectionField) semanticObject); 
 					return; 
 				}
 				else break;
 			case FormsPackage.TABLE:
-				if(context == grammarAccess.getPageElementRule() ||
-				   context == grammarAccess.getRelationshipPageElementRule() ||
+				if(context == grammarAccess.getPageElementRule()) {
+					sequence_PageElement_Table(context, (Table) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getRelationshipPageElementRule() ||
 				   context == grammarAccess.getTableRule()) {
 					sequence_Table(context, (Table) semanticObject); 
 					return; 
 				}
 				else break;
 			case FormsPackage.TEXT_AREA:
-				if(context == grammarAccess.getAttributePageElementRule() ||
-				   context == grammarAccess.getPageElementRule() ||
+				if(context == grammarAccess.getPageElementRule()) {
+					sequence_PageElement_TextArea(context, (TextArea) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAttributePageElementRule() ||
 				   context == grammarAccess.getTextAreaRule()) {
 					sequence_TextArea(context, (TextArea) semanticObject); 
 					return; 
 				}
 				else break;
 			case FormsPackage.TEXT_FIELD:
-				if(context == grammarAccess.getAttributePageElementRule() ||
-				   context == grammarAccess.getPageElementRule() ||
+				if(context == grammarAccess.getPageElementRule()) {
+					sequence_PageElement_TextField(context, (TextField) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAttributePageElementRule() ||
 				   context == grammarAccess.getTextFieldRule()) {
 					sequence_TextField(context, (TextField) semanticObject); 
 					return; 
 				}
 				else break;
 			case FormsPackage.TIME_SELECTION_FIELD:
-				if(context == grammarAccess.getAttributePageElementRule() ||
-				   context == grammarAccess.getPageElementRule() ||
+				if(context == grammarAccess.getPageElementRule()) {
+					sequence_PageElement_TimeSelectionField(context, (TimeSelectionField) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAttributePageElementRule() ||
 				   context == grammarAccess.getTimeSelectionFieldRule()) {
 					sequence_TimeSelectionField(context, (TimeSelectionField) semanticObject); 
 					return; 
@@ -173,6 +197,15 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_Column_PageElement(EObject context, Column semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         conditionID=EString 
 	 *         composedConditions+=AttributeValueCondition 
@@ -191,6 +224,15 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName])
 	 */
 	protected void sequence_DateSelectionField(EObject context, DateSelectionField semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_DateSelectionField_PageElement(EObject context, DateSelectionField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -225,6 +267,68 @@ public abstract class AbstractFormSemanticSequencer extends AbstractDelegatingSe
 	 *     (elementID=EString label=EString relationship=[Relationship|QualifiedName] editingForm=[Form|QualifiedName])
 	 */
 	protected void sequence_List(EObject context, List semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elementID=EString label=EString relationship=[Relationship|QualifiedName] editingForm=[Form|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_List_PageElement(EObject context, List semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_PageElement_SelectionField(EObject context, SelectionField semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         elementID=EString 
+	 *         label=EString 
+	 *         relationship=[Relationship|QualifiedName] 
+	 *         columns+=Column* 
+	 *         columns+=Column 
+	 *         editingForm=[Form|QualifiedName] 
+	 *         condition=Condition?
+	 *     )
+	 */
+	protected void sequence_PageElement_Table(EObject context, Table semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_PageElement_TextArea(EObject context, TextArea semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elementID=EString label=EString format=EString? attribute=[Attribute|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_PageElement_TextField(EObject context, TextField semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elementID=EString label=EString attribute=[Attribute|QualifiedName] condition=Condition?)
+	 */
+	protected void sequence_PageElement_TimeSelectionField(EObject context, TimeSelectionField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -39,7 +39,7 @@ public class FormParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
-					put(grammarAccess.getPageElementAccess().getAlternatives(), "rule__PageElement__Alternatives");
+					put(grammarAccess.getPageElementAccess().getAlternatives_0(), "rule__PageElement__Alternatives_0");
 					put(grammarAccess.getRelationshipPageElementAccess().getAlternatives(), "rule__RelationshipPageElement__Alternatives");
 					put(grammarAccess.getAttributePageElementAccess().getAlternatives(), "rule__AttributePageElement__Alternatives");
 					put(grammarAccess.getCompositeConditionTypeAccess().getAlternatives(), "rule__CompositeConditionType__Alternatives");
@@ -51,6 +51,8 @@ public class FormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPageAccess().getGroup_6(), "rule__Page__Group_6__0");
 					put(grammarAccess.getCompositeConditionAccess().getGroup(), "rule__CompositeCondition__Group__0");
 					put(grammarAccess.getAttributeValueConditionAccess().getGroup(), "rule__AttributeValueCondition__Group__0");
+					put(grammarAccess.getPageElementAccess().getGroup(), "rule__PageElement__Group__0");
+					put(grammarAccess.getPageElementAccess().getGroup_1(), "rule__PageElement__Group_1__0");
 					put(grammarAccess.getTableAccess().getGroup(), "rule__Table__Group__0");
 					put(grammarAccess.getTableAccess().getGroup_6(), "rule__Table__Group_6__0");
 					put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
@@ -84,6 +86,7 @@ public class FormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeValueConditionAccess().getAttributeAssignment_3(), "rule__AttributeValueCondition__AttributeAssignment_3");
 					put(grammarAccess.getAttributeValueConditionAccess().getValueAssignment_5(), "rule__AttributeValueCondition__ValueAssignment_5");
 					put(grammarAccess.getAttributeValueConditionAccess().getTypeAssignment_7(), "rule__AttributeValueCondition__TypeAssignment_7");
+					put(grammarAccess.getPageElementAccess().getConditionAssignment_1_1(), "rule__PageElement__ConditionAssignment_1_1");
 					put(grammarAccess.getTableAccess().getElementIDAssignment_1(), "rule__Table__ElementIDAssignment_1");
 					put(grammarAccess.getTableAccess().getLabelAssignment_2(), "rule__Table__LabelAssignment_2");
 					put(grammarAccess.getTableAccess().getRelationshipAssignment_4(), "rule__Table__RelationshipAssignment_4");

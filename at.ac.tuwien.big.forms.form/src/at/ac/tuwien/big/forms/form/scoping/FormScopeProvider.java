@@ -95,7 +95,6 @@ public class FormScopeProvider extends
 			RelationshipPageElement rpe, EReference ref) {
 		if (ref.equals(FormsPackage.Literals.RELATIONSHIP_PAGE_ELEMENT__EDITING_FORM)) {
 			FormModel f = (FormModel) EcoreUtil.getRootContainer(rpe);
-			// System.err.println(f.getForms().toString());
 			return Scopes.scopeFor(f.getForms());
 		}
 		return IScope.NULLSCOPE;

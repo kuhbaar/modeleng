@@ -383,22 +383,42 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class PageElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PageElement");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cAttributePageElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cRelationshipPageElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cAttributePageElementParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cRelationshipPageElementParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cWithKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cConditionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cConditionConditionParserRuleCall_1_1_0 = (RuleCall)cConditionAssignment_1_1.eContents().get(0);
 		
 		//PageElement:
-		//	AttributePageElement | RelationshipPageElement;
+		//	(AttributePageElement | RelationshipPageElement) ("with" condition=Condition)?;
 		public ParserRule getRule() { return rule; }
 
+		//(AttributePageElement | RelationshipPageElement) ("with" condition=Condition)?
+		public Group getGroup() { return cGroup; }
+
 		//AttributePageElement | RelationshipPageElement
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//AttributePageElement
-		public RuleCall getAttributePageElementParserRuleCall_0() { return cAttributePageElementParserRuleCall_0; }
+		public RuleCall getAttributePageElementParserRuleCall_0_0() { return cAttributePageElementParserRuleCall_0_0; }
 
 		//RelationshipPageElement
-		public RuleCall getRelationshipPageElementParserRuleCall_1() { return cRelationshipPageElementParserRuleCall_1; }
+		public RuleCall getRelationshipPageElementParserRuleCall_0_1() { return cRelationshipPageElementParserRuleCall_0_1; }
+
+		//("with" condition=Condition)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"with"
+		public Keyword getWithKeyword_1_0() { return cWithKeyword_1_0; }
+
+		//condition=Condition
+		public Assignment getConditionAssignment_1_1() { return cConditionAssignment_1_1; }
+
+		//Condition
+		public RuleCall getConditionConditionParserRuleCall_1_1_0() { return cConditionConditionParserRuleCall_1_1_0; }
 	}
 
 	public class RelationshipPageElementElements extends AbstractParserRuleElementFinder {
@@ -1242,7 +1262,7 @@ public class FormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PageElement:
-	//	AttributePageElement | RelationshipPageElement;
+	//	(AttributePageElement | RelationshipPageElement) ("with" condition=Condition)?;
 	public PageElementElements getPageElementAccess() {
 		return pPageElement;
 	}

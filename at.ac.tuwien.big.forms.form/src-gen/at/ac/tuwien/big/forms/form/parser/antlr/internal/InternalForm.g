@@ -688,9 +688,9 @@ rulePageElement returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
     { 
-        newCompositeNode(grammarAccess.getPageElementAccess().getAttributePageElementParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getPageElementAccess().getAttributePageElementParserRuleCall_0_0()); 
     }
     this_AttributePageElement_0=ruleAttributePageElement
     { 
@@ -700,14 +700,36 @@ rulePageElement returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getPageElementAccess().getRelationshipPageElementParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getPageElementAccess().getRelationshipPageElementParserRuleCall_0_1()); 
     }
     this_RelationshipPageElement_1=ruleRelationshipPageElement
     { 
         $current = $this_RelationshipPageElement_1.current; 
         afterParserOrEnumRuleCall();
     }
+)(	otherlv_2='with' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getPageElementAccess().getWithKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPageElementAccess().getConditionConditionParserRuleCall_1_1_0()); 
+	    }
+		lv_condition_3_0=ruleCondition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPageElementRule());
+	        }
+       		set(
+       			$current, 
+       			"condition",
+        		lv_condition_3_0, 
+        		"Condition");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 

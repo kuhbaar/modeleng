@@ -51,7 +51,7 @@ enum ConditionType returns ConditionType:
 ;
 
 PageElement:
-  AttributePageElement | RelationshipPageElement
+   (AttributePageElement | RelationshipPageElement) ('with' condition=Condition)?
 ;
 
 RelationshipPageElement:
