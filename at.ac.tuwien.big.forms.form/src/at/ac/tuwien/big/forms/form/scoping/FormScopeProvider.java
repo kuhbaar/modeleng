@@ -6,18 +6,10 @@ package at.ac.tuwien.big.forms.form.scoping;
 import java.util.Collection;
 import java.util.HashSet;
 
-
-
-
-
-
-
-
-
+import javax.management.relation.Relation;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
@@ -26,11 +18,11 @@ import at.ac.tuwien.big.forms.AttributePageElement;
 import at.ac.tuwien.big.forms.Entity;
 import at.ac.tuwien.big.forms.Feature;
 import at.ac.tuwien.big.forms.Form;
-import at.ac.tuwien.big.forms.FormModel;
 import at.ac.tuwien.big.forms.FormsPackage;
-import at.ac.tuwien.big.forms.Page;
-import at.ac.tuwien.big.forms.TextField;
-import at.ac.tuwien.big.forms.impl.FormsPackageImpl;
+import at.ac.tuwien.big.forms.Relationship;
+import at.ac.tuwien.big.forms.RelationshipPageElement;
+import at.ac.tuwien.big.forms.impl.FormImpl;
+
 
 /**
  * This class contains custom scoping description.
@@ -43,55 +35,80 @@ public class FormScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDe
 	
 	/* An attribute page element has to reference an attribute of the entity the containing form references. */
 	public IScope scope_AttributePageElement_attribute(AttributePageElement ape, EReference ref){
-		Page p = (Page) ape.eContainer();
-		Form f = (Form) p.eContainer();
-		/*EObject o = ape.eContainer();
-		while (!(o instanceof Form)){
-			o = o.eContainer();
-			if(o == null)
-				return IScope.NULLSCOPE;
+		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE)){
+			Entity e = getForm(ape).getEntity();
+			return Scopes.scopeFor(getEntitiesAttributes(e));
 		}
-		
-		Form f = (Form) o;*/
-		Entity e = f.getEntity();
-		
-		if(ref.equals(FormsPackage.Literals.ATTRIBUTE_PAGE_ELEMENT__ATTRIBUTE))
-			return Scopes.scopeFor(getAllMemberAttributes(e));
+		return IScope.NULLSCOPE;
+		//TODO works, but ctrl+space doesnt show the correct scope, https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=54021
+	}
+	
+	// A relationship page element has to reference a relationship of the entity the containing form references.
+	public IScope scope_RelationshipPageElement_relationship(RelationshipPageElement rpe, EReference ref){
+		if(ref.equals(FormsPackage.Literals.RELATIONSHIP_PAGE_ELEMENT__RELATIONSHIP)){
+			Entity e = getForm(rpe).getEntity();
+			return Scopes.scopeFor(getEntitiesRelationships(e));
+		}
 		return IScope.NULLSCOPE;
 	}
 	
-	private Collection<Attribute> getAllMemberAttributes(Entity entity) {
-		Collection<Feature> allMemberAttributes = new HashSet<Feature>();
-		allMemberAttributes.addAll(entity.getFeatures());
+	// An attribute value condition has to reference an attribute of the entity the containing form references.
+	
+	// A selection field is only allowed to reference an attribute of type Boolean or an attribute which has a reference to an enumeration.
+	
+	// A relationship page element has to reference a form of the same form model as editing form.
+	
+	// A column of a table can only reference attributes of the entity of the form the table edits.
+	
+	private Form getForm(EObject o) {
+		EObject container = o.eContainer();
+		while (!(container instanceof FormImpl)){
+			if(container == null)
+				return null;
+			container = container.eContainer();
+
+		}
+		return (Form) container;
+	}
+	
+	private Collection<Relationship> getEntitiesRelationships(Entity e){
+		Collection<Feature> feats = new HashSet<Feature>();
+		feats.addAll(e.getFeatures());
 		
-		Entity st = entity.getSuperType();
+		Entity st = e.getSuperType();
 		
 		while(st != null){
-			allMemberAttributes.addAll(st.getFeatures());
+			feats.addAll(st.getFeatures());
+			st = st.getSuperType();
+		}
+		
+		Collection<Relationship> allRel = new HashSet<Relationship>();
+		for (Feature f : feats){
+			if(f instanceof Relationship)
+				allRel.add((Relationship) f);
+		}
+		
+		return allRel;
+	}
+	
+	private Collection<Attribute> getEntitiesAttributes(Entity e) {
+		Collection<Feature> feats = new HashSet<Feature>();
+		feats.addAll(e.getFeatures());
+		
+		Entity st = e.getSuperType();
+		
+		while(st != null){
+			feats.addAll(st.getFeatures());
 			st = st.getSuperType();
 		}
 		
 		Collection<Attribute> allAttr = new HashSet<Attribute>();
-		for (Feature f : allMemberAttributes){
+		for (Feature f : feats){
 			if(f instanceof Attribute)
 				allAttr.add((Attribute) f);
 		}
 		
 		return allAttr;
 	}
-	/*private Collection<Attribute> getAllEntityAttributes(AttributePageElement ape){
-		Collection<Attribute> allAttr = new HashSet<Attribute>();
-		
-		Form f = (Form) ape.eContainer().eContainer();
-		
-		//Form f = (Form) EcoreUtil.getRootContainer(ape);
-		System.out.println("DEBUG Mode working?!");
-		Collection<Feature> feats = f.getEntity().getFeatures(); // feats to show in scoping
-		for(Feature fe : feats){
-			if(fe instanceof Attribute)
-				allAttr.add((Attribute) fe);
-		}
-		
-		return allAttr;
-	}*/
+
 }
