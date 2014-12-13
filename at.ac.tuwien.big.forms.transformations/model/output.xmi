@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<forms:FormModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:forms="http://www.big.tuwien.ac.at/forms"/>
+<forms:FormModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:forms="http://www.big.tuwien.ac.at/forms">
+  <forms name="Publication" title="Publication">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.0"/>
+  </forms>
+  <forms name="Person" title="Person">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.1"/>
+  </forms>
+  <forms name="Proceedings" title="Proceedings">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.2"/>
+  </forms>
+  <forms name="Journal" title="Journal">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.3"/>
+  </forms>
+  <forms name="Book" title="Book">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.4"/>
+  </forms>
+  <forms name="PublicationVenue" title="PublicationVenue" welcomeForm="true">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.5"/>
+  </forms>
+  <forms name="Event" title="Event">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.6"/>
+  </forms>
+  <forms name="Venue" title="Venue">
+    <entity href="publicationEntityModel.xmi#//@entityModelElements.10"/>
+  </forms>
+</forms:FormModel>

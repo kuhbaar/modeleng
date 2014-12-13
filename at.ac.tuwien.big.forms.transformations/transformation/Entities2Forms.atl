@@ -3,10 +3,53 @@
 module Entities2Forms;
 create OUT : Forms from IN : Forms;
 
+helper def: welcomeForm : Boolean = true;
+helper def: welcomeFormEntity : Forms!Entity = OclUndefined;
+helper def: continue : Boolean = true;
+helper def : id : Integer = 0;
+helper context Integer def : inc() : Integer = self + 1; 
+
 rule EntityModel2FormModel {
 	from
 		em : Forms!EntityModel
 	to 
 		fm : Forms!FormModel (
+			forms <- em.entityModelElements -> select(e|e.oclIsTypeOf(Forms!Entity))
 		)
+}
+
+rule Entity2Form {
+	from
+		e : Forms!Entity
+	to
+		f : Forms!Form (
+			name <- e.name,
+			title <- e.name
+		)
+	do{
+		thisModule.welcomeForm();
+		f.entity <- e;
+		if(e = thisModule.welcomeFormEntity) {
+			f.welcomeForm <- true;	
+		}
+	}
+}
+
+rule welcomeForm() {
+	do {
+		for(e in Forms!Entity.allInstances()) {
+			if(thisModule.continue) {
+				thisModule.welcomeForm <- true;
+				for(f in Forms!Relationship.allInstances()) {
+					if(f.target = e) {
+						thisModule.welcomeForm <- false;	
+					}
+				}
+				if(thisModule.welcomeForm) {
+					thisModule.welcomeFormEntity <- e;
+					thisModule.continue <- false;
+				}
+			}
+		}
+	}
 }
