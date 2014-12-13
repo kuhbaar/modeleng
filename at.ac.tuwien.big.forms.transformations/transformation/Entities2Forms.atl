@@ -22,11 +22,14 @@ rule EntityModel2FormModel {
 rule Entity2Form {
 	from
 		e : Forms!Entity
+	using {
+		initPage : Forms!Page = thisModule.Entity2InitialPage(e);		
+	}
 	to
 		f : Forms!Form (
 			name <- e.name,
 			title <- e.name,
-			pages <- thisModule.Entity2InitialPage(e)
+			pages <- initPage
 		)
 		
 	do{
@@ -35,6 +38,9 @@ rule Entity2Form {
 			f.welcomeForm <- true;	
 		}
 		for(rel in e.features) {
+			if(rel.oclIsTypeOf(Forms!Attribute)) {
+				initPage.pageElements <- thisModule.Attribute2AttributePageElement(rel);	
+			}
 			if(rel.oclIsTypeOf(Forms!Relationship)) {
 				f.pages <- f.pages.append(thisModule.Relationship2Page(rel));
 			}
@@ -84,3 +90,80 @@ entrypoint rule welcomeForm() {
 		}
 	}
 }
+
+lazy abstract rule Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute
+	to
+		ape: Forms!AttributePageElement(
+			label <- att.name.firstToUpper()
+		)
+}
+
+lazy rule Attribute2TextField extends Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute(att.type.name='String' or att.type.name='Year' or att.type.name='Integer' or att.type.name='Email')
+	to
+		ape: Forms!TextField()
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		ape.elementID <- thisModule.id.toString();
+		ape.attribute <- att;
+		if(att.type.name='Year' or att.type.name='Integer') {
+			ape.format <- '^[0-9]+$';
+		}
+		if(att.type.name='Email') {
+			ape.format <- 'hallo';
+			--TODO: add real format throws error
+		}
+	}
+}
+
+lazy rule Attribute2TextArea extends Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute(att.type.name='Text')
+	to
+		ape: Forms!TextArea()
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		ape.elementID <- thisModule.id.toString();
+		ape.attribute <- att;	
+	}
+}
+
+lazy rule Attribute2SelectionField extends Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute(att.type.name='None' or att.type.name='Boolean')
+	to
+		ape: Forms!SelectionField()
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		ape.elementID <- thisModule.id.toString();
+		ape.attribute <- att;	
+	}
+}
+
+lazy rule Attribute2DateSelectionField extends Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute(att.type.name='Date')
+	to
+		ape: Forms!DateSelectionField()
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		ape.elementID <- thisModule.id.toString();
+		ape.attribute <- att;	
+	}
+}
+
+lazy rule Attribute2TimeSelectionField extends Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute(att.type.name='Time')
+	to
+		ape: Forms!TimeSelectionField()
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		ape.elementID <- thisModule.id.toString();
+		ape.attribute <- att;	
+	}
+}
+
