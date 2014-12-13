@@ -43,7 +43,7 @@ rule Entity2Form {
 			}
 			if(rel.oclIsTypeOf(Forms!Relationship)) {
 				f.pages <- f.pages.append(thisModule.Relationship2Page(rel));
-			--	f.pages.last().pageElements.append(thisModule.Relationship2List(e, rel));
+				f.pages.last().pageElements <- thisModule.Relationship2List(rel);
 			}
 		}
 		-- TODO: add attributes of supersupertypes?
@@ -56,6 +56,7 @@ rule Entity2Form {
 		}
 	}
 }
+
 
 lazy rule Entity2InitialPage {
 	from
@@ -77,10 +78,20 @@ lazy rule Relationship2Page {
 		)
 }
 
-rule Relationship2List(e: Forms!Entity, r: Forms!Relationship) {
+rule Relationship2List(r: Forms!Relationship) {
+	using {
+		form: Forms!Form = thisModule.resolveTemp(r.target,	'f');
+	}
 	to
 		li : Forms!List()
-	-- TODO: continue
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		li.elementID <- thisModule.id.toString();
+		li.relationship <- r;
+		li.label <- r.target.name;
+		li.editingForm <- form;	
+		li;
+	}
 }
 
 
@@ -125,7 +136,7 @@ lazy rule Attribute2TextField extends Attribute2AttributePageElement {
 			ape.format <- '^[0-9]+$';
 		}
 		if(att.type.name='Email') {
-			ape.format <- '^w+@[a-zA-Z_]+\\.[a-zA-Z]{2,3}$';
+			ape.format <- '^\\w+@[a-zA-Z_]+\\.[a-zA-Z]{2,3}$';
 		}
 	}
 }

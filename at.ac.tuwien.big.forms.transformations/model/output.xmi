@@ -34,61 +34,89 @@
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.0/@features.9"/>
       </pageElements>
     </pages>
-    <pages title="Authors"/>
-    <pages title="Proceedings"/>
-    <pages title="Journal"/>
-    <pages title="Book"/>
+    <pages title="Authors">
+      <pageElements xsi:type="forms:List" label="Person" elementID="11" editingForm="//@forms.1">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.0/@features.10"/>
+      </pageElements>
+    </pages>
+    <pages title="Proceedings">
+      <pageElements xsi:type="forms:List" label="Proceedings" elementID="12" editingForm="//@forms.2">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.0/@features.11"/>
+      </pageElements>
+    </pages>
+    <pages title="Journal">
+      <pageElements xsi:type="forms:List" label="Journal" elementID="13" editingForm="//@forms.3">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.0/@features.12"/>
+      </pageElements>
+    </pages>
+    <pages title="Book">
+      <pageElements xsi:type="forms:List" label="Book" elementID="14" editingForm="//@forms.4">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.0/@features.13"/>
+      </pageElements>
+    </pages>
   </forms>
   <forms name="Person" title="Person">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.1"/>
     <pages title="Person Details">
-      <pageElements xsi:type="forms:TextField" label="Firstname" elementID="11">
+      <pageElements xsi:type="forms:TextField" label="Firstname" elementID="15">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Lastname" elementID="12">
+      <pageElements xsi:type="forms:TextField" label="Lastname" elementID="16">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Email" elementID="13" format="^w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$">
+      <pageElements xsi:type="forms:TextField" label="Email" elementID="17" format="^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.2"/>
       </pageElements>
-      <pageElements xsi:type="forms:SelectionField" label="External" elementID="14">
+      <pageElements xsi:type="forms:SelectionField" label="External" elementID="18">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.3"/>
       </pageElements>
-      <pageElements xsi:type="forms:SelectionField" label="Faculty" elementID="15">
+      <pageElements xsi:type="forms:SelectionField" label="Faculty" elementID="19">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.4"/>
       </pageElements>
     </pages>
-    <pages title="Publications"/>
+    <pages title="Publications">
+      <pageElements xsi:type="forms:List" label="Publication" elementID="20" editingForm="//@forms.0">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.1/@features.5"/>
+      </pageElements>
+    </pages>
   </forms>
   <forms name="Proceedings" title="Proceedings">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.2"/>
     <pages title="Proceedings Details">
-      <pageElements xsi:type="forms:TextField" label="Publisher" elementID="16">
+      <pageElements xsi:type="forms:TextField" label="Publisher" elementID="21">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.2/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Volume" elementID="17" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Volume" elementID="22" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.2/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Isbn" elementID="18">
+      <pageElements xsi:type="forms:TextField" label="Isbn" elementID="23">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.2/@features.2"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="19">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="26">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
       </pageElements>
     </pages>
-    <pages title="Event"/>
-    <pages title="Editors"/>
+    <pages title="Event">
+      <pageElements xsi:type="forms:List" label="Event" elementID="24" editingForm="//@forms.6">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.2/@features.3"/>
+      </pageElements>
+    </pages>
+    <pages title="Editors">
+      <pageElements xsi:type="forms:List" label="Person" elementID="25" editingForm="//@forms.1">
+        <relationship href="publicationEntityModel.xmi#//@entityModelElements.2/@features.4"/>
+      </pageElements>
+    </pages>
   </forms>
   <forms name="Journal" title="Journal">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.3"/>
     <pages title="Journal Details">
-      <pageElements xsi:type="forms:TextField" label="Volume" elementID="20" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Volume" elementID="27" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.3/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Number" elementID="21" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Number" elementID="28" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.3/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="22">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="29">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
       </pageElements>
     </pages>
@@ -96,13 +124,13 @@
   <forms name="Book" title="Book">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.4"/>
     <pages title="Book Details">
-      <pageElements xsi:type="forms:TextField" label="Publisher" elementID="23">
+      <pageElements xsi:type="forms:TextField" label="Publisher" elementID="30">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.4/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Isbn" elementID="24">
+      <pageElements xsi:type="forms:TextField" label="Isbn" elementID="31">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.4/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="25">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="32">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
       </pageElements>
     </pages>
@@ -110,13 +138,13 @@
   <forms name="PublicationVenue" title="PublicationVenue" welcomeForm="true">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.5"/>
     <pages title="PublicationVenue Details">
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="26">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="33">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Rating" elementID="27" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Rating" elementID="34" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Id" elementID="28">
+      <pageElements xsi:type="forms:TextField" label="Id" elementID="35">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.1"/>
       </pageElements>
     </pages>
@@ -124,25 +152,25 @@
   <forms name="Event" title="Event">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.6"/>
     <pages title="Event Details">
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="29">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="36">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="City" elementID="30">
+      <pageElements xsi:type="forms:TextField" label="City" elementID="37">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Country" elementID="31">
+      <pageElements xsi:type="forms:TextField" label="Country" elementID="38">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.2"/>
       </pageElements>
-      <pageElements xsi:type="forms:DateSelectionField" label="FromDate" elementID="32">
+      <pageElements xsi:type="forms:DateSelectionField" label="FromDate" elementID="39">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.3"/>
       </pageElements>
-      <pageElements xsi:type="forms:DateSelectionField" label="UntilDate" elementID="33">
+      <pageElements xsi:type="forms:DateSelectionField" label="UntilDate" elementID="40">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.4"/>
       </pageElements>
-      <pageElements xsi:type="forms:TimeSelectionField" label="StartTime" elementID="34">
+      <pageElements xsi:type="forms:TimeSelectionField" label="StartTime" elementID="41">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.5"/>
       </pageElements>
-      <pageElements xsi:type="forms:TimeSelectionField" label="EndTime" elementID="35">
+      <pageElements xsi:type="forms:TimeSelectionField" label="EndTime" elementID="42">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.6"/>
       </pageElements>
     </pages>
@@ -150,10 +178,10 @@
   <forms name="Venue" title="Venue">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.10"/>
     <pages title="Venue Details">
-      <pageElements xsi:type="forms:TextField" label="Rating" elementID="36" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Rating" elementID="43" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Id" elementID="37">
+      <pageElements xsi:type="forms:TextField" label="Id" elementID="44">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.1"/>
       </pageElements>
     </pages>
