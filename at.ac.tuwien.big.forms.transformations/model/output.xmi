@@ -48,7 +48,7 @@
       <pageElements xsi:type="forms:TextField" label="Lastname" elementID="12">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Email" elementID="13" format="hallo">
+      <pageElements xsi:type="forms:TextField" label="Email" elementID="13" format="^w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.1/@features.2"/>
       </pageElements>
       <pageElements xsi:type="forms:SelectionField" label="External" elementID="14">

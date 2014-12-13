@@ -43,8 +43,10 @@ rule Entity2Form {
 			}
 			if(rel.oclIsTypeOf(Forms!Relationship)) {
 				f.pages <- f.pages.append(thisModule.Relationship2Page(rel));
+			--	f.pages.last().pageElements.append(thisModule.Relationship2List(e, rel));
 			}
 		}
+		-- TODO: add attributes of supersupertypes?
 		if(e.superType.oclIsUndefined() = false) {
 			for(rel2 in e.superType.features) {
 				if(rel2.oclIsTypeOf(Forms!Attribute)) {
@@ -75,6 +77,11 @@ lazy rule Relationship2Page {
 		)
 }
 
+rule Relationship2List(e: Forms!Entity, r: Forms!Relationship) {
+	to
+		li : Forms!List()
+	-- TODO: continue
+}
 
 
 entrypoint rule welcomeForm() {
@@ -118,8 +125,8 @@ lazy rule Attribute2TextField extends Attribute2AttributePageElement {
 			ape.format <- '^[0-9]+$';
 		}
 		if(att.type.name='Email') {
-			ape.format <- 'hallo';
-			--TODO: add real format throws error
+			ape.format <- '^w+@[a-zA-Z_]+\\.[a-zA-Z]{2,3}$';
+			--TODO: add real format ^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$ throws error
 		}
 	}
 }
