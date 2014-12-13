@@ -27,7 +27,6 @@ rule Entity2Form {
 			title <- e.name
 		)
 	do{
-		thisModule.welcomeForm();
 		f.entity <- e;
 		if(e = thisModule.welcomeFormEntity) {
 			f.welcomeForm <- true;	
@@ -35,7 +34,7 @@ rule Entity2Form {
 	}
 }
 
-rule welcomeForm() {
+entrypoint rule welcomeForm() {
 	do {
 		for(e in Forms!Entity.allInstances()) {
 			if(thisModule.continue) {
