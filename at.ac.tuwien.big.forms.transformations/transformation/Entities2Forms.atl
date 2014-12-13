@@ -8,6 +8,7 @@ helper def: welcomeFormEntity : Forms!Entity = OclUndefined;
 helper def: continue : Boolean = true;
 helper def : id : Integer = 0;
 helper context Integer def : inc() : Integer = self + 1; 
+helper context String def : firstToUpper() : String = self.substring(1,1).toUpper() + self.substring(2,self -> size());
 
 rule EntityModel2FormModel {
 	from
@@ -24,14 +25,62 @@ rule Entity2Form {
 	to
 		f : Forms!Form (
 			name <- e.name,
-			title <- e.name
+			title <- e.name,
+			pages <- thisModule.Entity2InitialPage(e)
 		)
+		
 	do{
 		f.entity <- e;
 		if(e = thisModule.welcomeFormEntity) {
 			f.welcomeForm <- true;	
 		}
 	}
+}
+
+lazy rule Entity2InitialPage {
+	from
+		e: Forms!Entity
+	to
+		pg : Forms!Page(
+			title <- e.name.firstToUpper() + ' Details'
+		)
+}
+
+lazy rule Relationship2Page {
+	from
+		r: Forms!Relationship
+	to
+		pg : Forms!Page(
+			title <- r.name.firstToUpper()
+		)
+}
+
+lazy abstract rule Attribute2AttributePageElement {
+	from
+		att: Forms!Attribute
+	to
+		ape: Forms!AttributePageElement(
+			label <- att.name
+		)
+	do {
+		thisModule.id <- thisModule.id.inc();	
+		ape.elementID <- thisModule.id;
+		ape.attribute <- att;
+	}
+}
+
+lazy rule Attribute2TextField extends Attribute2AttributePageElement {
+	from
+		attr: Forms!Attribute(attr.type='String' or attr.type='Year')
+	to
+		txf: Forms!TextField()
+}
+
+lazy rule Attribute2TextArea extends Attribute2AttributePageElement {
+	from
+		attri: Forms!Attribute(attri.type='Text')
+	to
+		txa: Forms!TextArea()
 }
 
 entrypoint rule welcomeForm() {
