@@ -23,7 +23,7 @@ rule Entity2Form {
 	from
 		e : Forms!Entity
 	using {
-		initPage : Forms!Page = thisModule.Entity2InitialPage(e);		
+		initPage : Forms!Page = thisModule.Entity2InitialPage(e);	
 	}
 	to
 		f : Forms!Form (
@@ -45,8 +45,13 @@ rule Entity2Form {
 				f.pages <- f.pages.append(thisModule.Relationship2Page(rel));
 			}
 		}
-		
-		
+		if(e.superType.oclIsUndefined() = false) {
+			for(rel2 in e.superType.features) {
+				if(rel2.oclIsTypeOf(Forms!Attribute)) {
+					initPage.pageElements <- initPage.pageElements.append(thisModule.Attribute2AttributePageElement(rel2));
+				}
+			}
+		}
 	}
 }
 

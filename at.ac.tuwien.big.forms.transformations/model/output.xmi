@@ -72,6 +72,9 @@
       <pageElements xsi:type="forms:TextField" label="Isbn" elementID="18">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.2/@features.2"/>
       </pageElements>
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="19">
+        <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
+      </pageElements>
     </pages>
     <pages title="Event"/>
     <pages title="Editors"/>
@@ -79,55 +82,67 @@
   <forms name="Journal" title="Journal">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.3"/>
     <pages title="Journal Details">
-      <pageElements xsi:type="forms:TextField" label="Volume" elementID="19" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Volume" elementID="20" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.3/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Number" elementID="20" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Number" elementID="21" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.3/@features.1"/>
+      </pageElements>
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="22">
+        <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
       </pageElements>
     </pages>
   </forms>
   <forms name="Book" title="Book">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.4"/>
     <pages title="Book Details">
-      <pageElements xsi:type="forms:TextField" label="Publisher" elementID="21">
+      <pageElements xsi:type="forms:TextField" label="Publisher" elementID="23">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.4/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Isbn" elementID="22">
+      <pageElements xsi:type="forms:TextField" label="Isbn" elementID="24">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.4/@features.1"/>
+      </pageElements>
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="25">
+        <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
       </pageElements>
     </pages>
   </forms>
   <forms name="PublicationVenue" title="PublicationVenue" welcomeForm="true">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.5"/>
     <pages title="PublicationVenue Details">
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="23">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="26">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.5/@features.0"/>
+      </pageElements>
+      <pageElements xsi:type="forms:TextField" label="Rating" elementID="27" format="^[0-9]+$">
+        <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.0"/>
+      </pageElements>
+      <pageElements xsi:type="forms:TextField" label="Id" elementID="28">
+        <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.1"/>
       </pageElements>
     </pages>
   </forms>
   <forms name="Event" title="Event">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.6"/>
     <pages title="Event Details">
-      <pageElements xsi:type="forms:TextField" label="Title" elementID="24">
+      <pageElements xsi:type="forms:TextField" label="Title" elementID="29">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="City" elementID="25">
+      <pageElements xsi:type="forms:TextField" label="City" elementID="30">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.1"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Country" elementID="26">
+      <pageElements xsi:type="forms:TextField" label="Country" elementID="31">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.2"/>
       </pageElements>
-      <pageElements xsi:type="forms:DateSelectionField" label="FromDate" elementID="27">
+      <pageElements xsi:type="forms:DateSelectionField" label="FromDate" elementID="32">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.3"/>
       </pageElements>
-      <pageElements xsi:type="forms:DateSelectionField" label="UntilDate" elementID="28">
+      <pageElements xsi:type="forms:DateSelectionField" label="UntilDate" elementID="33">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.4"/>
       </pageElements>
-      <pageElements xsi:type="forms:TimeSelectionField" label="StartTime" elementID="29">
+      <pageElements xsi:type="forms:TimeSelectionField" label="StartTime" elementID="34">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.5"/>
       </pageElements>
-      <pageElements xsi:type="forms:TimeSelectionField" label="EndTime" elementID="30">
+      <pageElements xsi:type="forms:TimeSelectionField" label="EndTime" elementID="35">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.6/@features.6"/>
       </pageElements>
     </pages>
@@ -135,10 +150,10 @@
   <forms name="Venue" title="Venue">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.10"/>
     <pages title="Venue Details">
-      <pageElements xsi:type="forms:TextField" label="Rating" elementID="31" format="^[0-9]+$">
+      <pageElements xsi:type="forms:TextField" label="Rating" elementID="36" format="^[0-9]+$">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.0"/>
       </pageElements>
-      <pageElements xsi:type="forms:TextField" label="Id" elementID="32">
+      <pageElements xsi:type="forms:TextField" label="Id" elementID="37">
         <attribute href="publicationEntityModel.xmi#//@entityModelElements.10/@features.1"/>
       </pageElements>
     </pages>
