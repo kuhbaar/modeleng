@@ -3,14 +3,21 @@
   <forms name="Publication" title="Publication">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.0"/>
     <pages title="Publication Details"/>
+    <pages title="Authors"/>
+    <pages title="Proceedings"/>
+    <pages title="Journal"/>
+    <pages title="Book"/>
   </forms>
   <forms name="Person" title="Person">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.1"/>
     <pages title="Person Details"/>
+    <pages title="Publications"/>
   </forms>
   <forms name="Proceedings" title="Proceedings">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.2"/>
     <pages title="Proceedings Details"/>
+    <pages title="Event"/>
+    <pages title="Editors"/>
   </forms>
   <forms name="Journal" title="Journal">
     <entity href="publicationEntityModel.xmi#//@entityModelElements.3"/>
