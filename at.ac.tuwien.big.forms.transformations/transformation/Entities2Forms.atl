@@ -3,9 +3,7 @@
 module Entities2Forms;
 create OUT : Forms from IN : Forms;
 
-helper def: welcomeForm : Boolean = true;
 helper def: welcomeFormEntity : Forms!Entity = OclUndefined;
-helper def: continue : Boolean = true;
 helper def : id : Integer = 0;
 helper context Integer def : inc() : Integer = self + 1; 
 helper context String def : firstToUpper() : String = self.substring(1,1).toUpper() + (self.substring(2,self -> size()));
@@ -96,18 +94,22 @@ rule Relationship2List(r: Forms!Relationship) {
 
 
 entrypoint rule welcomeForm() {
+	using {
+		welcomeForm : Boolean = true;
+		continue : Boolean = true;
+	}
 	do {
 		for(e in Forms!Entity.allInstances()) {
-			if(thisModule.continue) {
-				thisModule.welcomeForm <- true;
+			if(continue) {
+				welcomeForm <- true;
 				for(f in Forms!Relationship.allInstances()) {
 					if(f.target = e) {
-						thisModule.welcomeForm <- false;	
+						welcomeForm <- false;	
 					}
 				}
-				if(thisModule.welcomeForm) {
+				if(welcomeForm) {
 					thisModule.welcomeFormEntity <- e;
-					thisModule.continue <- false;
+					continue <- false;
 				}
 			}
 		}
