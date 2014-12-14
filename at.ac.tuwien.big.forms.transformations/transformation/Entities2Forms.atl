@@ -7,6 +7,12 @@ helper def: welcomeFormEntity : Forms!Entity = OclUndefined;
 helper def : id : Integer = 0;
 helper context Integer def : inc() : Integer = self + 1; 
 helper context String def : firstToUpper() : String = self.substring(1,1).toUpper() + (self.substring(2,self -> size()));
+helper context Forms!Entity def : getSuperTypes() : Sequence(Forms!Entity) =
+	if self.superType.oclIsUndefined() = false then
+		self.superType.getSuperTypes() -> append(self)
+	else
+		Sequence{self}
+	endif;
 
 rule EntityModel2FormModel {
 	from
@@ -22,6 +28,7 @@ rule Entity2Form {
 		e : Forms!Entity
 	using {
 		initPage : Forms!Page = thisModule.Entity2InitialPage(e);	
+		superTypes : Sequence(Forms!Entity) = e.getSuperTypes();
 	}
 	to
 		f : Forms!Form (
@@ -44,11 +51,13 @@ rule Entity2Form {
 				f.pages.last().pageElements <- thisModule.Relationship2List(rel);
 			}
 		}
-		-- TODO: add attributes of supersupertypes?
-		if(e.superType.oclIsUndefined() = false) {
-			for(rel2 in e.superType.features) {
-				if(rel2.oclIsTypeOf(Forms!Attribute)) {
-					initPage.pageElements <- initPage.pageElements.append(thisModule.Attribute2AttributePageElement(rel2));
+
+		for(ec1 in superTypes) {
+			if(e<> ec1) {
+				for(rel2 in ec1.features) {
+					if(rel2.oclIsTypeOf(Forms!Attribute)) {
+						initPage.pageElements <- initPage.pageElements.append(thisModule.Attribute2AttributePageElement(rel2));
+					}
 				}
 			}
 		}
