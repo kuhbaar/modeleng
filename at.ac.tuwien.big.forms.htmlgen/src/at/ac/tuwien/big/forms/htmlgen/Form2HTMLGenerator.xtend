@@ -78,40 +78,41 @@ class Form2HTMLGenerator implements IGenerator {
 	  '''
 	  form.addWelcomeForm('«form.title»');
 	  '''»
-          «FOR page : form.pages»
-            «FOR pageElement : page.pageElements»
-              «registerPE(pageElement, page)»
-              «registerCondition(pageElement.condition, null, page)»
-            «ENDFOR»
-          «ENDFOR»
+     «FOR page : form.pages»
+     «FOR pageElement : page.pageElements»
+     «registerPE(pageElement, page)»
+     «if(page.condition != null)registerCondition(page.condition, null, page, null)»
+     «if(pageElement.condition != null) registerCondition(pageElement.condition, null, null, pageElement)»
+     «ENDFOR»
+     «ENDFOR»
 	  '''
 	}
 	
 	def registerPE(PageElement pe, Page contPage){
 	  if(pe instanceof TextField){
+	    if(pe.format != null)
 	    '''
 	    form.addRegularExpression('«pe.elementID»','«pe.format»');
 	    '''
 	  } else if(pe instanceof RelationshipPageElement){
 	    '''
-	    form.addRelationshipPageElement ('«contPage.title»','«pe.elementID»','«pe.editingForm.title»','
-	    «if(pe instanceof Table) "table" else "list"»','«pe.relationship.lowerBound»','«pe.relationship.upperBound»');
+	    form.addRelationshipPageElement ('«contPage.title»','«pe.elementID»','«pe.editingForm.title»','«if(pe instanceof Table) "table" else "list"»','«pe.relationship.lowerBound»','«pe.relationship.upperBound»');
 	    '''
 	  }
 	}
 	
-	def registerCondition(Condition c, Condition parent, Page contPage){
+	def registerCondition(Condition c, Condition parent, Page contPage, PageElement contPe){
 	  if(c instanceof CompositeCondition){
 	    '''
-      form.addCompositeCondition('«c.conditionID»', «if(parent==null) "null" else "'"+parent.conditionID+"'"», «c.type»'); 
-	    «if(!c.composedConditions.isEmpty())
-	     for(cc : c.composedConditions)
-	       registerCondition(cc,c, contPage)»
+	    form.addCompositeCondition('«c.conditionID»', «if(parent==null) "null" else "'"+parent.conditionID+"'"», '«c.compositionType»');
+	    «FOR cc : c.composedConditions»
+	      «registerCondition(cc, c, contPage, contPe)»
+	    «ENDFOR»
       '''
 	  } else if(c instanceof AttributeValueCondition){
-	    '''
-	    form.addAttributeValueCondition('«c.conditionID»',«if(parent==null) "null" else "'"+parent.conditionID+"'"»,('«contPage.title»'), '«c.value»', '«c.type»');
-	    '''
+	  '''
+    form.addAttributeValueCondition('«c.conditionID»',«if(parent==null) "null" else "'"+parent.conditionID+"'"»,'«(if(contPe != null) contPe.elementID else contPage.title)»', '«c.value»', '«c.type»');
+    '''
 	  }
 	}
 	
@@ -223,12 +224,7 @@ class Form2HTMLGenerator implements IGenerator {
       </div>
       '''
   }
-  /* TODO
-   * Assignment says: "The columns created for a table don’t need this mandatory
-   * check because they are not used as an input field and only display entered data."
-   * But in the expected output there's "class="mandatory"" in columns?
-   * https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=55220
-   */
+
 	def generateCode(Column c){
 	  '''
 	  <th>«c.label»</th>
@@ -246,8 +242,8 @@ class Form2HTMLGenerator implements IGenerator {
 	def generateOptions(AttributePageElement ape){
 	  if(ape.attribute.type.equals(AttributeType.BOOLEAN)){
 	    '''
-	    <option value="Yes">Yes</option>
-	    <option value="No">No</option>
+	    <option value="true">Yes</option>
+	    <option value="false">No</option>
 	    '''
 	  } else if(ape.attribute.type.equals(AttributeType.NONE)){
 	    '''
